@@ -118,7 +118,7 @@ describe("0.6 bounded optimization and transparent acceptance", () => {
 });
 describe("traceable real glass snapshots", () => {
   it("matches all eight catalog reference nd and Vd values from independent supplied metadata", () => {
-    expect(glasses).toHaveLength(8);
+    expect(glasses).toHaveLength(33);
     for (const entry of glasses) {
       const g = entry as unknown as Material,
         { nd, vd } = glassNumbers(g);

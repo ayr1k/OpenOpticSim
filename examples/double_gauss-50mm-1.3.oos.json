@@ -1,0 +1,268 @@
+{
+  "description": "OOS 原创参数；仅借鉴经典结构拓扑，不是 ZEISS 或其他厂商处方；需按目标优化和验证。 Validated at 5 degree half-field only; full-frame corners and manufacturing not certified.",
+  "fields": [
+    0.0,
+    0.06108652381980153,
+    0.08726646259971647
+  ],
+  "materials": [
+    {
+      "n": 1.0,
+      "name": "Air",
+      "range_nm": [
+        380.0,
+        780.0
+      ],
+      "sellmeier": null,
+      "source": "Ideal vacuum approximation n=1"
+    },
+    {
+      "n": 1.5168,
+      "name": "SCHOTT N-BK7",
+      "range_nm": [
+        300.0,
+        2500.0
+      ],
+      "sellmeier": [
+        [
+          1.03961212,
+          0.231792344,
+          1.01046945
+        ],
+        [
+          0.00600069867,
+          0.0200179144,
+          103.560653
+        ]
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-BK7.yml; SHA256 87da400af68251beaeb605a85fb949483fa082c609a5b1d78b4823cb9f4f65b8"
+    },
+    {
+      "n": 1.62005,
+      "name": "SCHOTT N-F2",
+      "range_nm": [
+        365.0,
+        2500.0
+      ],
+      "sellmeier": [
+        [
+          1.39757037,
+          0.159201403,
+          1.2686543
+        ],
+        [
+          0.00995906143,
+          0.0546931752,
+          119.248346
+        ]
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-F2.yml; SHA256 85c50ba2f37383a07a3e7dd85cea8c25ef9c7e090500e73ac8398315fe6ddd0a"
+    }
+  ],
+  "name": "double_gauss · 50 mm F8 · 5deg teaching design",
+  "object_distance": null,
+  "schema_version": 1,
+  "sensor": [
+    36.0,
+    24.0
+  ],
+  "stop": 6,
+  "surfaces": [
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": 0.027204496984103328,
+      "material": 1,
+      "name": "S1 · 经典结构初值",
+      "semi_aperture": 6.49988663525924,
+      "thickness": 2.5268509586808325
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": 0.001774096090090832,
+      "material": 0,
+      "name": "S2 · 经典结构初值",
+      "semi_aperture": 6.49988663525924,
+      "thickness": 1.3358499327227602
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": 0.03655363733806209,
+      "material": 1,
+      "name": "S3 · 经典结构初值",
+      "semi_aperture": 6.49988663525924,
+      "thickness": 2.8613485935060115
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": 0.0256325104367154,
+      "material": 0,
+      "name": "S4 · 经典结构初值",
+      "semi_aperture": 6.49988663525924,
+      "thickness": 1.396255111135253
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": 0.030247434538734717,
+      "material": 2,
+      "name": "S5 · 经典结构初值",
+      "semi_aperture": 6.49988663525924,
+      "thickness": 1.3816238328533446
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": 0.040359911467017326,
+      "material": 0,
+      "name": "S6 · 经典结构初值",
+      "semi_aperture": 6.49988663525924,
+      "thickness": 2.2587449849352157
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": 0.0,
+      "material": 0,
+      "name": "S7 · 光阑",
+      "semi_aperture": 2.5293196260117257,
+      "thickness": 3.257299222743795
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": -0.05756039516494078,
+      "material": 2,
+      "name": "S8 · 经典结构初值",
+      "semi_aperture": 6.49988663525924,
+      "thickness": 1.2985151196195377
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": 0.011704858255962637,
+      "material": 0,
+      "name": "S9 · 经典结构初值",
+      "semi_aperture": 6.49988663525924,
+      "thickness": 1.3139345306076553
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": -0.021999938305152525,
+      "material": 1,
+      "name": "S10 · 经典结构初值",
+      "semi_aperture": 6.49988663525924,
+      "thickness": 3.152133089939336
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": -0.05834880624262603,
+      "material": 0,
+      "name": "S11 · 经典结构初值",
+      "semi_aperture": 6.49988663525924,
+      "thickness": 1.147325871141443
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": 0.017044110644994337,
+      "material": 1,
+      "name": "S12 · 经典结构初值",
+      "semi_aperture": 6.49988663525924,
+      "thickness": 2.2325714931887513
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": -0.03201571345058547,
+      "material": 0,
+      "name": "S13 · 经典结构初值",
+      "semi_aperture": 6.49988663525924,
+      "thickness": 42.237677378584145
+    }
+  ],
+  "wavelengths": [
+    {
+      "nm": 486.1327,
+      "weight": 1.0
+    },
+    {
+      "nm": 587.5618,
+      "weight": 1.0
+    },
+    {
+      "nm": 656.2725,
+      "weight": 1.0
+    }
+  ]
+}

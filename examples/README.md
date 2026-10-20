@@ -24,3 +24,7 @@
 ## v1.1 镜组运动
 
 `24-70mm-zoom.oos.json`：项目自主构建的两正双胶合镜组教学变焦，24/35/50/70 mm 四个配置，4×3 mm 传感器、小光圈；非商业 24–70 mm f/2.8 或全画幅处方。采用已有合成材料快照，按 Apache-2.0 分发。生成器 `scripts/build_zoom_example.py`，独立验证 `scripts/validate_motion.py`，使用方法见 [镜组运动](../docs/manual/motion.md)。
+
+## v1.3 经典拓扑指标设计
+
+`tessar-50mm-1.3.oos.json`、`planar-50mm-1.3.oos.json`、`double_gauss-50mm-1.3.oos.json`、`sonnar-50mm-1.3.oos.json`：由 `synthesis.rs` 原创参数起点和 `scripts/validate_design13.py` 生成，按 Apache-2.0 分发。仅借鉴经典拓扑，未复制厂商数值处方。使用固定 CC0 快照的 N-BK7/N-F2；50 mm、F/8、5° 半视场、三谱线几何复核通过，传感器角落及制造公差未验证。设计族名称用于结构说明，不表示厂商背书。

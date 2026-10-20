@@ -48,6 +48,8 @@ pub struct MechanicalEdge {
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Surface {
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub coating: Vec<crate::coating::Layer>,
     pub name: String,
     /// Curvature in 1/mm; positive centre of curvature is toward +z.
     pub curvature: f64,
@@ -252,6 +254,11 @@ impl Project {
             }
         }
         for (i, s) in self.surfaces.iter().enumerate() {
+            if s.coating.iter().any(|l| l.index > 10.)
+                || crate::coating::response(1., 1.5, 0., 550., &s.coating).is_err()
+            {
+                add(Some(i), "Invalid coating layers");
+            }
             if !s.thickness.is_finite()
                 || s.thickness < 0.
                 || !s.semi_aperture.is_finite()
@@ -354,6 +361,7 @@ pub fn examples() -> Vec<Project> {
         semi_aperture: a,
         material: m,
         mechanical: None,
+        coating: vec![],
     };
     let base = Project {
         schema_version: 1,

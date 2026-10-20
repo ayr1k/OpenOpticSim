@@ -31,9 +31,9 @@ export async function createDrawingPdf(
       .join("");
   const p = s.project;
   doc.setTitle(`${p.name} - OOS 技术图纸`);
-  doc.setAuthor("OpenOpticSim 1.2");
+  doc.setAuthor("OpenOpticSim 1.3");
   doc.setSubject("旋转对称顺序透射光学设计记录");
-  doc.setCreator("OOS 1.2 / pdf-lib");
+  doc.setCreator("OOS 1.3 / pdf-lib");
   doc.setCreationDate(new Date(s.createdAt));
   let page!: PDFPage;
   let y = 0,
@@ -68,7 +68,7 @@ export async function createDrawingPdf(
     section = title.replace(/（续）$/, "");
     page = doc.addPage([W, H]);
     text("OpenOpticSim", M, 23, 11, accent);
-    text("1.2  /  OPTICAL DESIGN RECORD", W - 265, 24, 8, muted);
+    text("1.3  /  OPTICAL DESIGN RECORD", W - 265, 24, 8, muted);
     line(M, 45, W - M, 45);
     text(title, M, 59, 18);
     y = 94;
@@ -455,6 +455,27 @@ export async function createDrawingPdf(
     [57, 105, 149, 149, 149, 148.89],
     8.2,
   );
+  if (p.surfaces.some((s) => s.coating?.length)) {
+    newPage("名义镀膜层参数");
+    paragraph(
+      "顺序从物方到像方。常数折射率、无吸收的教学介质模型；不是加工工艺规范。光学分析未将膜层相位加入 PSF/MTF。",
+      9,
+      muted,
+    );
+    table(
+      ["面号", "层号", "名称", "折射率 n", "物理厚度 nm"],
+      p.surfaces.flatMap((s, i) =>
+        (s.coating ?? []).map((l, j) => [
+          `S${i + 1}`,
+          String(j + 1),
+          l.name,
+          String(l.index),
+          String(l.thickness_nm),
+        ]),
+      ),
+      [60, 60, 337.89, 140, 160],
+    );
+  }
   newPage("材料快照 / 色散与有效范围");
   paragraph(
     "Sellmeier：n² = 1 + Σ Bi λ² / (λ² - Ci)，λ 使用 µm，Ci 单位 µm²。常数材料使用 n；Sellmeier 材料的 n 字段为保存的常数回退值，实际追迹使用系数。",
@@ -779,7 +800,7 @@ export async function createDrawingPdf(
     10,
   );
   paragraph(
-    "生成工具：OpenOpticSim 1.2（Apache-2.0）；PDF-LIB / fontkit（MIT）；中文字体 Noto Sans SC（SIL OFL 1.1）。字体来源与许可随安装包分发。",
+    "生成工具：OpenOpticSim 1.3（Apache-2.0）；PDF-LIB / fontkit（MIT）；中文字体 Noto Sans SC（SIL OFL 1.1）。字体来源与许可随安装包分发。",
     9,
     muted,
   );
@@ -830,7 +851,7 @@ export async function createDrawingPdf(
     line(M, H - 35, W - M, H - 35, muted, 0.4, a);
     let name = clean(p.name);
     while (font.widthOfTextAtSize(name, 7) > 450) name = name.slice(0, -1);
-    text(`${name}  |  OOS 1.2  |  名义设计 / mm`, M, H - 26, 7, muted, a);
+    text(`${name}  |  OOS 1.3  |  名义设计 / mm`, M, H - 26, 7, muted, a);
     text(`${i + 1} / ${pages.length}`, W - M - 40, H - 26, 8, muted, a);
   });
   return doc.save();

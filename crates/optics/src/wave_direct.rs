@@ -85,7 +85,7 @@ pub(super) fn calculate_direct(
         let mut mono = vec![0.; n * n];
         let workers = std::thread::available_parallelism()
             .map_or(1, usize::from)
-            .min(8);
+            .min(n);
         let rows = n.div_ceil(workers);
         std::thread::scope(|scope| {
             for (chunk, output) in mono.chunks_mut(rows * n).enumerate() {

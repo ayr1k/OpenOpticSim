@@ -247,7 +247,7 @@ export default function OptimizationEditor({
               }
             />
             <p>
-              {draft.variables.filter((s) => !s.locked).length} / 12
+              {draft.variables.filter((s) => !s.locked).length} / 32
               个参与优化；其余表面参数保持固定。
             </p>
             {error && (

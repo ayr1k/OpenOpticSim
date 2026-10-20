@@ -1,6 +1,7 @@
 """v1.2 fixed-sensor studies, independent intersections, and legacy motion regression."""
 import copy
 import json
+import sys
 from pathlib import Path
 import validate_rayoptics as reference
 from validate_motion import options as motion_options
@@ -75,8 +76,11 @@ def main():
                 optimization_all_fields_protected=True,focus400=[dict(distance_mm=r['configuration']['object_distance'],positions_mm=r['configuration']['positions_mm'],rms_um=r['rms_um']) for r in focus['points']],
                 focus400_rayoptics=focus_ref,legacy_zoom_rms_errors_um=regression,
                 scope='Fixed-sensor geometric studies; finite sampled positions only; not continuous parfocality or diffraction certification')
-    (ROOT/'docs/validation-study-1.2.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
-    (ROOT/'docs/fixtures/study-1.2-results.json').write_text(json.dumps(scan,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+    output=ROOT/(sys.argv[1] if len(sys.argv)>1 else 'docs/validation-study-1.2.json')
+    if len(sys.argv)>1: report['version']='1.3.0'
+    output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+    if len(sys.argv)==1:
+        (ROOT/'docs/fixtures/study-1.2-results.json').write_text(json.dumps(scan,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     print(json.dumps(report,ensure_ascii=True,indent=2))
 
 if __name__=='__main__':main()

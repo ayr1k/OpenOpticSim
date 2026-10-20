@@ -1,6 +1,7 @@
 pub mod aiming;
 pub mod analysis;
 pub mod aperture;
+pub mod coating;
 pub mod constraints;
 pub mod fields;
 pub mod focus;
@@ -11,6 +12,7 @@ pub mod optimize;
 pub mod preview;
 pub mod quality;
 pub mod study;
+pub mod synthesis;
 pub mod trace;
 pub mod wave;
 pub use analysis::*;
@@ -42,6 +44,8 @@ pub struct Request {
     pub group_move: Option<aperture::GroupMove>,
     pub motion_options: Option<motion::MotionOptions>,
     pub study_options: Option<study::StudyOptions>,
+    pub design_brief: Option<synthesis::DesignBrief>,
+    pub coating_options: Option<coating::CoatingOptions>,
 }
 fn default_sampling() -> usize {
     17
@@ -58,6 +62,16 @@ pub fn execute_with_progress(
     progress: &mut dyn FnMut(&OptimizationProgress),
 ) -> Result<serde_json::Value, String> {
     let p = &request.project;
+    if request.operation == "synthesize" {
+        return Ok(serde_json::json!(synthesis::run(
+            request
+                .design_brief
+                .as_ref()
+                .ok_or("Design brief required")?,
+            cancel,
+            progress
+        )?));
+    }
     if request.operation == "validate" {
         return Ok(serde_json::json!(p.validate()));
     }
@@ -79,6 +93,24 @@ pub fn execute_with_progress(
         return Err("Add a lens before optical analysis".into());
     }
     match request.operation.as_str() {
+        "coatings" => coating::analyze_coatings(
+            p,
+            &request
+                .coating_options
+                .unwrap_or_else(|| coating::CoatingOptions {
+                    stacks: p
+                        .surfaces
+                        .iter()
+                        .enumerate()
+                        .filter(|(_, s)| !s.coating.is_empty())
+                        .map(|(i, s)| coating::Stack {
+                            surface: i,
+                            layers: s.coating.clone(),
+                        })
+                        .collect(),
+                }),
+            cancel,
+        ),
         "motion_study" => Ok(serde_json::json!(study::run(
             p,
             request

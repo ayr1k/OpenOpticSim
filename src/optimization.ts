@@ -158,5 +158,5 @@ export function optimizationError(
       return `${variableLabel(v)} 当前值超出上下限，请调整范围`;
   }
   const count = o.variables.filter((v) => !v.locked).length;
-  return count > 12 ? "最多同时优化 12 个未锁定变量" : "";
+  return count > 32 ? "最多同时优化 32 个未锁定变量" : "";
 }

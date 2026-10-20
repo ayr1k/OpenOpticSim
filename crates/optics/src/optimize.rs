@@ -386,8 +386,8 @@ pub fn optimize_configured(
         }
     }
     let settings: Vec<_> = options.variables.iter().filter(|s| !s.locked).collect();
-    if settings.is_empty() || settings.len() > 12 {
-        return Err("请选择 1–12 个未锁定的优化变量。".into());
+    if settings.is_empty() || settings.len() > 32 {
+        return Err("请选择 1–32 个未锁定的优化变量。".into());
     }
     let variables: Vec<_> = settings.iter().map(|s| &s.variable).collect();
     let resolved = crate::fields::resolve(p, cancel)?;
@@ -427,11 +427,18 @@ pub fn optimize_configured(
     let mut stop_reason = "达到迭代上限".to_string();
     let scales: Vec<f64> = variables
         .iter()
-        .map(|v| match v {
-            Variable::Curvature { .. } => 0.01,
-            Variable::Thickness { .. } => 1.,
-            Variable::Aperture { .. } => 1.,
-            Variable::Asphere { coefficient, .. } => 10f64.powi(-5 - 2 * (*coefficient as i32)),
+        .enumerate()
+        .map(|(i, v)| {
+            let floor = match v {
+                Variable::Curvature { .. } => 0.01,
+                Variable::Thickness { .. } => 1.,
+                Variable::Aperture { .. } => 1.,
+                Variable::Asphere { coefficient, .. } => 10f64.powi(-5 - 2 * (*coefficient as i32)),
+            };
+            match (settings[i].min, settings[i].max) {
+                (Some(lo), Some(hi)) => ((hi - lo) * 0.2).max(f64::MIN_POSITIVE),
+                _ => value(p, v).unwrap().abs().max(floor),
+            }
         })
         .collect();
     for _ in 0..options.max_iterations {
@@ -440,33 +447,70 @@ pub fn optimize_configured(
         }
         let r = &eval.residual;
         let mut j = DMatrix::zeros(r.len(), variables.len());
-        for (col, v) in variables.iter().enumerate() {
-            let mut q = best.clone();
-            let x = value(&best, v).unwrap();
-            let mut h = scales[col] * 1e-3;
-            if settings[col].max.is_some_and(|max| x + h > max) {
-                h = -h;
-            }
-            let next = (x + h).clamp(
-                settings[col].min.unwrap_or(f64::NEG_INFINITY),
-                settings[col].max.unwrap_or(f64::INFINITY),
-            );
-            let normalized_h = (next - x) / scales[col];
-            if normalized_h.abs() < 1e-15 {
-                continue;
-            }
-            set(&mut q, v, next);
-            if let Ok(rr) = residuals(
-                &q,
-                constraints,
-                &weights,
-                options.quality.as_ref(),
-                &baseline,
-                cancel,
-            ) {
-                if rr.residual.len() == r.len() {
-                    j.set_column(col, &((rr.residual - r) / normalized_h));
-                }
+        // Independent derivative columns share read-only inputs. Bound the worker
+        // count; join before publishing progress or returning cancellation.
+        let workers = std::thread::available_parallelism()
+            .map_or(1, usize::from)
+            .min(variables.len());
+        let columns = std::thread::scope(|scope| {
+            let handles: Vec<_> = (0..workers)
+                .map(|worker| {
+                    let best = &best;
+                    let variables = &variables;
+                    let scales = &scales;
+                    let settings = &settings;
+                    let weights = &weights;
+                    let baseline = &baseline;
+                    scope.spawn(move || {
+                        (worker..variables.len())
+                            .step_by(workers)
+                            .map(|col| {
+                                let v = variables[col];
+                                let x = value(best, v).unwrap();
+                                let evaluate = |sign: f64| {
+                                    let next = (x + sign * scales[col] * 1e-3).clamp(
+                                        settings[col].min.unwrap_or(f64::NEG_INFINITY),
+                                        settings[col].max.unwrap_or(f64::INFINITY),
+                                    );
+                                    let h = (next - x) / scales[col];
+                                    if h.abs() < 1e-15 || cancel.load(Ordering::Relaxed) {
+                                        return None;
+                                    }
+                                    let mut q = best.clone();
+                                    set(&mut q, v, next);
+                                    residuals(
+                                        &q,
+                                        constraints,
+                                        weights,
+                                        options.quality.as_ref(),
+                                        baseline,
+                                        cancel,
+                                    )
+                                    .ok()
+                                    .filter(|e| e.residual.len() == r.len())
+                                    .map(|e| (e.residual, h))
+                                };
+                                let derivative = match (evaluate(1.), evaluate(-1.)) {
+                                    (Some((a, ha)), Some((b, hb))) => Some((a - b) / (ha - hb)),
+                                    (Some((a, h)), None) | (None, Some((a, h))) => {
+                                        Some((a - r) / h)
+                                    }
+                                    _ => None,
+                                };
+                                (col, derivative)
+                            })
+                            .collect::<Vec<_>>()
+                    })
+                })
+                .collect();
+            handles
+                .into_iter()
+                .map(|h| h.join().map_err(|_| "Derivative worker failed"))
+                .collect::<Result<Vec<_>, _>>()
+        })?;
+        for (col, derivative) in columns.into_iter().flatten() {
+            if let Some(d) = derivative {
+                j.set_column(col, &d);
             }
         }
         let jt = j.transpose();
@@ -475,35 +519,43 @@ pub fn optimize_configured(
             stop_reason = "线性方程无法求解".into();
             break;
         };
-        let mut trial = best.clone();
-        let mut movement: f64 = 0.;
-        for (i, v) in variables.iter().enumerate() {
-            let old = value(&best, v).unwrap();
-            let next = (old + step[i].clamp(-1., 1.) * scales[i]).clamp(
-                settings[i].min.unwrap_or(f64::NEG_INFINITY),
-                settings[i].max.unwrap_or(f64::INFINITY),
-            );
-            movement = movement.max((next - old).abs() / scales[i]);
-            set(&mut trial, v, next);
-        }
         let mut step_accepted = false;
-        if let Ok(rr) = residuals(
-            &trial,
-            constraints,
-            &weights,
-            options.quality.as_ref(),
-            &baseline,
-            cancel,
-        ) {
-            if rr.residual.norm_squared() < r.norm_squared() {
-                best = trial;
-                eval = rr;
-                step_accepted = true;
-                damping = (damping / 3.).max(1e-8);
-            } else {
-                damping *= 10.;
+        let mut movement: f64 = 0.;
+        // Retry the same direction with a shorter step before increasing damping.
+        // Invalid intersections never contribute zero residuals.
+        for fraction in [1., 0.5, 0.25, 0.125, 0.0625] {
+            if cancel.load(Ordering::Relaxed) {
+                return Err("Cancelled".into());
             }
-        } else {
+            let mut trial = best.clone();
+            movement = 0.;
+            for (i, v) in variables.iter().enumerate() {
+                let old = value(&best, v).unwrap();
+                let next = (old + fraction * step[i].clamp(-1., 1.) * scales[i]).clamp(
+                    settings[i].min.unwrap_or(f64::NEG_INFINITY),
+                    settings[i].max.unwrap_or(f64::INFINITY),
+                );
+                movement = movement.max((next - old).abs() / scales[i]);
+                set(&mut trial, v, next);
+            }
+            if let Ok(rr) = residuals(
+                &trial,
+                constraints,
+                &weights,
+                options.quality.as_ref(),
+                &baseline,
+                cancel,
+            ) {
+                if rr.residual.norm_squared() < r.norm_squared() {
+                    best = trial;
+                    eval = rr;
+                    step_accepted = true;
+                    damping = (damping / 3.).max(1e-8);
+                    break;
+                }
+            }
+        }
+        if !step_accepted {
             damping *= 10.;
         }
         iterations += 1;

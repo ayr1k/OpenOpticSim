@@ -132,7 +132,7 @@ fn validate(p: &Project, o: &StudyOptions) -> Result<(), String> {
             .is_some_and(|v| !v.is_finite() || v <= 0.)
         || o.iterations == 0
         || o.iterations > 30
-        || o.variables.len() > 12
+        || o.variables.len() > 32
         || (o.mode == "optimize" && o.variables.is_empty())
         || (o.mode == "focus" && o.steps + usize::from(o.include_infinity) > o.max_points)
     {
@@ -464,6 +464,41 @@ fn protect(points: &mut [StudyPoint], baseline: &[StudyPoint], degradation: f64)
         }
     }
 }
+fn search_merit(points: &[StudyPoint], baseline: &[StudyPoint], o: &StudyOptions) -> Option<f64> {
+    let mut value = (rms(points)? / 10.).powi(2);
+    for (a, b) in points.iter().zip(baseline) {
+        for (x, y) in a.fields_rms_um.iter().zip(&b.fields_rms_um) {
+            let x = (*x)?;
+            let y = (*y)?;
+            value += 100. * (x / o.motion.max_rms_um - 1.).max(0.).powi(2);
+            value += 100.
+                * (x / (y * (1. + o.max_degradation_percent / 100.)).max(1e-9) - 1.)
+                    .max(0.)
+                    .powi(2);
+        }
+        if let (Some(target), Some(tol)) = (a.configuration.target_efl_mm, o.efl_tolerance_percent)
+        {
+            value += 100.
+                * ((a.efl_mm? - target).abs() / (target * tol / 100.) - 1.)
+                    .max(0.)
+                    .powi(2);
+        }
+        value += 100.
+            * ((o.min_glass_mm - a.min_glass_mm?) / o.min_glass_mm.max(0.1))
+                .max(0.)
+                .powi(2);
+        if o.require_sensor_coverage {
+            value += 100.
+                * a.coverage
+                    .as_ref()?
+                    .checkpoints
+                    .iter()
+                    .filter(|c| c.status != "sampled_clear")
+                    .count() as f64;
+        }
+    }
+    Some(value)
+}
 pub fn run(
     p: &Project,
     o: &StudyOptions,
@@ -479,8 +514,9 @@ pub fn run(
     let mut evaluations = 0;
     if o.mode == "optimize" {
         let baseline = all(p, o, &configs, o.motion.sampling, cancel)?;
-        let mut best =
-            rms(&baseline).ok_or("原设计存在失败光线或无有效视场，无法建立逐视场保护基线")?;
+        let mut best = search_merit(&baseline, &baseline, o)
+            .ok_or("原设计存在失败光线或无有效视场，无法建立逐视场保护基线")?;
+        let mut best_rms = rms(&baseline).unwrap();
         let mut step_scale = 0.2;
         for iteration in 0..o.iterations {
             let mut improved = false;
@@ -500,10 +536,9 @@ pub fn run(
                     let mut tested = all(&q, o, &c, o.motion.sampling, cancel)?;
                     evaluations += tested.len();
                     protect(&mut tested, &baseline, o.max_degradation_percent);
-                    if tested.iter().all(|p| p.accepted)
-                        && rms(&tested).is_some_and(|s| s < best - 1e-9)
-                    {
-                        best = rms(&tested).unwrap();
+                    if search_merit(&tested, &baseline, o).is_some_and(|s| s < best - 1e-9) {
+                        best = search_merit(&tested, &baseline, o).unwrap();
+                        best_rms = rms(&tested).unwrap();
                         reference = q;
                         configs = c;
                         improved = true;
@@ -514,7 +549,7 @@ pub fn run(
                 iteration: iteration + 1,
                 max_iterations: o.iterations,
                 merit: best,
-                weighted_rms_um: best,
+                weighted_rms_um: best_rms,
                 efl_mm: None,
                 total_length_mm: reference.image_z(),
                 step_accepted: improved,

@@ -39,7 +39,7 @@ pnpm release:build
 python scripts/stage_release.py
 ```
 
-整理到 `artifacts/release-1.2.0/`：安装包和单独校验文件、SHA256SUMS、JSON manifest / build-report、独立 HTML 手册、文档 / 示例 ZIP、独立发布说明及许可文件，共 11 个附件。脚本验证版本、许可资源、字体和示例资源一致性；生成报告仅写入被忽略的附件目录，不再改写源码内的历史报告。普通程序 exe 依赖 WebView2 和相邻资源，不将它单独作为“便携版”发布。
+整理到 `artifacts/release-1.3.0/`：安装包和单独校验文件、SHA256SUMS、JSON manifest / build-report、独立 HTML 手册、文档 / 示例 ZIP、独立发布说明及许可文件，共 11 个附件。脚本验证版本、许可资源、字体和示例资源一致性；生成报告仅写入被忽略的附件目录，不再改写源码内的历史报告。普通程序 exe 依赖 WebView2 和相邻资源，不将它单独作为“便携版”发布。
 
 `release:build` 使用 Node 辅助脚本：从当前环境动态映射用户目录、Cargo / Rustup 缓存和工作区为通用路径，并用 MSVC `/PDBALTPATH` 只保留 PDB 文件名；不把任何人的绝对目录写进源码配置。它在相同标志下重新运行 Rust 测试、构建 CLI 与 NSIS，然后检查两个 exe 的 ASCII / UTF-16 个人主目录路径。`stage_release.py` 再次检查，发现残留会拒绝整理。普通 `pnpm tauri build` 可用于本地调试构建，不作为通过该隐私检查的发布方法。
 

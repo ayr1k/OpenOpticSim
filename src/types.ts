@@ -57,6 +57,7 @@ export interface QualityGuards {
   min_geometric_fraction?: number | null;
 }
 export interface Surface {
+  coating?: import("./coatings").CoatingLayer[];
   name: string;
   curvature: number;
   conic: number;

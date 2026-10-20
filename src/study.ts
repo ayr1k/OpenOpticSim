@@ -106,7 +106,7 @@ export function validStudy(s: StudyWorkspace | undefined): boolean {
     typeof v.include_infinity !== "boolean" ||
     typeof v.require_sensor_coverage !== "boolean" ||
     !Array.isArray(v.variables) ||
-    v.variables.length > 12 ||
+    v.variables.length > 32 ||
     v.variables.some(
       (x) =>
         !x ||

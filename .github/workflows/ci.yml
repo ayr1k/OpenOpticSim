@@ -46,3 +46,4 @@ jobs:
       - run: python scripts/validate_coverage.py
       - run: python scripts/validate_motion.py
       - run: python scripts/validate_study.py
+      - run: python scripts/validate_design13.py

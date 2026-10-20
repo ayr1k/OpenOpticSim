@@ -1,0 +1,2301 @@
+{
+  "version": "1.3.0",
+  "classic_structures": [
+    {
+      "structure": "tessar",
+      "brief": {
+        "structure": "tessar",
+        "focal_length_mm": 50.0,
+        "f_number": 8.0,
+        "sensor_mm": [
+          36.0,
+          24.0
+        ],
+        "half_field_deg": 5.0,
+        "max_length_mm": 150.0,
+        "max_rms_um": 25.0,
+        "iterations": 25,
+        "starts": 1
+      },
+      "elapsed_seconds": 3.1126032000174746,
+      "rms_um": 1.4042460045396035,
+      "checks": [
+        {
+          "actual": 0.00017463077329438192,
+          "limit": 0.5,
+          "name": "efl_error_mm",
+          "passed": true,
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 55.32881862513148,
+          "limit": 150.0,
+          "name": "total_length_mm",
+          "passed": true,
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 4.0300179698249394e-05,
+          "limit": 0.24,
+          "name": "f_number_error",
+          "passed": true,
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 44.05023795910475,
+          "limit": 0.01,
+          "name": "bfl_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": null
+        },
+        {
+          "actual": 12.99977327051848,
+          "limit": 1000.0,
+          "name": "front_diameter_mm",
+          "passed": true,
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 3.0983004597953334,
+          "limit": 0.1929695266382685,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 0
+        },
+        {
+          "actual": 1.7814098317882174,
+          "limit": 0.0385939053276537,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S1–S2：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 0
+        },
+        {
+          "actual": 1.1336896954857927,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S2–S3：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 1
+        },
+        {
+          "actual": 0.800404151490274,
+          "limit": 0.1929695266382685,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 2
+        },
+        {
+          "actual": 0.800404151490274,
+          "limit": 0.0385939053276537,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S3–S4：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 2
+        },
+        {
+          "actual": 0.519405062118897,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S4–S5：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 3
+        },
+        {
+          "actual": 0.2758250320743363,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S5–S6：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 4
+        },
+        {
+          "actual": 0.8390371141062385,
+          "limit": 0.1929695266382685,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 5
+        },
+        {
+          "actual": 0.04093395547475431,
+          "limit": 0.0385939053276537,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S6–S7：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 5
+        },
+        {
+          "actual": 3.3027413997065853,
+          "limit": 0.1929695266382685,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 6
+        },
+        {
+          "actual": 2.2094778144809597,
+          "limit": 0.0385939053276537,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S7–S8：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 6
+        },
+        {
+          "actual": 0.2691206842371858,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S4–S6：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 3
+        },
+        {
+          "actual": 44.01197580378938,
+          "limit": 0.0,
+          "name": "image_gap_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 7
+        },
+        {
+          "actual": 1.0539381464024011,
+          "limit": 25.0,
+          "name": "视场 1 (0.000°) RMS µm",
+          "passed": true,
+          "reason": "多色 RMS；数值失败不会按零误差计分。",
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 0.9905198835188337,
+          "limit": 25.0,
+          "name": "视场 2 (3.500°) RMS µm",
+          "passed": true,
+          "reason": "多色 RMS；数值失败不会按零误差计分。",
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 1.9554552584265454,
+          "limit": 25.0,
+          "name": "视场 3 (5.000°) RMS µm",
+          "passed": true,
+          "reason": "多色 RMS；数值失败不会按零误差计分。",
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 0.0,
+          "limit": 0.0,
+          "name": "failed_rays",
+          "passed": true,
+          "reason": "全部配置视场与波长，33×33 瞳采样；失败光线包括遮挡、未命中、全反射与数值失败。",
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 3.0983004597953334,
+          "limit": 0.1929695266382685,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 0
+        },
+        {
+          "actual": 3.0983004597953334,
+          "limit": 6.339343452216283,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 0
+        },
+        {
+          "actual": 0.07564344972764313,
+          "limit": 0.020197255142324767,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 0
+        },
+        {
+          "actual": 0.07564344972764313,
+          "limit": 0.12384056270710442,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 0
+        },
+        {
+          "actual": 2.229975064751499,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 1
+        },
+        {
+          "actual": 2.229975064751499,
+          "limit": 4.440700180686852,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 1
+        },
+        {
+          "actual": 0.018461247170085456,
+          "limit": -0.037547195589780674,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 1
+        },
+        {
+          "actual": 0.018461247170085456,
+          "limit": 0.06609611197499897,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 1
+        },
+        {
+          "actual": 0.8004041514902739,
+          "limit": 0.1929695266382685,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 2
+        },
+        {
+          "actual": 0.8004041514902739,
+          "limit": 1.641576751414296,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 2
+        },
+        {
+          "actual": -0.03298091160025837,
+          "limit": -0.08339577410895396,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 2
+        },
+        {
+          "actual": -0.03298091160025837,
+          "limit": 0.02024753345582568,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 2
+        },
+        {
+          "actual": 0.7705595994178315,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 3
+        },
+        {
+          "actual": 0.7705595994178315,
+          "limit": 1.4724250498847442,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 3
+        },
+        {
+          "actual": 0.06833060173661554,
+          "limit": 0.015096703881587396,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 3
+        },
+        {
+          "actual": 0.06833060173661554,
+          "limit": 0.11874001144636703,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 3
+        },
+        {
+          "actual": 0.27582503207433595,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 4
+        },
+        {
+          "actual": 0.27582503207433595,
+          "limit": 0.563362938140507,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 4
+        },
+        {
+          "actual": 0.8390371141062384,
+          "limit": 0.1929695266382685,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 5
+        },
+        {
+          "actual": 0.8390371141062384,
+          "limit": 1.5865307684638301,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 5
+        },
+        {
+          "actual": 0.03482749157621904,
+          "limit": -0.016794154914923816,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 5
+        },
+        {
+          "actual": 0.03482749157621904,
+          "limit": 0.08684915264985582,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 5
+        },
+        {
+          "actual": 3.3027413997065858,
+          "limit": 0.1929695266382685,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 6
+        },
+        {
+          "actual": 3.3027413997065858,
+          "limit": 7.400187207265327,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 6
+        },
+        {
+          "actual": -0.0024956925676880007,
+          "limit": -0.05006001236978636,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 6
+        },
+        {
+          "actual": -0.0024956925676880007,
+          "limit": 0.05358329519499328,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 6
+        },
+        {
+          "actual": 44.01197580378938,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 7
+        },
+        {
+          "actual": 44.01197580378938,
+          "limit": 87.77932733777861,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 7
+        },
+        {
+          "actual": -0.05261428173637923,
+          "limit": -0.10199336430594674,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 7
+        },
+        {
+          "actual": -0.05261428173637923,
+          "limit": 0.0016499432588329005,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 7
+        }
+      ],
+      "rayoptics": {
+        "name": "tessar · 原创设计起点",
+        "rays": 63,
+        "max_intersection_error_mm": 9.828404756717646e-11,
+        "max_optical_path_error_mm": 5.375255796025158e-11,
+        "max_direction_error": 9.707512571566213e-14
+      },
+      "roundtrip_exact": true,
+      "efl_mm": 50.000174630773294,
+      "f_number": 8.000040300179698
+    },
+    {
+      "structure": "planar",
+      "brief": {
+        "structure": "planar",
+        "focal_length_mm": 50.0,
+        "f_number": 8.0,
+        "sensor_mm": [
+          36.0,
+          24.0
+        ],
+        "half_field_deg": 5.0,
+        "max_length_mm": 150.0,
+        "max_rms_um": 25.0,
+        "iterations": 25,
+        "starts": 1
+      },
+      "elapsed_seconds": 3.391110699973069,
+      "rms_um": 1.4949813140214652,
+      "checks": [
+        {
+          "actual": 0.02859085237364667,
+          "limit": 0.5,
+          "name": "efl_error_mm",
+          "passed": true,
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 67.64488003185859,
+          "limit": 150.0,
+          "name": "total_length_mm",
+          "passed": true,
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 0.004449109440382237,
+          "limit": 0.24,
+          "name": "f_number_error",
+          "passed": true,
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 47.87076236737375,
+          "limit": 0.01,
+          "name": "bfl_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": null
+        },
+        {
+          "actual": 12.99977327051848,
+          "limit": 1000.0,
+          "name": "front_diameter_mm",
+          "passed": true,
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 2.1616921395120015,
+          "limit": 0.26969483879262773,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 0
+        },
+        {
+          "actual": 1.5756329065053931,
+          "limit": 0.05393896775852555,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S1–S2：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 0
+        },
+        {
+          "actual": 1.1983868608002535,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S2–S3：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 1
+        },
+        {
+          "actual": 2.591189712158574,
+          "limit": 0.26969483879262773,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 2
+        },
+        {
+          "actual": 2.591189712158574,
+          "limit": 0.05393896775852555,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S3–S4：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 2
+        },
+        {
+          "actual": 1.3068845505287214,
+          "limit": 0.26969483879262773,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 3
+        },
+        {
+          "actual": 1.1434498594201914,
+          "limit": 0.05393896775852555,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S4–S5：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 3
+        },
+        {
+          "actual": 1.928608004129548,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S5–S6：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 4
+        },
+        {
+          "actual": 2.4400555410884004,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S6–S7：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 5
+        },
+        {
+          "actual": 1.3241005127213796,
+          "limit": 0.26969483879262773,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 6
+        },
+        {
+          "actual": 1.3241005127213796,
+          "limit": 0.05393896775852555,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S7–S8：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 6
+        },
+        {
+          "actual": 3.2571557382085192,
+          "limit": 0.26969483879262773,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 7
+        },
+        {
+          "actual": 1.5695924579774807,
+          "limit": 0.05393896775852555,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S8–S9：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 7
+        },
+        {
+          "actual": 1.0004106272312185,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S9–S10：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 8
+        },
+        {
+          "actual": 1.9875954910551101,
+          "limit": 0.26969483879262773,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 9
+        },
+        {
+          "actual": 1.0485654209075632,
+          "limit": 0.05393896775852555,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S10–S11：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 9
+        },
+        {
+          "actual": 1.3175630687066786,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S5–S7：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 4
+        },
+        {
+          "actual": 47.8813223744013,
+          "limit": 0.0,
+          "name": "image_gap_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 10
+        },
+        {
+          "actual": 0.7442690009600951,
+          "limit": 25.0,
+          "name": "视场 1 (0.000°) RMS µm",
+          "passed": true,
+          "reason": "多色 RMS；数值失败不会按零误差计分。",
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 1.3130792423315854,
+          "limit": 25.0,
+          "name": "视场 2 (3.500°) RMS µm",
+          "passed": true,
+          "reason": "多色 RMS；数值失败不会按零误差计分。",
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 2.1039947588784083,
+          "limit": 25.0,
+          "name": "视场 3 (5.000°) RMS µm",
+          "passed": true,
+          "reason": "多色 RMS；数值失败不会按零误差计分。",
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 0.0,
+          "limit": 0.0,
+          "name": "failed_rays",
+          "passed": true,
+          "reason": "全部配置视场与波长，33×33 瞳采样；失败光线包括遮挡、未命中、全反射与数值失败。",
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 2.1616921395120015,
+          "limit": 0.26969483879262773,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 0
+        },
+        {
+          "actual": 2.1616921395120015,
+          "limit": 4.668081082508419,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 0
+        },
+        {
+          "actual": 0.03327202812741458,
+          "limit": -0.004292535069445762,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 0
+        },
+        {
+          "actual": 0.03327202812741458,
+          "limit": 0.06986535423068391,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 0
+        },
+        {
+          "actual": 1.1983868608002535,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 1
+        },
+        {
+          "actual": 1.1983868608002535,
+          "limit": 2.3614029022930705,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 1
+        },
+        {
+          "actual": 0.00592482140501891,
+          "limit": -0.028654993622287746,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 1
+        },
+        {
+          "actual": 0.00592482140501891,
+          "limit": 0.045502895677841916,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 1
+        },
+        {
+          "actual": 2.591189712158574,
+          "limit": 0.26969483879262773,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 2
+        },
+        {
+          "actual": 2.591189712158574,
+          "limit": 4.995725022109702,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 2
+        },
+        {
+          "actual": 0.04105239595111318,
+          "limit": 0.006515118931769162,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 2
+        },
+        {
+          "actual": 0.04105239595111318,
+          "limit": 0.08067300823189882,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 2
+        },
+        {
+          "actual": 1.3068845505287212,
+          "limit": 0.26969483879262773,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 3
+        },
+        {
+          "actual": 1.3068845505287212,
+          "limit": 2.298331840023419,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 3
+        },
+        {
+          "actual": 0.07199046991114615,
+          "limit": 0.00024069779071071024,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 3
+        },
+        {
+          "actual": 0.07199046991114615,
+          "limit": 0.07439858709084038,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 3
+        },
+        {
+          "actual": 2.1628902900511635,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 4
+        },
+        {
+          "actual": 2.1628902900511635,
+          "limit": 4.4966686109278,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 4
+        },
+        {
+          "actual": 0.06543420567968289,
+          "limit": 0.014084057182034204,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 4
+        },
+        {
+          "actual": 0.06543420567968289,
+          "limit": 0.08824194648216387,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 4
+        },
+        {
+          "actual": 2.7732517351903456,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 5
+        },
+        {
+          "actual": 2.7732517351903456,
+          "limit": 4.759185742688939,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 5
+        },
+        {
+          "actual": 1.3241005127213794,
+          "limit": 0.26969483879262773,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 6
+        },
+        {
+          "actual": 1.3241005127213794,
+          "limit": 2.3111213392540733,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 6
+        },
+        {
+          "actual": -0.09233671034035511,
+          "limit": -0.1012839360447007,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 6
+        },
+        {
+          "actual": -0.09233671034035511,
+          "limit": -0.027126046744571038,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 6
+        },
+        {
+          "actual": 3.2571557382085192,
+          "limit": 0.26969483879262773,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 7
+        },
+        {
+          "actual": 3.2571557382085192,
+          "limit": 5.176294330765112,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 7
+        },
+        {
+          "actual": -0.006033613379417886,
+          "limit": -0.0504513664347469,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 7
+        },
+        {
+          "actual": -0.006033613379417886,
+          "limit": 0.023706522865382756,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 7
+        },
+        {
+          "actual": 1.0004106272312192,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 8
+        },
+        {
+          "actual": 1.0004106272312192,
+          "limit": 2.333112255132423,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 8
+        },
+        {
+          "actual": -0.07970788235298856,
+          "limit": -0.09296507782325572,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 8
+        },
+        {
+          "actual": -0.07970788235298856,
+          "limit": -0.01880718852312606,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 8
+        },
+        {
+          "actual": 1.9875954910551104,
+          "limit": 0.26969483879262773,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 9
+        },
+        {
+          "actual": 1.9875954910551104,
+          "limit": 4.703214582949095,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 9
+        },
+        {
+          "actual": 0.007630517231227112,
+          "limit": -0.03368664450406356,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 9
+        },
+        {
+          "actual": 0.007630517231227112,
+          "limit": 0.0404712447960661,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 9
+        },
+        {
+          "actual": 47.8813223744013,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 10
+        },
+        {
+          "actual": 47.8813223744013,
+          "limit": 86.7415356643917,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 10
+        },
+        {
+          "actual": -0.03629777855322977,
+          "limit": -0.06997055019416765,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 10
+        },
+        {
+          "actual": -0.03629777855322977,
+          "limit": 0.004187339105962008,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 10
+        }
+      ],
+      "rayoptics": {
+        "name": "planar · 原创设计起点",
+        "rays": 63,
+        "max_intersection_error_mm": 8.850031818496973e-11,
+        "max_optical_path_error_mm": 4.531841568677919e-11,
+        "max_direction_error": 2.709915625231929e-13
+      },
+      "roundtrip_exact": true,
+      "efl_mm": 49.97140914762635,
+      "f_number": 7.995550890559618
+    },
+    {
+      "structure": "double_gauss",
+      "brief": {
+        "structure": "double_gauss",
+        "focal_length_mm": 50.0,
+        "f_number": 8.0,
+        "sensor_mm": [
+          36.0,
+          24.0
+        ],
+        "half_field_deg": 5.0,
+        "max_length_mm": 150.0,
+        "max_rms_um": 25.0,
+        "iterations": 25,
+        "starts": 1
+      },
+      "elapsed_seconds": 3.824444800033234,
+      "rms_um": 1.6281545574363052,
+      "checks": [
+        {
+          "actual": 0.023287982794641948,
+          "limit": 0.5,
+          "name": "efl_error_mm",
+          "passed": true,
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 66.40013011965809,
+          "limit": 150.0,
+          "name": "total_length_mm",
+          "passed": true,
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 0.0035454706465420927,
+          "limit": 0.24,
+          "name": "f_number_error",
+          "passed": true,
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 42.225419739610494,
+          "limit": 0.01,
+          "name": "bfl_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": null
+        },
+        {
+          "actual": 12.99977327051848,
+          "limit": 1000.0,
+          "name": "front_diameter_mm",
+          "passed": true,
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 2.5268509586808325,
+          "limit": 0.32740693730942455,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 0
+        },
+        {
+          "actual": 1.9850899317421844,
+          "limit": 0.06548138746188491,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S1–S2：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 0
+        },
+        {
+          "actual": 1.3358499327227604,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S2–S3：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 1
+        },
+        {
+          "actual": 2.861348593506012,
+          "limit": 0.32740693730942455,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 2
+        },
+        {
+          "actual": 2.623242137132649,
+          "limit": 0.06548138746188491,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S3–S4：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 2
+        },
+        {
+          "actual": 1.3962551111352521,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S4–S5：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 3
+        },
+        {
+          "actual": 1.3816238328533448,
+          "limit": 0.32740693730942455,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 4
+        },
+        {
+          "actual": 1.3816238328533448,
+          "limit": 0.06548138746188491,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S5–S6：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 4
+        },
+        {
+          "actual": 2.129306468691569,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S6–S7：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 5
+        },
+        {
+          "actual": 3.072192990260443,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S7–S8：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 6
+        },
+        {
+          "actual": 1.2985151196195375,
+          "limit": 0.32740693730942455,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 7
+        },
+        {
+          "actual": 1.2985151196195375,
+          "limit": 0.06548138746188491,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S8–S9：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 7
+        },
+        {
+          "actual": 0.599186369966295,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S9–S10：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 8
+        },
+        {
+          "actual": 3.152133089939337,
+          "limit": 0.32740693730942455,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 9
+        },
+        {
+          "actual": 2.338860770524854,
+          "limit": 0.06548138746188491,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S10–S11：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 9
+        },
+        {
+          "actual": 1.1473258711414438,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S11–S12：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 10
+        },
+        {
+          "actual": 2.2325714931887504,
+          "limit": 0.32740693730942455,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 11
+        },
+        {
+          "actual": 1.1876224539337936,
+          "limit": 0.06548138746188491,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S12–S13：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 11
+        },
+        {
+          "actual": 3.386536280263779,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S6–S8：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 5
+        },
+        {
+          "actual": 42.237677378584145,
+          "limit": 0.0,
+          "name": "image_gap_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 12
+        },
+        {
+          "actual": 0.5713796164532697,
+          "limit": 25.0,
+          "name": "视场 1 (0.000°) RMS µm",
+          "passed": true,
+          "reason": "多色 RMS；数值失败不会按零误差计分。",
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 1.3344245544687088,
+          "limit": 25.0,
+          "name": "视场 2 (3.500°) RMS µm",
+          "passed": true,
+          "reason": "多色 RMS；数值失败不会按零误差计分。",
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 2.417746519185693,
+          "limit": 25.0,
+          "name": "视场 3 (5.000°) RMS µm",
+          "passed": true,
+          "reason": "多色 RMS；数值失败不会按零误差计分。",
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 0.0,
+          "limit": 0.0,
+          "name": "failed_rays",
+          "passed": true,
+          "reason": "全部配置视场与波长，33×33 瞳采样；失败光线包括遮挡、未命中、全反射与数值失败。",
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 2.5268509586808325,
+          "limit": 0.32740693730942455,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 0
+        },
+        {
+          "actual": 2.5268509586808325,
+          "limit": 5.673743774916103,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 0
+        },
+        {
+          "actual": 0.027204496984103328,
+          "limit": -0.0036987007877985548,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 0
+        },
+        {
+          "actual": 0.027204496984103328,
+          "limit": 0.05738735977144511,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 0
+        },
+        {
+          "actual": 1.3358499327227602,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 1
+        },
+        {
+          "actual": 1.3358499327227602,
+          "limit": 2.8282352085046796,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 1
+        },
+        {
+          "actual": 0.001774096090090832,
+          "limit": -0.024795986062156092,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 1
+        },
+        {
+          "actual": 0.001774096090090832,
+          "limit": 0.03629007449708757,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 1
+        },
+        {
+          "actual": 2.8613485935060115,
+          "limit": 0.32740693730942455,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 2
+        },
+        {
+          "actual": 2.8613485935060115,
+          "limit": 5.641997390724575,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 2
+        },
+        {
+          "actual": 0.03655363733806209,
+          "limit": 0.008512530372911817,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 2
+        },
+        {
+          "actual": 0.03655363733806209,
+          "limit": 0.06959859093215548,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 2
+        },
+        {
+          "actual": 1.396255111135253,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 3
+        },
+        {
+          "actual": 1.396255111135253,
+          "limit": 2.848351356456071,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 3
+        },
+        {
+          "actual": 0.0256325104367154,
+          "limit": -0.013692533605292712,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 3
+        },
+        {
+          "actual": 0.0256325104367154,
+          "limit": 0.04739352695395095,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 3
+        },
+        {
+          "actual": 1.3816238328533446,
+          "limit": 0.32740693730942455,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 4
+        },
+        {
+          "actual": 1.3816238328533446,
+          "limit": 2.6291724076911978,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 4
+        },
+        {
+          "actual": 0.030247434538734717,
+          "limit": -0.010173148738994615,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 4
+        },
+        {
+          "actual": 0.030247434538734717,
+          "limit": 0.05091291182024905,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 4
+        },
+        {
+          "actual": 2.2587449849352157,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 5
+        },
+        {
+          "actual": 2.2587449849352157,
+          "limit": 5.409832991546878,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 5
+        },
+        {
+          "actual": 0.040359911467017326,
+          "limit": 0.009770865915451163,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 5
+        },
+        {
+          "actual": 0.040359911467017326,
+          "limit": 0.07085692647469483,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 5
+        },
+        {
+          "actual": 3.257299222743795,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 6
+        },
+        {
+          "actual": 3.257299222743795,
+          "limit": 5.923034921513721,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 6
+        },
+        {
+          "actual": 1.2985151196195377,
+          "limit": 0.32740693730942455,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 7
+        },
+        {
+          "actual": 1.2985151196195377,
+          "limit": 2.585203442425161,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 7
+        },
+        {
+          "actual": -0.05756039516494078,
+          "limit": -0.07856088501595496,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 7
+        },
+        {
+          "actual": -0.05756039516494078,
+          "limit": -0.017474824456711287,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 7
+        },
+        {
+          "actual": 1.3139345306076553,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 8
+        },
+        {
+          "actual": 1.3139345306076553,
+          "limit": 2.6781531609087814,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 8
+        },
+        {
+          "actual": 0.011704858255962637,
+          "limit": -0.030607354070034624,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 8
+        },
+        {
+          "actual": 0.011704858255962637,
+          "limit": 0.03047870648920904,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 8
+        },
+        {
+          "actual": 3.152133089939336,
+          "limit": 0.32740693730942455,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 9
+        },
+        {
+          "actual": 3.152133089939336,
+          "limit": 5.181612746539825,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 9
+        },
+        {
+          "actual": -0.021999938305152525,
+          "limit": -0.04068324183046078,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 9
+        },
+        {
+          "actual": -0.021999938305152525,
+          "limit": 0.020402818728782884,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 9
+        },
+        {
+          "actual": 1.147325871141443,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 10
+        },
+        {
+          "actual": 1.147325871141443,
+          "limit": 2.7619057120584825,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 10
+        },
+        {
+          "actual": -0.05834880624262603,
+          "limit": -0.07791927036372018,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 10
+        },
+        {
+          "actual": -0.05834880624262603,
+          "limit": -0.016833209804476522,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 10
+        },
+        {
+          "actual": 2.2325714931887513,
+          "limit": 0.32740693730942455,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 11
+        },
+        {
+          "actual": 2.2325714931887513,
+          "limit": 5.602853657978099,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 11
+        },
+        {
+          "actual": 0.017044110644994337,
+          "limit": -0.02045569902530716,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 11
+        },
+        {
+          "actual": 0.017044110644994337,
+          "limit": 0.0406303615339365,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 11
+        },
+        {
+          "actual": 42.237677378584145,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 12
+        },
+        {
+          "actual": 42.237677378584145,
+          "limit": 79.24625174325188,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 12
+        },
+        {
+          "actual": -0.03201571345058547,
+          "limit": -0.055901182579511294,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 12
+        },
+        {
+          "actual": -0.03201571345058547,
+          "limit": 0.005184877979732366,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 12
+        }
+      ],
+      "rayoptics": {
+        "name": "double_gauss · 原创设计起点",
+        "rays": 63,
+        "max_intersection_error_mm": 8.996536848826509e-11,
+        "max_optical_path_error_mm": 4.462208380573429e-11,
+        "max_direction_error": 1.8299251003384143e-13
+      },
+      "roundtrip_exact": true,
+      "efl_mm": 49.97671201720536,
+      "f_number": 7.996454529353458
+    },
+    {
+      "structure": "sonnar",
+      "brief": {
+        "structure": "sonnar",
+        "focal_length_mm": 50.0,
+        "f_number": 8.0,
+        "sensor_mm": [
+          36.0,
+          24.0
+        ],
+        "half_field_deg": 5.0,
+        "max_length_mm": 150.0,
+        "max_rms_um": 25.0,
+        "iterations": 25,
+        "starts": 1
+      },
+      "elapsed_seconds": 3.609446099959314,
+      "rms_um": 2.050232776893635,
+      "checks": [
+        {
+          "actual": 0.004880347435765486,
+          "limit": 0.5,
+          "name": "efl_error_mm",
+          "passed": true,
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 70.26756409294391,
+          "limit": 150.0,
+          "name": "total_length_mm",
+          "passed": true,
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 0.0023209471898795186,
+          "limit": 0.24,
+          "name": "f_number_error",
+          "passed": true,
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 27.136476409570506,
+          "limit": 0.01,
+          "name": "bfl_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": null
+        },
+        {
+          "actual": 23.245924892854756,
+          "limit": 1000.0,
+          "name": "front_diameter_mm",
+          "passed": true,
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 2.9171003721468627,
+          "limit": 0.7264351529017111,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 0
+        },
+        {
+          "actual": 1.8712029657874985,
+          "limit": 0.14528703058034223,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S1–S2：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 0
+        },
+        {
+          "actual": 3.287272915647802,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S2–S3：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 1
+        },
+        {
+          "actual": 5.4120902480385435,
+          "limit": 0.7264351529017111,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 2
+        },
+        {
+          "actual": 1.6409150791151053,
+          "limit": 0.14528703058034223,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S3–S4：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 2
+        },
+        {
+          "actual": 2.8773011896989225,
+          "limit": 0.7264351529017111,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 3
+        },
+        {
+          "actual": 2.8773011896989225,
+          "limit": 0.14528703058034223,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S4–S5：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 3
+        },
+        {
+          "actual": 4.048683058259691,
+          "limit": 0.7264351529017111,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 4
+        },
+        {
+          "actual": 4.048683058259691,
+          "limit": 0.14528703058034223,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S5–S6：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 4
+        },
+        {
+          "actual": 10.338286633926485,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S6–S7：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 5
+        },
+        {
+          "actual": 5.8053186786883835,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S7–S8：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 6
+        },
+        {
+          "actual": 3.11798183660855,
+          "limit": 0.7264351529017111,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 7
+        },
+        {
+          "actual": 3.11798183660855,
+          "limit": 0.14528703058034223,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S8–S9：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 7
+        },
+        {
+          "actual": 5.327486039246878,
+          "limit": 0.7264351529017111,
+          "name": "center_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 8
+        },
+        {
+          "actual": 0.14675090155796555,
+          "limit": 0.14528703058034223,
+          "name": "body_min_mm",
+          "passed": true,
+          "reason": "S9–S10：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 8
+        },
+        {
+          "actual": 15.722373249459832,
+          "limit": 0.0,
+          "name": "air_min_mm",
+          "passed": true,
+          "reason": "S6–S8：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+          "relation": "min",
+          "surface": 5
+        },
+        {
+          "actual": 27.06521979793027,
+          "limit": 0.0,
+          "name": "image_gap_mm",
+          "passed": true,
+          "relation": "min",
+          "surface": 9
+        },
+        {
+          "actual": 1.9640228761581557,
+          "limit": 25.0,
+          "name": "视场 1 (0.000°) RMS µm",
+          "passed": true,
+          "reason": "多色 RMS；数值失败不会按零误差计分。",
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 1.3020041925009873,
+          "limit": 25.0,
+          "name": "视场 2 (3.500°) RMS µm",
+          "passed": true,
+          "reason": "多色 RMS；数值失败不会按零误差计分。",
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 2.6566449787249056,
+          "limit": 25.0,
+          "name": "视场 3 (5.000°) RMS µm",
+          "passed": true,
+          "reason": "多色 RMS；数值失败不会按零误差计分。",
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 0.0,
+          "limit": 0.0,
+          "name": "failed_rays",
+          "passed": true,
+          "reason": "全部配置视场与波长，33×33 瞳采样；失败光线包括遮挡、未命中、全反射与数值失败。",
+          "relation": "max",
+          "surface": null
+        },
+        {
+          "actual": 2.9171003721468627,
+          "limit": 0.7264351529017111,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 0
+        },
+        {
+          "actual": 2.9171003721468627,
+          "limit": 9.847545477567733,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 0
+        },
+        {
+          "actual": 0.022795181160373375,
+          "limit": 0.008805434738894332,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 0
+        },
+        {
+          "actual": 0.022795181160373375,
+          "limit": 0.03633714203597507,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 0
+        },
+        {
+          "actual": 3.2872729156478027,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 1
+        },
+        {
+          "actual": 3.2872729156478027,
+          "limit": 9.864189027767548,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 1
+        },
+        {
+          "actual": 0.007710286210819071,
+          "limit": -0.002861423594659261,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 1
+        },
+        {
+          "actual": 0.007710286210819071,
+          "limit": 0.024670283702421476,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 1
+        },
+        {
+          "actual": 5.412090248038544,
+          "limit": 0.7264351529017111,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 2
+        },
+        {
+          "actual": 5.412090248038544,
+          "limit": 14.085167549583455,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 2
+        },
+        {
+          "actual": 0.03259999787929054,
+          "limit": 0.01607121131357716,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 2
+        },
+        {
+          "actual": 0.03259999787929054,
+          "limit": 0.0436029186106579,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 2
+        },
+        {
+          "actual": 2.8773011896989216,
+          "limit": 0.7264351529017111,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 3
+        },
+        {
+          "actual": 2.8773011896989216,
+          "limit": 5.903953395386889,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 3
+        },
+        {
+          "actual": -0.021615884848888087,
+          "limit": -0.02853271155003862,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 3
+        },
+        {
+          "actual": -0.021615884848888087,
+          "limit": -0.0010010042529578819,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 3
+        },
+        {
+          "actual": 4.048683058259692,
+          "limit": 0.7264351529017111,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 4
+        },
+        {
+          "actual": 4.048683058259692,
+          "limit": 8.782376094316069,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 4
+        },
+        {
+          "actual": 0.010341477092402879,
+          "limit": 0.007439652844440696,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 4
+        },
+        {
+          "actual": 0.010341477092402879,
+          "limit": 0.03497136014152143,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 4
+        },
+        {
+          "actual": 10.409109956678012,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 5
+        },
+        {
+          "actual": 10.409109956678012,
+          "limit": 13.94335456754931,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 5
+        },
+        {
+          "actual": 0.031283451469603776,
+          "limit": 0.006059507842678141,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 5
+        },
+        {
+          "actual": 0.031283451469603776,
+          "limit": 0.03359121513975888,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 5
+        },
+        {
+          "actual": 5.805318678688383,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 6
+        },
+        {
+          "actual": 5.805318678688383,
+          "limit": 18.282307881341318,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 6
+        },
+        {
+          "actual": 3.11798183660855,
+          "limit": 0.7264351529017111,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 7
+        },
+        {
+          "actual": 3.11798183660855,
+          "limit": 6.456452332439537,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 7
+        },
+        {
+          "actual": 0.024583955769338344,
+          "limit": 0.005503471943838278,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 7
+        },
+        {
+          "actual": 0.024583955769338344,
+          "limit": 0.03303517924091902,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 7
+        },
+        {
+          "actual": 5.327486039246877,
+          "limit": 0.7264351529017111,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 8
+        },
+        {
+          "actual": 5.327486039246877,
+          "limit": 14.165156955946534,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 8
+        },
+        {
+          "actual": 0.052605716962402835,
+          "limit": 0.03074844888684051,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 8
+        },
+        {
+          "actual": 0.052605716962402835,
+          "limit": 0.058280156183921246,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 8
+        },
+        {
+          "actual": 27.06521979793027,
+          "limit": 0.01,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "min",
+          "surface": 9
+        },
+        {
+          "actual": 27.06521979793027,
+          "limit": 48.72214301586101,
+          "name": "bound_thickness",
+          "passed": true,
+          "relation": "max",
+          "surface": 9
+        },
+        {
+          "actual": -0.017770142163706815,
+          "limit": -0.03595921875103147,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "min",
+          "surface": 9
+        },
+        {
+          "actual": -0.017770142163706815,
+          "limit": -0.00842751145395073,
+          "name": "bound_curvature",
+          "passed": true,
+          "relation": "max",
+          "surface": 9
+        }
+      ],
+      "rayoptics": {
+        "name": "sonnar · 原创设计起点",
+        "rays": 63,
+        "max_intersection_error_mm": 9.166001291305292e-11,
+        "max_optical_path_error_mm": 5.049116680311272e-11,
+        "max_direction_error": 1.364186541508161e-13
+      },
+      "roundtrip_exact": true,
+      "efl_mm": 49.995119652564235,
+      "f_number": 8.00232094718988
+    }
+  ],
+  "impossible_length_rejected": true,
+  "scope": "Nominal geometric 50mm F8 +/-5deg; no full-frame, MTF or manufacturing certification"
+}

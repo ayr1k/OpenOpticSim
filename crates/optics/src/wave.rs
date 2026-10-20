@@ -580,6 +580,47 @@ pub fn diffraction(
     options: &WaveOptions,
     cancel: &AtomicBool,
 ) -> Result<WaveResult, String> {
+    use std::collections::VecDeque;
+    use std::sync::{Mutex, OnceLock};
+    // Shared by native MTF and test-chart requests. Exact serialized inputs,
+    // including all dispersion coefficients and sampling settings; no rounded keys.
+    // At most eight entries and 64 MiB of PSF samples are retained.
+    static CACHE: OnceLock<Mutex<VecDeque<(String, WaveResult)>>> = OnceLock::new();
+    cancelled(cancel)?;
+    let key = serde_json::to_string(&(p, options)).map_err(|e| e.to_string())?;
+    let cache = CACHE.get_or_init(|| Mutex::new(VecDeque::new()));
+    if let Ok(mut entries) = cache.lock() {
+        if let Some(i) = entries.iter().position(|(k, _)| *k == key) {
+            let entry = entries.remove(i).unwrap();
+            let result = entry.1.clone();
+            entries.push_back(entry);
+            cancelled(cancel)?;
+            return Ok(result);
+        }
+    }
+    let result = diffraction_uncached(p, options, cancel)?;
+    cancelled(cancel)?;
+    if let Ok(mut entries) = cache.lock() {
+        entries.retain(|(k, _)| *k != key);
+        while !entries.is_empty()
+            && (entries.len() >= 8
+                || entries.iter().map(|(_, w)| w.psf.len() * 8).sum::<usize>()
+                    + result.psf.len() * 8
+                    > 64 * 1024 * 1024)
+        {
+            entries.pop_front();
+        }
+        if result.psf.len() * 8 <= 64 * 1024 * 1024 {
+            entries.push_back((key, result.clone()));
+        }
+    }
+    Ok(result)
+}
+pub fn diffraction_uncached(
+    p: &Project,
+    options: &WaveOptions,
+    cancel: &AtomicBool,
+) -> Result<WaveResult, String> {
     cancelled(cancel)?;
     if !p.validate_optical().is_empty() {
         return Err("Invalid project".into());

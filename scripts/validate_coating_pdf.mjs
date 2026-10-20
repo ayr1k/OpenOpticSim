@@ -1,0 +1,17 @@
+import {createRequire} from "node:module";
+import {readFileSync,writeFileSync,mkdirSync,realpathSync} from "node:fs";
+import {resolve} from "node:path";
+import {createHash} from "node:crypto";
+import {execFileSync} from "node:child_process";
+const req=createRequire(realpathSync(resolve("node_modules/vite/package.json")));
+mkdirSync("tmp/pdfs",{recursive:true});mkdirSync("output/pdf",{recursive:true});
+await req("esbuild").build({entryPoints:["src/drawingPdf.ts"],bundle:true,platform:"node",format:"cjs",outfile:"tmp/pdfs/coating.cjs"});
+const {createDrawingPdf}=createRequire(import.meta.url)(resolve("tmp/pdfs/coating.cjs"));
+const p=JSON.parse(readFileSync("examples/tessar-50mm-1.3.oos.json","utf8"));
+p.surfaces[0].coating=Array.from({length:32},(_,i)=>({name:`测试膜层 ${i+1} · 常折射率介质`,index:i%2?2.1:1.38,thickness_nm:100+i}));
+const source=JSON.stringify(p,null,2);
+const invoke=operation=>JSON.parse(execFileSync(resolve("target/release/oos-cli.exe"),["--request"],{input:JSON.stringify({operation,project:p,sampling:33}),encoding:"utf8",maxBuffer:32*1024*1024}));
+const snapshot={project:p,createdAt:new Date().toISOString(),analysis:invoke("analyze"),geometry:invoke("geometry"),fields:invoke("field_plan"),waves:[],errors:[],sampling:33,waveMethod:"fast",sourceHash:createHash("sha256").update(source).digest("hex")};
+writeFileSync("output/pdf/coating-1.3-validation.pdf",await createDrawingPdf(snapshot,readFileSync("src/assets/fonts/NotoSansSC.ttf")));
+writeFileSync("tmp/pdfs/coating-source.json",source);
+console.log("Generated coating pagination fixture");

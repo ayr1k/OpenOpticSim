@@ -74,6 +74,8 @@ import {
   adoptionBlockers,
 } from "./ConstraintEditor";
 import OptimizationEditor from "./OptimizationEditor";
+import SynthesisPanel from "./SynthesisPanel";
+import CoatingPanel from "./CoatingPanel";
 import OptimizationReportView, { ProgressView } from "./OptimizationReport";
 import MaterialLibrary from "./MaterialLibrary";
 import { defaultOptimization, optimizationError } from "./optimization";
@@ -706,7 +708,7 @@ export default function App() {
           <div>
             OpenOpticSim <small>光学工作室</small>
           </div>
-          <span className="alpha">1.2</span>
+          <span className="alpha">1.3</span>
         </div>
         <div className="toolbar">
           <button
@@ -1122,6 +1124,15 @@ export default function App() {
             </div>
           )}
           <section className="analysis" id="analysis-workbench">
+            {tab === "synthesis" && (
+              <SynthesisPanel
+                project={project}
+                onCreate={(p) => requestAction(() => loadDocument(p))}
+              />
+            )}
+            {tab === "coatings" && (
+              <CoatingPanel project={project} selected={selected} edit={edit} />
+            )}
             {tab === "optimization" && (
               <div className="workflow-panel optimization-workbench">
                 <h2>约束优化</h2>

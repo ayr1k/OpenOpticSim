@@ -6,34 +6,36 @@ OpenOpticSim is a local-first optical design workbench for photography enthusias
 
 ![OpenOpticSim 1.0 工作区](docs/screenshots/studio-1.0.png)
 
-**版本：1.2.0。** 源码仓库：[ayr1k/OpenOpticSim](https://github.com/ayr1k/OpenOpticSim)。Windows 安装包通过 [GitHub Releases](https://github.com/ayr1k/OpenOpticSim/releases) 分发，用户无需安装开发工具。
+**版本：1.3.0。** 源码仓库：[ayr1k/OpenOpticSim](https://github.com/ayr1k/OpenOpticSim)。Windows 安装包通过 [GitHub Releases](https://github.com/ayr1k/OpenOpticSim/releases) 分发，用户无需安装开发工具。
 
-1.2 发布内容已准备，标签与 Release 由维护者发布；下列版本下载链接在 `v1.2.0` 发布并上传附件后生效：
+1.3 发布内容已准备，标签与 Release 由维护者发布；下列版本下载链接在 `v1.3.0` 发布并上传附件后生效：
 
-- [Windows x64 安装包](https://github.com/ayr1k/OpenOpticSim/releases/download/v1.2.0/OpenOpticSim_1.2.0_x64-setup.exe)
-- [安装包 SHA-256](https://github.com/ayr1k/OpenOpticSim/releases/download/v1.2.0/OpenOpticSim_1.2.0_x64-setup.exe.sha256) · [全部附件校验清单](https://github.com/ayr1k/OpenOpticSim/releases/download/v1.2.0/SHA256SUMS.txt)
-- [1.2 发布说明](docs/releases/1.2.0.md) · [版本发布页](https://github.com/ayr1k/OpenOpticSim/releases/tag/v1.2.0)
+- [Windows x64 安装包](https://github.com/ayr1k/OpenOpticSim/releases/download/v1.3.0/OpenOpticSim_1.3.0_x64-setup.exe)
+- [安装包 SHA-256](https://github.com/ayr1k/OpenOpticSim/releases/download/v1.3.0/OpenOpticSim_1.3.0_x64-setup.exe.sha256) · [全部附件校验清单](https://github.com/ayr1k/OpenOpticSim/releases/download/v1.3.0/SHA256SUMS.txt)
+- [1.3 发布说明](docs/releases/1.3.0.md) · [版本发布页](https://github.com/ayr1k/OpenOpticSim/releases/tag/v1.3.0)
 
 安装包未签名；干净 Windows 无 WebView2 的断网安装验收尚未完成。具体已验证内容与限制见发布说明。
 
 | 我想做什么 | 入口 |
 | --- | --- |
 | 第一次使用、搭建并对焦镜头 | [十分钟新手教程](docs/manual/start.md) |
-| 查找功能、快捷键与技术解释 | [完整手册](docs/OOS-1.2-使用手册.md) · [离线 HTML](docs/OOS-1.2-使用手册.html) |
+| 查找功能、快捷键与技术解释 | [完整手册](docs/OOS-1.3-使用手册.md) · [离线 HTML](docs/OOS-1.3-使用手册.html) |
 | 确认能计算什么、结果如何验证 | [功能与限制](docs/STATUS.md) · [测试报告](docs/TEST_REPORT.md) |
 | 使用 400 mm 或其他示例 | [示例与来源](examples/README.md) |
 | 报告问题、改进代码或文档 | [贡献指南](CONTRIBUTING.md) · [安全报告](SECURITY.md) |
 | 查阅更新、许可和发布流程 | [更新日志](CHANGELOG.md) · [许可审查](docs/THIRD_PARTY_AUDIT.md) · [发布流程](docs/RELEASING.md) |
 
-**当前版本：1.2.0。** 新增变焦补偿轨迹生成、全焦段扫描、多配置联合优化和对焦距离扫描，集中在「调校 → 变焦与对焦工作台」。支持逐视场退化保护、高采样复核、可持久化扫描记录与 CSV 位置表。详见 [工作台教程](docs/manual/study.md) 与 [数值验证](docs/validation-study-1.2.json)。 将既有功能整理为「设计、画质、调校、交付」四组；右侧镜片与摄影设置分别切换，保留独立滚动与布局记忆。增加功能搜索、22 章离线可检索帮助、新手教程和技术文档，以及含矢量剖面、全部处方/材料/非球面参数、分析条件和精确源项目附件的 PDF 技术图纸。
+**当前版本：1.3.0。** 新增经典结构指标设计、32 变量并行局部优化、无吸收介质镀膜直透分析、33 种玻璃与消色差教程、原生进程 PSF 缓存。经典结构仅在公开测试条件下验证名义几何成像，不等同可制造镜头。详见[设计向导](docs/manual/synthesis.md)与[镀膜说明](docs/manual/coatings.md)。
 
-软件内「帮助」、F1 或 Ctrl+K 可查阅与定位功能；也可直接打开 [离线 HTML 完整手册](docs/OOS-1.2-使用手册.html)、[Markdown 手册](docs/OOS-1.2-使用手册.md) 或 [新手教程](docs/manual/start.md)。[功能范围](docs/STATUS.md)和[测试报告](docs/TEST_REPORT.md)说明适用范围与实测证据。既有传感器联动、离轴衍射、扫描、优化、镜组与版本对比全部保留。[0.9 计算范围](docs/COVERAGE.md)继续适用。
+保留 1.2 功能： 新增变焦补偿轨迹生成、全焦段扫描、多配置联合优化和对焦距离扫描，集中在「调校 → 变焦与对焦工作台」。支持逐视场退化保护、高采样复核、可持久化扫描记录与 CSV 位置表。详见 [工作台教程](docs/manual/study.md) 与 [数值验证](docs/validation-study-1.2.json)。 将既有功能整理为「设计、画质、调校、交付」四组；右侧镜片与摄影设置分别切换，保留独立滚动与布局记忆。增加功能搜索、25 章离线可检索帮助、新手教程和技术文档，以及含矢量剖面、全部处方/材料/非球面参数、分析条件和精确源项目附件的 PDF 技术图纸。
+
+软件内「帮助」、F1 或 Ctrl+K 可查阅与定位功能；也可直接打开 [离线 HTML 完整手册](docs/OOS-1.3-使用手册.html)、[Markdown 手册](docs/OOS-1.3-使用手册.md) 或 [新手教程](docs/manual/start.md)。[功能范围](docs/STATUS.md)和[测试报告](docs/TEST_REPORT.md)说明适用范围与实测证据。既有传感器联动、离轴衍射、扫描、优化、镜组与版本对比全部保留。[0.9 计算范围](docs/COVERAGE.md)继续适用。
 
 ## Windows 运行
 
-构建后的安装包位于 `target/release/bundle/nsis/OpenOpticSim_1.2.0_x64-setup.exe`，配置包含 WebView2 离线安装组件、完整手册和许可。也可运行 `target/release/openopticsim-desktop.exe`（需要系统已有 WebView2）。发布版嵌入界面、引擎、PDF 工具与中文字体，不需要 Node、Python、Rust 或本地 HTTP 服务。
+构建后的安装包位于 `target/release/bundle/nsis/OpenOpticSim_1.3.0_x64-setup.exe`，配置包含 WebView2 离线安装组件、完整手册和许可。也可运行 `target/release/openopticsim-desktop.exe`（需要系统已有 WebView2）。发布版嵌入界面、引擎、PDF 工具与中文字体，不需要 Node、Python、Rust 或本地 HTTP 服务。
 
-下载后可在 PowerShell 中运行 `Get-FileHash .\OpenOpticSim_1.2.0_x64-setup.exe -Algorithm SHA256`，与同版本 `.sha256` 比较。正式附件以对应 Release 的文件为准；源码内的历史本地验收记录不替代下载附件的最新校验清单。
+下载后可在 PowerShell 中运行 `Get-FileHash .\OpenOpticSim_1.3.0_x64-setup.exe -Algorithm SHA256`，与同版本 `.sha256` 比较。正式附件以对应 Release 的文件为准；源码内的历史本地验收记录不替代下载附件的最新校验清单。
 
 首次使用：
 

@@ -1,7 +1,12 @@
 import { useState } from "react";
 import Modal from "./Modal";
 import type { Project } from "./types";
-import { applyGlass, glassNumbers, glasses } from "./materials";
+import {
+  applyGlass,
+  glassNumbers,
+  glassDescription,
+  glasses,
+} from "./materials";
 export default function MaterialLibrary({
   project,
   selected,
@@ -101,19 +106,77 @@ export default function MaterialLibrary({
               {rows.length} / {glasses.length} 种 · nd 为 d 线折射率，Vd =
               (nd−1)/(nF−nC)。标称 293 K；不计算温漂与吸收。
             </p>
+            <details>
+              <summary>查看当前筛选的折射率–阿贝数分布</summary>
+              <svg
+                viewBox="0 0 640 230"
+                role="img"
+                aria-label="玻璃分布图：横轴阿贝数，纵轴 d 线折射率"
+                style={{ width: "100%", maxHeight: 230 }}
+              >
+                <path d="M55 20V190H615" fill="none" stroke="currentColor" />
+                <text x="260" y="225" fill="currentColor">
+                  阿贝数 Vd → 低色散
+                </text>
+                <text x="5" y="18" fill="currentColor">
+                  nd
+                </text>
+                {[20, 40, 60, 80].map((v) => (
+                  <text
+                    key={v}
+                    x={55 + (v - 20) * 8}
+                    y={210}
+                    fill="currentColor"
+                  >
+                    {v}
+                  </text>
+                ))}
+                {[1.5, 1.7, 1.9].map((v) => (
+                  <text
+                    key={v}
+                    x={10}
+                    y={190 - (v - 1.45) * 320}
+                    fill="currentColor"
+                  >
+                    {v}
+                  </text>
+                ))}
+                {rows.map((m) => {
+                  const { nd, vd } = glassNumbers(m);
+                  return (
+                    <circle
+                      key={m.name}
+                      cx={55 + (vd! - 20) * 8}
+                      cy={190 - (nd! - 1.45) * 320}
+                      r={4}
+                      fill="#cde4aa"
+                    >
+                      <title>
+                        {m.name} · nd {nd?.toFixed(5)} / Vd {vd?.toFixed(2)}
+                      </title>
+                    </circle>
+                  );
+                })}
+              </svg>
+              <p className="hint">
+                按同一坐标比较材料，悬停查看名称；相近 nd/Vd
+                不代表部分色散、温度与制造性能相同。表内 P(g,F)=(ng−nF)/(nF−nC)
+                用于比较二级光谱，不能独自证明复消色差。
+              </p>
+            </details>
             <div className="scroll-table">
               <table>
                 <thead>
                   <tr>
                     <th>玻璃</th>
-                    <th>nd / Vd</th>
+                    <th>nd / Vd / P(g,F)</th>
                     <th>有效波段</th>
                     <th>操作</th>
                   </tr>
                 </thead>
                 <tbody>
                   {rows.map((m) => {
-                    const { nd, vd } = glassNumbers(m),
+                    const { nd, vd, pgf } = glassNumbers(m),
                       valid = project.wavelengths.every(
                         (w) => w.nm >= m.range_nm[0] && w.nm <= m.range_nm[1],
                       );
@@ -121,6 +184,7 @@ export default function MaterialLibrary({
                       <tr key={m.name}>
                         <td>
                           {m.name}
+                          <small>{glassDescription(m)}</small>
                           <small>
                             <a href={m.url} target="_blank" rel="noreferrer">
                               数据与来源 · CC0
@@ -130,6 +194,7 @@ export default function MaterialLibrary({
                         <td>
                           {nd?.toFixed(6)}
                           <small>{vd?.toFixed(3)}</small>
+                          <small>{pgf?.toFixed(5) ?? "—"}</small>
                         </td>
                         <td>
                           {m.range_nm.join("–")} nm

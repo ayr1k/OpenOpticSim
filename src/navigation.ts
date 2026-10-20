@@ -4,7 +4,9 @@ export const sections = [
     label: "设计",
     hint: "定义目标、搭建镜头并检查几何",
     tabs: [
+      ["synthesis", "从指标创建设计", "synthesis"],
       ["goals", "设计目标", "fields"],
+      ["coatings", "镀膜与透射", "coatings"],
       ["prescription", "镜头处方", "editing"],
       ["groups", "镜组管理", "groups"],
       ["geometry", "几何检查", "mechanics"],

@@ -18,7 +18,7 @@ if DEST.exists():
 else:
     commit = json.loads(fetch(f"https://api.github.com/repos/{REPO}/commits/main"))["sha"]
 entries = []
-for name in ["N-BK7", "N-BAK4", "N-SK16", "N-LAK22", "N-F2", "N-SF5", "N-SF10", "N-SF11"]:
+for name in ["N-BK7", "N-BAK4", "N-SK16", "N-LAK22", "N-F2", "N-SF5", "N-SF10", "N-SF11", "N-BAF4", "N-BAF10", "N-BAK1", "N-BALF4", "N-FK5", "N-FK51A", "N-LAK8", "N-LAK10", "N-LAK12", "N-LAK14", "N-LAK21", "N-LASF9", "N-LASF31A", "N-LASF44", "N-PSK3", "N-PSK53A", "N-SF1", "N-SF2", "N-SF4", "N-SF6", "N-SF8", "N-SK2", "N-SK4", "N-SK5", "N-SSK2"]:
     path = f"database/data/specs/schott/optical/{name}.yml"
     url = f"https://raw.githubusercontent.com/{REPO}/{commit}/{path}"
     raw = fetch(url)
@@ -35,7 +35,7 @@ for name in ["N-BK7", "N-BAK4", "N-SK16", "N-LAK22", "N-F2", "N-SF5", "N-SF10", 
                         source=f"refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; {url}; SHA256 {hashlib.sha256(raw).hexdigest()}",
                         nd_reference=nd, vd_reference=vd, url=url, sha256=hashlib.sha256(raw).hexdigest()))
 DEST.parent.mkdir(exist_ok=True)
-DEST.write_text(json.dumps(dict(commit=commit,license="CC0-1.0",retrieved="2026-10-18",entries=entries),indent=2)+"\n", encoding="utf-8")
+DEST.write_text(json.dumps(dict(commit=commit,license="CC0-1.0",retrieved="2026-10-20",entries=entries),indent=2)+"\n", encoding="utf-8")
 notice = ROOT / "docs/catalog"
 notice.mkdir(exist_ok=True)
 (notice/"CC0-1.0.txt").write_bytes(fetch(f"https://raw.githubusercontent.com/{REPO}/{commit}/LICENSE"))

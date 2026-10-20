@@ -289,7 +289,7 @@ export default function StudyPanel({
   const point = result?.points[selected];
   function addVariable() {
     update((v) => {
-      if (v.variables.length >= 12) return;
+      if (v.variables.length >= 32) return;
       if (variableKind === "position") {
         const g = m.groups[variableGroup],
           value =
@@ -623,7 +623,7 @@ export default function StudyPanel({
                 </select>
               </label>
             )}
-            <button disabled={s.variables.length >= 12} onClick={addVariable}>
+            <button disabled={s.variables.length >= 32} onClick={addVariable}>
               添加联合变量
             </button>
           </div>

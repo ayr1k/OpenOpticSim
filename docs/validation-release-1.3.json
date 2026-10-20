@@ -1,0 +1,63 @@
+{
+  "version": "1.3.0",
+  "frontend_tests": 67,
+  "rust_desktop_tests": 93,
+  "clippy": "passed",
+  "production_frontend": "passed",
+  "classic_structure_validation": "docs/validation-design-1.3.json",
+  "optical_validation": "docs/validation-study-1.3.json",
+  "diffraction_validation": "docs/validation-diffraction-1.3.json",
+  "coating_tests": [
+    "Fresnel normal incidence",
+    "Brewster p reflection zero",
+    "ideal quarter-wave zero reflection",
+    "multi-angle energy conservation",
+    "TIR explicitly rejected",
+    "coated project roundtrip with identical geometric analysis"
+  ],
+  "legacy_400mm": {
+    "coverage_samples_exact": 38508,
+    "aperture_scan_legacy_fields_exact": true,
+    "analysis_wave_preview_metadata_invariance": true
+  },
+  "cache": {
+    "report": "docs/benchmark-1.3.json",
+    "results_identical": true,
+    "max_entries": 8,
+    "max_psf_sample_bytes": 67108864,
+    "cancellation_checked_before_hits": true
+  },
+  "ui": {
+    "classic_design_generated": true,
+    "validated_tessar_created": true,
+    "coverage_gap_visible": true,
+    "coating_editor_and_calculation": true,
+    "project_download_initiated": true,
+    "coating_restored_after_reload": true,
+    "restored_calculation_same_values": true,
+    "screenshot": "docs/screenshots/coatings-1.3.png"
+  },
+  "pdf": {
+    "report": "docs/validation-coating-pdf-1.3.json",
+    "all_32_layers_present": true,
+    "source_attachment_exact": true,
+    "rendered_pages_visually_checked": [
+      6,
+      7
+    ]
+  },
+  "license": {
+    "glasses": 33,
+    "snapshot": "c5c2f188e848453def5970e347399d653df2ffc2",
+    "license": "CC0-1.0",
+    "new_third_party_packages": false
+  },
+  "limitations": [
+    "Classic synthesis validated at nominal 50mm F8 half-field5deg only; full sensor, diffraction and manufacturing require separate checks",
+    "No automatic glass discrete search or global optimum guarantee",
+    "Lossless constant-index dielectric coatings, meridional throughput only; no ghosts or coating phase PSF",
+    "Performance report is warm/cold in one process, not a universal cross-version speedup",
+    "Unsigned Windows installer; clean offline install/upgrade and complete native dialogs not tested",
+    "Tags and Release owned by maintainer"
+  ]
+}

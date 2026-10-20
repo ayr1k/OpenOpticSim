@@ -1,4 +1,5 @@
 import { validMotion } from "./motion";
+import { validCoating } from "./coatings";
 import type { Project } from "./types";
 import { optimizationError } from "./optimization";
 import { validAperture, validGroups, validScan } from "./design";
@@ -61,6 +62,8 @@ export function projectFromJson(text: string, nested = false): Project {
   )
     throw Error("目标像高视场需要 v3 项目，且视场数量必须一致");
   for (const s of p.surfaces) {
+    if (s.coating !== undefined && !validCoating(s.coating))
+      throw Error("镀膜数据无效：最多 32 层，折射率 1–10、物理厚度 0–10000 nm");
     if (
       !s ||
       typeof s.name !== "string" ||

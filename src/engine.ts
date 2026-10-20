@@ -15,6 +15,10 @@ import { download, projectFromJson } from "./project";
 import repaired400 from "../examples/400mm-coverage-0.9.oos.json";
 import wide35 from "../examples/35mm-coverage.oos.json";
 import zoom2470 from "../examples/24-70mm-zoom.oos.json";
+import tessar from "../examples/tessar-50mm-1.3.oos.json";
+import planar from "../examples/planar-50mm-1.3.oos.json";
+import gauss from "../examples/double_gauss-50mm-1.3.oos.json";
+import sonnar from "../examples/sonnar-50mm-1.3.oos.json";
 export const native = "__TAURI_INTERNALS__" in window;
 export async function exportPdf(
   name: string,
@@ -67,6 +71,9 @@ export async function examples(): Promise<Project[]> {
       projectFromJson(JSON.stringify(repaired400)),
       projectFromJson(JSON.stringify(wide35)),
       projectFromJson(JSON.stringify(zoom2470)),
+      ...[tessar, planar, gauss, sonnar].map((p) =>
+        projectFromJson(JSON.stringify(p)),
+      ),
     ];
   const r = await fetch("/api/examples", {
     method: "POST",
@@ -80,6 +87,9 @@ export async function examples(): Promise<Project[]> {
     projectFromJson(JSON.stringify(repaired400)),
     projectFromJson(JSON.stringify(wide35)),
     projectFromJson(JSON.stringify(zoom2470)),
+    ...[tessar, planar, gauss, sonnar].map((p) =>
+      projectFromJson(JSON.stringify(p)),
+    ),
   ];
 }
 export async function compute<T>(
@@ -100,6 +110,7 @@ export async function compute<T>(
     aperture_options?: ApertureOptions;
     motion_options?: import("./types").MotionOptions;
     study_options?: import("./types").StudyOptions;
+    design_brief?: import("./SynthesisPanel").DesignBrief;
     group_move?: { start: number; end: number; delta_mm: number };
   } = {},
   onProgress?: (p: OptimizationProgress) => void,
