@@ -117,6 +117,11 @@ export function projectFromJson(text: string, nested = false): Project {
     if (w.motion !== undefined) {
       if (!validMotion(w.motion)) throw Error("多配置镜组数据无效");
       projectFromJson(JSON.stringify(w.motion.reference), true);
+      if (w.motion.study?.saved)
+        projectFromJson(
+          JSON.stringify(w.motion.study.saved.result.reference),
+          true,
+        );
     }
     const ids = new Set<string>();
     if (w.groups !== undefined && !validGroups(p, w.groups))
@@ -148,6 +153,11 @@ export function projectFromJson(text: string, nested = false): Project {
       if (v.motion !== undefined) {
         if (!validMotion(v.motion)) throw Error("版本的多配置镜组数据无效");
         projectFromJson(JSON.stringify(v.motion.reference), true);
+        if (v.motion.study?.saved)
+          projectFromJson(
+            JSON.stringify(v.motion.study.saved.result.reference),
+            true,
+          );
       }
       if (v.groups !== undefined && !validGroups(v.prescription, v.groups))
         throw Error("版本的镜组范围无效");

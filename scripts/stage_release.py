@@ -25,7 +25,7 @@ def main():
     config = read(ROOT / 'src-tauri/tauri.conf.json')
     version = package['version']
     cargo = tomllib.loads((ROOT / 'Cargo.toml').read_text(encoding='utf-8'))
-    if version not in ('1.0.0', '1.1.0') or config['version'] != version or cargo['workspace']['package']['version'] != version:
+    if version not in ('1.0.0', '1.1.0', '1.2.0') or config['version'] != version or cargo['workspace']['package']['version'] != version:
         raise SystemExit('This staging recipe is for matching supported source and desktop versions only.')
     installer = ROOT / f'target/release/bundle/nsis/OpenOpticSim_{version}_x64-setup.exe'
     executable = ROOT / 'target/release/openopticsim-desktop.exe'

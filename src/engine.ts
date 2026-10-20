@@ -99,6 +99,7 @@ export async function compute<T>(
     optimization?: OptimizationOptions;
     aperture_options?: ApertureOptions;
     motion_options?: import("./types").MotionOptions;
+    study_options?: import("./types").StudyOptions;
     group_move?: { start: number; end: number; delta_mm: number };
   } = {},
   onProgress?: (p: OptimizationProgress) => void,

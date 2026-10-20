@@ -393,6 +393,7 @@ export interface MotionConfiguration {
   target_f_number: number | null;
 }
 export interface MotionWorkspace {
+  study?: StudyWorkspace;
   application_revision?: number;
   schema_version: 1;
   reference: Prescription;
@@ -430,4 +431,76 @@ export interface MotionResult {
     score_um: number | null;
     diagnostic: string | null;
   }[];
+}
+
+export type StudyVariable =
+  | {
+      kind: "curvature" | "thickness";
+      surface: number;
+      min: number;
+      max: number;
+    }
+  | {
+      kind: "position";
+      configuration: number;
+      group: number;
+      min: number;
+      max: number;
+    };
+export interface StudySettings {
+  mode: "scan" | "trajectory" | "focus" | "optimize";
+  steps: number;
+  max_points: number;
+  adaptive: boolean;
+  refine_rms_um: number;
+  driver_group: number;
+  compensator_group: number;
+  near_mm: number;
+  far_mm: number;
+  include_infinity: boolean;
+  verification_sampling: number;
+  max_degradation_percent: number;
+  efl_tolerance_percent: number | null;
+  min_glass_mm: number;
+  require_sensor_coverage: boolean;
+  variables: StudyVariable[];
+  iterations: number;
+}
+export interface StudyOptions extends StudySettings {
+  motion: MotionOptions;
+  configurations: MotionConfiguration[];
+}
+export interface StudyPoint {
+  coordinate: number;
+  configuration: MotionConfiguration;
+  accepted: boolean;
+  diagnostic: string;
+  rms_um: number | null;
+  fields_rms_um: (number | null)[];
+  efl_mm: number | null;
+  f_number: number | null;
+  distortion_percent: number | null;
+  lateral_color_um: number | null;
+  geometric_fraction: number | null;
+  min_air_mm: number | null;
+  min_glass_mm: number | null;
+  field_angles_rad: number[];
+  coverage: Analysis["coverage"];
+  failed_rays: number;
+}
+export interface StudyResult {
+  mode: StudySettings["mode"];
+  reference: Prescription;
+  configurations: MotionConfiguration[];
+  before: StudyPoint[];
+  points: StudyPoint[];
+  accepted: boolean;
+  verification_sampling: number;
+  evaluations: number;
+  sensor_reference_mm: number;
+  note: string;
+}
+export interface StudyWorkspace {
+  settings: StudySettings;
+  saved?: { source_key: string; settings: StudySettings; result: StudyResult };
 }

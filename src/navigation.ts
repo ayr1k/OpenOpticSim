@@ -28,7 +28,7 @@ export const sections = [
     hint: "保存基准后进行扫描或受约束的局部优化",
     tabs: [
       ["focus", "像面对焦扫描", "focus"],
-      ["motion", "配置与镜组运动", "motion"],
+      ["motion", "变焦与对焦工作台", "study"],
       ["aperture", "光圈扫描", "aperture"],
       ["optimization", "约束优化", "optimization"],
     ],

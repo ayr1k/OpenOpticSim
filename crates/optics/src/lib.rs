@@ -10,6 +10,7 @@ pub mod motion;
 pub mod optimize;
 pub mod preview;
 pub mod quality;
+pub mod study;
 pub mod trace;
 pub mod wave;
 pub use analysis::*;
@@ -40,6 +41,7 @@ pub struct Request {
     pub aperture_options: Option<aperture::ApertureOptions>,
     pub group_move: Option<aperture::GroupMove>,
     pub motion_options: Option<motion::MotionOptions>,
+    pub study_options: Option<study::StudyOptions>,
 }
 fn default_sampling() -> usize {
     17
@@ -77,6 +79,15 @@ pub fn execute_with_progress(
         return Err("Add a lens before optical analysis".into());
     }
     match request.operation.as_str() {
+        "motion_study" => Ok(serde_json::json!(study::run(
+            p,
+            request
+                .study_options
+                .as_ref()
+                .ok_or("Study options required")?,
+            cancel,
+            progress
+        )?)),
         "motion" => Ok(serde_json::json!(motion::run(
             p,
             request

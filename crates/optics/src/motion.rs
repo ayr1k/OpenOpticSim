@@ -155,8 +155,14 @@ pub fn run(p: &Project, o: &MotionOptions, cancel: &AtomicBool) -> Result<Motion
     {
         return Err("采样须为 7–33 的奇数，RMS 验收上限须为正数".into());
     }
-    // Validate even when a solver will replace a position.
-    placed(p, o)?;
+    // A seed can collide even though another compensator position is feasible.
+    // Validate vector shape before indexing; each trial still receives full validation.
+    if o.positions_mm.len() != o.groups.len() || o.positions_mm.iter().any(|x| !x.is_finite()) {
+        return Err("镜组位置数量或数值无效".into());
+    }
+    if o.solve_group.is_none() {
+        placed(p, o)?;
+    }
     let mut options = o.clone();
     let mut points = Vec::new();
     let mut best: Option<(f64, Vec<f64>)> = None;

@@ -1,0 +1,53 @@
+{
+  "version": "1.2.0",
+  "frontend_tests": 65,
+  "rust_desktop_tests": 88,
+  "clippy": "passed",
+  "production_frontend": "passed",
+  "optical_validation": "docs/validation-study-1.2.json",
+  "diffraction_validation": "docs/validation-diffraction-1.2.json",
+  "legacy_400mm": {
+    "coverage_samples_exact": 38508,
+    "aperture_scan_legacy_fields_exact": true,
+    "analysis_wave_preview_metadata_invariance": true
+  },
+  "ui": {
+    "scan_13_of_13": true,
+    "trajectory_7_of_7": true,
+    "record_saved_to_project": true,
+    "project_download_initiated": true,
+    "record_restored_after_reload": true,
+    "historical_record_adoption_requires_recompute": true,
+    "trajectory_position_adopted": true,
+    "joint_variable_editor": true,
+    "no_improvement_candidate_adoption_disabled": true,
+    "screenshot": "docs/screenshots/study-1.2.png"
+  },
+  "persistence": {
+    "study_settings_and_complete_records_roundtrip": true,
+    "named_version_roundtrip": true,
+    "invalid_archived_prescription_rejected": true,
+    "native_atomic_save_tests": "passed"
+  },
+  "limitations": [
+    "Unsigned Windows x64 installer",
+    "Clean Windows offline installation and upgrade not tested",
+    "Native file/PDF dialog end-to-end not tested",
+    "Discrete studies do not certify continuous parfocality",
+    "24-70 mm is small-sensor teaching design; no new diffraction-model certification",
+    "Joint optimizer is bounded feasible coordinate search, not global optimization"
+  ],
+  "native_startup": {
+    "version": "1.2.0",
+    "executable_sha256": "280492c090b95b33125380ffae892ad4441d3bebd4c002a4082a2a4ce74e7e0c",
+    "exited": false,
+    "responding": true,
+    "scope": "Executable startup only; no installation or upgrade performed"
+  },
+  "public_source_audit": {
+    "files": 313,
+    "text_files": 283,
+    "findings": 0,
+    "detector_self_test_families": 8
+  }
+}

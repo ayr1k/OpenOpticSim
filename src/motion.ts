@@ -7,6 +7,7 @@ import type {
 } from "./types";
 import { opticalKey, validGroups } from "./design";
 import { prescription } from "./versions";
+import { validStudy } from "./study";
 
 export function createMotion(p: Project): MotionWorkspace {
   const groups = p.workspace?.groups ?? [];
@@ -52,6 +53,7 @@ export function motionOptions(
 export function validMotion(m: MotionWorkspace): boolean {
   if (
     !m ||
+    !validStudy(m.study) ||
     m.schema_version !== 1 ||
     !m.reference ||
     "workspace" in m.reference ||

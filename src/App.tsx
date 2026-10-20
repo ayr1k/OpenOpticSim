@@ -706,7 +706,7 @@ export default function App() {
           <div>
             OpenOpticSim <small>光学工作室</small>
           </div>
-          <span className="alpha">1.1</span>
+          <span className="alpha">1.2</span>
         </div>
         <div className="toolbar">
           <button

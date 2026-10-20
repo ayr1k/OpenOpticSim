@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { allTabs, helpFor, matchesQuery, sectionFor } from "./navigation";
 import { articles, findArticles } from "./help";
-describe("1.1 navigation and offline documentation", () => {
+describe("1.2 navigation and offline documentation", () => {
   it("keeps all 0.9 tools and adds optimization and drawing workspaces", () => {
     expect(allTabs.map((t) => t[0]).sort()).toEqual(
       [
@@ -28,7 +28,7 @@ describe("1.1 navigation and offline documentation", () => {
     expect(sectionFor("wave").id).toBe("quality");
   });
   it("bundles complete articles and resolves every local manual link", () => {
-    expect(articles).toHaveLength(21);
+    expect(articles).toHaveLength(22);
     for (const a of articles) {
       expect(a.title).not.toBe("");
       expect(a.body.length).toBeGreaterThan(300);

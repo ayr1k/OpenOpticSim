@@ -19,6 +19,7 @@ const order = [
   "optimization",
   "groups",
   "motion",
+  "study",
   "versions",
   "diffraction",
   "imaging",

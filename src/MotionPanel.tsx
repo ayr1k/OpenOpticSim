@@ -17,6 +17,7 @@ import {
 import { Num } from "./Num";
 import { Layout, Spots } from "./Plots";
 import Coverage from "./Coverage";
+import StudyPanel from "./StudyPanel";
 
 function magnification(r: MotionResult) {
   const d = r.project.object_distance;
@@ -250,6 +251,12 @@ export default function MotionPanel({
   );
   return (
     <div className="workflow-panel motion-panel">
+      <StudyPanel
+        project={project}
+        edit={edit}
+        selectedConfiguration={selected}
+      />
+      <hr />
       <h2>配置与镜组运动 · 固定传感器</h2>
       <p>
         主画布配置：
