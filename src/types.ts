@@ -370,6 +370,7 @@ export interface DesignVersion {
   groups?: OpticalGroup[];
 }
 export interface Workspace {
+  spatial?: import("./spatial").SpatialWorkspace;
   search_checkpoint?: import("./searchCheckpoint").SearchCheckpoint;
   design_task?: import("./designTask").DesignBrief;
   motion?: MotionWorkspace;

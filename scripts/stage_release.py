@@ -25,7 +25,7 @@ def main():
     config = read(ROOT / 'src-tauri/tauri.conf.json')
     version = package['version']
     cargo = tomllib.loads((ROOT / 'Cargo.toml').read_text(encoding='utf-8'))
-    if version not in ('1.0.0', '1.1.0', '1.2.0', '1.3.0', '1.4.0', '1.5.0') or config['version'] != version or cargo['workspace']['package']['version'] != version:
+    if version not in ('1.0.0', '1.1.0', '1.2.0', '1.3.0', '1.4.0', '1.5.0', '2.0.0') or config['version'] != version or cargo['workspace']['package']['version'] != version:
         raise SystemExit('This staging recipe is for matching supported source and desktop versions only.')
     installer = ROOT / f'target/release/bundle/nsis/OpenOpticSim_{version}_x64-setup.exe'
     executable = ROOT / 'target/release/openopticsim-desktop.exe'
@@ -36,6 +36,9 @@ def main():
             raise SystemExit('Installer is not a Windows executable.')
     files = subprocess.check_output(['git', 'ls-files', '--cached', '--others', '--exclude-standard', '-z'], cwd=ROOT)
     candidates = {p.decode() for p in files.split(b'\0') if p}
+    # Engine extraction intentionally removes tracked paths before the owner commits.
+    deleted = subprocess.check_output(['git', 'ls-files', '--deleted', '-z'], cwd=ROOT)
+    candidates -= {p.decode() for p in deleted.split(b'\0') if p}
     binary_checks = []
     for binary in [executable, ROOT / 'target/release/oos-cli.exe']:
         data = binary.read_bytes()
@@ -50,10 +53,10 @@ def main():
     # staging of a previous installer after changing notices / documentation.
     resources = []
     bundle_inputs = [ROOT / 'src-tauri/tauri.conf.json', executable]
-    source_roots = ('src/', 'crates/', 'src-tauri/')
+    source_roots = ('src/', 'crates/', 'src-tauri/', 'OOS-Wollaston/crates/', 'OOS-Wollaston/data/')
     source_files = {'Cargo.toml', 'Cargo.lock', 'package.json', 'pnpm-lock.yaml',
                     'pnpm-workspace.yaml', 'vite.config.ts', 'tsconfig.json',
-                    'index.html', 'scripts/build_manual.mjs'}
+                    'index.html', 'scripts/build_manual.mjs', 'OOS-Wollaston/Cargo.toml', 'OOS-Wollaston/Cargo.lock'}
     for name in sorted(candidates):
         if name.startswith(source_roots) or name in source_files:
             if not (ROOT / name).is_file():

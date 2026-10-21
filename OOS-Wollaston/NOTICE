@@ -1,0 +1,10 @@
+OOS-Wollaston
+Copyright 2026 OpenOpticSim contributors
+
+Extracted from OpenOpticSim. Original code and synthetic teaching prescriptions: Apache-2.0.
+The SCHOTT glass subset in data/glass-catalog.json comes from the CC0-1.0 refractiveindex.info database by Mikhail Polyanskiy.
+Original data references: SCHOTT catalog 2017-01-20b. Provenance and checksums are in that JSON; license in data/CC0-1.0.txt.
+M. N. Polyanskiy, Scientific Data 11, 94 (2024), https://doi.org/10.1038/s41597-023-02898-2
+RayOptics is an independent development reference, not the implementation or a runtime dependency.
+Examples are teaching designs, not official commercial prescriptions.
+Dependency licenses and upstream source URLs are in THIRD_PARTY_NOTICES.txt and docs/dependencies.json.

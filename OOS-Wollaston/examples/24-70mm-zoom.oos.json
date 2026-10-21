@@ -1,0 +1,448 @@
+{
+  "description": "本项目原创 Apache-2.0 教学处方；两正双胶合镜组移动实现 24–70 mm，固定传感器。非商业镜头复刻，4×3 mm 小传感器、小光圈；不代表全画幅或 f/2.8 画质。配置焦距按 d 线近轴矩阵构造，需检查真实光斑与通光；线性插值不保证齐焦。",
+  "fields": [
+    0.0,
+    0.015,
+    0.02,
+    0.025
+  ],
+  "materials": [
+    {
+      "n": 1.0,
+      "name": "Air",
+      "range_nm": [
+        380.0,
+        780.0
+      ],
+      "sellmeier": null,
+      "source": "Ideal vacuum approximation n=1"
+    },
+    {
+      "n": 1.52,
+      "name": "Teaching crown",
+      "range_nm": [
+        380.0,
+        780.0
+      ],
+      "sellmeier": [
+        [
+          1.04,
+          0.23,
+          1.01
+        ],
+        [
+          0.006,
+          0.02,
+          103.0
+        ]
+      ],
+      "source": "OSS synthetic teaching material; not a commercial glass"
+    },
+    {
+      "n": 1.62,
+      "name": "Teaching flint",
+      "range_nm": [
+        380.0,
+        780.0
+      ],
+      "sellmeier": [
+        [
+          1.3,
+          0.3,
+          1.1
+        ],
+        [
+          0.009,
+          0.04,
+          110.0
+        ]
+      ],
+      "source": "OSS synthetic teaching material; not a commercial glass"
+    }
+  ],
+  "name": "24–70 mm · 双镜组教学变焦",
+  "object_distance": null,
+  "schema_version": 3,
+  "sensor": [
+    4.0,
+    3.0
+  ],
+  "stop": 0,
+  "surfaces": [
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": 0.013684487367534965,
+      "material": 1,
+      "name": "G1 · 冠玻璃前面",
+      "semi_aperture": 1.2,
+      "thickness": 5.0,
+      "mechanical": {
+        "semi_diameter": 6.0,
+        "shape": "flat"
+      }
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": -0.018245983156713285,
+      "material": 2,
+      "name": "G1 · 胶合面",
+      "semi_aperture": 6.0,
+      "thickness": 2.0
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": -0.005473794947013986,
+      "material": 0,
+      "name": "G1 · 火石玻璃后面",
+      "semi_aperture": 6.0,
+      "thickness": 97.54140744576188
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": 0.06736256285269804,
+      "material": 1,
+      "name": "G2 · 冠玻璃前面",
+      "semi_aperture": 6.0,
+      "thickness": 5.0
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": -0.08981675047026405,
+      "material": 2,
+      "name": "G2 · 胶合面",
+      "semi_aperture": 6.0,
+      "thickness": 2.0
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": -0.026945025141079215,
+      "material": 0,
+      "name": "G2 · 火石玻璃后面",
+      "semi_aperture": 6.0,
+      "thickness": 6.772376677670079
+    }
+  ],
+  "wavelengths": [
+    {
+      "nm": 486.1327,
+      "weight": 1.0
+    },
+    {
+      "nm": 587.5618,
+      "weight": 1.0
+    },
+    {
+      "nm": 656.2725,
+      "weight": 1.0
+    }
+  ],
+  "field_spec": {
+    "mode": "sensor"
+  },
+  "workspace": {
+    "schema_version": 1,
+    "versions": [],
+    "groups": [
+      {
+        "id": "variator",
+        "name": "前组 / 变倍组",
+        "start": 0,
+        "end": 2
+      },
+      {
+        "id": "compensator",
+        "name": "后组 / 补偿组",
+        "start": 3,
+        "end": 5
+      }
+    ],
+    "motion": {
+      "schema_version": 1,
+      "reference": {
+        "description": "本项目原创 Apache-2.0 教学处方；两正双胶合镜组移动实现 24–70 mm，固定传感器。非商业镜头复刻，4×3 mm 小传感器、小光圈；不代表全画幅或 f/2.8 画质。配置焦距按 d 线近轴矩阵构造，需检查真实光斑与通光；线性插值不保证齐焦。",
+        "fields": [
+          0.0,
+          0.015,
+          0.02,
+          0.025
+        ],
+        "materials": [
+          {
+            "n": 1.0,
+            "name": "Air",
+            "range_nm": [
+              380.0,
+              780.0
+            ],
+            "sellmeier": null,
+            "source": "Ideal vacuum approximation n=1"
+          },
+          {
+            "n": 1.52,
+            "name": "Teaching crown",
+            "range_nm": [
+              380.0,
+              780.0
+            ],
+            "sellmeier": [
+              [
+                1.04,
+                0.23,
+                1.01
+              ],
+              [
+                0.006,
+                0.02,
+                103.0
+              ]
+            ],
+            "source": "OSS synthetic teaching material; not a commercial glass"
+          },
+          {
+            "n": 1.62,
+            "name": "Teaching flint",
+            "range_nm": [
+              380.0,
+              780.0
+            ],
+            "sellmeier": [
+              [
+                1.3,
+                0.3,
+                1.1
+              ],
+              [
+                0.009,
+                0.04,
+                110.0
+              ]
+            ],
+            "source": "OSS synthetic teaching material; not a commercial glass"
+          }
+        ],
+        "name": "24–70 mm · 双镜组教学变焦",
+        "object_distance": null,
+        "schema_version": 3,
+        "sensor": [
+          4.0,
+          3.0
+        ],
+        "stop": 0,
+        "surfaces": [
+          {
+            "asphere": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "conic": 0.0,
+            "curvature": 0.013684487367534965,
+            "material": 1,
+            "name": "G1 · 冠玻璃前面",
+            "semi_aperture": 1.2,
+            "thickness": 5.0,
+            "mechanical": {
+              "semi_diameter": 6.0,
+              "shape": "flat"
+            }
+          },
+          {
+            "asphere": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "conic": 0.0,
+            "curvature": -0.018245983156713285,
+            "material": 2,
+            "name": "G1 · 胶合面",
+            "semi_aperture": 6.0,
+            "thickness": 2.0
+          },
+          {
+            "asphere": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "conic": 0.0,
+            "curvature": -0.005473794947013986,
+            "material": 0,
+            "name": "G1 · 火石玻璃后面",
+            "semi_aperture": 6.0,
+            "thickness": 97.54140744576188
+          },
+          {
+            "asphere": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "conic": 0.0,
+            "curvature": 0.06736256285269804,
+            "material": 1,
+            "name": "G2 · 冠玻璃前面",
+            "semi_aperture": 6.0,
+            "thickness": 5.0
+          },
+          {
+            "asphere": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "conic": 0.0,
+            "curvature": -0.08981675047026405,
+            "material": 2,
+            "name": "G2 · 胶合面",
+            "semi_aperture": 6.0,
+            "thickness": 2.0
+          },
+          {
+            "asphere": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "conic": 0.0,
+            "curvature": -0.026945025141079215,
+            "material": 0,
+            "name": "G2 · 火石玻璃后面",
+            "semi_aperture": 6.0,
+            "thickness": 6.772376677670079
+          }
+        ],
+        "wavelengths": [
+          {
+            "nm": 486.1327,
+            "weight": 1.0
+          },
+          {
+            "nm": 587.5618,
+            "weight": 1.0
+          },
+          {
+            "nm": 656.2725,
+            "weight": 1.0
+          }
+        ],
+        "field_spec": {
+          "mode": "sensor"
+        }
+      },
+      "groups": [
+        {
+          "id": "variator",
+          "name": "前组 / 变倍组",
+          "start": 0,
+          "end": 2,
+          "min_mm": -2.0,
+          "max_mm": 90.0,
+          "locked": false
+        },
+        {
+          "id": "compensator",
+          "name": "后组 / 补偿组",
+          "start": 3,
+          "end": 5,
+          "min_mm": -40.0,
+          "max_mm": 5.0,
+          "locked": false
+        }
+      ],
+      "configurations": [
+        {
+          "id": "zoom-24",
+          "name": "24 mm",
+          "positions_mm": [
+            72.55952380952294,
+            -9.583333333333254
+          ],
+          "object_distance": null,
+          "target_efl_mm": 24.0,
+          "target_f_number": null
+        },
+        {
+          "id": "zoom-35",
+          "name": "35 mm",
+          "positions_mm": [
+            35.56547619047575,
+            -7.291666666666608
+          ],
+          "object_distance": null,
+          "target_efl_mm": 35.0,
+          "target_f_number": null
+        },
+        {
+          "id": "zoom-50",
+          "name": "50 mm",
+          "positions_mm": [
+            12.976190476190311,
+            -4.16666666666663
+          ],
+          "object_distance": null,
+          "target_efl_mm": 50.0,
+          "target_f_number": null
+        },
+        {
+          "id": "zoom-70",
+          "name": "70 mm",
+          "positions_mm": [
+            0.0,
+            0.0
+          ],
+          "object_distance": null,
+          "target_efl_mm": 70.0,
+          "target_f_number": null
+        }
+      ],
+      "active_id": "zoom-70",
+      "min_air_mm": 0.05,
+      "sampling": 17,
+      "criterion": "balanced",
+      "max_rms_um": 30.0
+    }
+  }
+}

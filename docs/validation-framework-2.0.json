@@ -1,0 +1,10 @@
+{
+  "cli_python_cabi_identical": true,
+  "independent_reference": "RayOptics profiles + bend with NumPy frame transforms",
+  "transformed_surfaces": 8,
+  "max_hit_error_mm": 1.5108375915914693e-11,
+  "cancelled": true,
+  "malformed_requests": 100,
+  "spatial_options_rejected_for_wave": true,
+  "dll_sha256": "b2bc1caed72edb8c6adff815b9b8458f2bb4a7ca359f3403d42257f86f889fb9"
+}

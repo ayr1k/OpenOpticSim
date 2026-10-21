@@ -1,0 +1,184 @@
+{
+  "description": "原创教学处方。缩小光阑，观察球差与通光的变化。材料为合成教学模型，不代表商品镜头。",
+  "fields": [
+    0.0,
+    0.07,
+    0.1
+  ],
+  "materials": [
+    {
+      "n": 1.0,
+      "name": "Air",
+      "range_nm": [
+        380.0,
+        780.0
+      ],
+      "sellmeier": null,
+      "source": "Ideal vacuum approximation n=1"
+    },
+    {
+      "n": 1.52,
+      "name": "Teaching crown",
+      "range_nm": [
+        380.0,
+        780.0
+      ],
+      "sellmeier": [
+        [
+          1.04,
+          0.23,
+          1.01
+        ],
+        [
+          0.006,
+          0.02,
+          103.0
+        ]
+      ],
+      "source": "OSS synthetic teaching material; not a commercial glass"
+    },
+    {
+      "n": 1.62,
+      "name": "Teaching flint",
+      "range_nm": [
+        380.0,
+        780.0
+      ],
+      "sellmeier": [
+        [
+          1.3,
+          0.3,
+          1.1
+        ],
+        [
+          0.009,
+          0.04,
+          110.0
+        ]
+      ],
+      "source": "OSS synthetic teaching material; not a commercial glass"
+    }
+  ],
+  "name": "03 · 三片式探索",
+  "object_distance": null,
+  "schema_version": 1,
+  "sensor": [
+    36.0,
+    24.0
+  ],
+  "stop": 2,
+  "surfaces": [
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": 0.025,
+      "material": 1,
+      "name": "第一片前面",
+      "semi_aperture": 10.0,
+      "thickness": 4.0
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": -0.014285714285714285,
+      "material": 0,
+      "name": "第一片后面",
+      "semi_aperture": 10.0,
+      "thickness": 4.0
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": 0.0,
+      "material": 0,
+      "name": "光阑",
+      "semi_aperture": 4.0,
+      "thickness": 2.0
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": -0.02857142857142857,
+      "material": 2,
+      "name": "第二片前面",
+      "semi_aperture": 8.0,
+      "thickness": 2.0
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": 0.02857142857142857,
+      "material": 0,
+      "name": "第二片后面",
+      "semi_aperture": 8.0,
+      "thickness": 4.0
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": 0.016666666666666666,
+      "material": 1,
+      "name": "第三片前面",
+      "semi_aperture": 10.0,
+      "thickness": 4.0
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": -0.025,
+      "material": 0,
+      "name": "第三片后面",
+      "semi_aperture": 10.0,
+      "thickness": 55.0
+    }
+  ],
+  "wavelengths": [
+    {
+      "nm": 486.1327,
+      "weight": 1.0
+    },
+    {
+      "nm": 587.5618,
+      "weight": 1.0
+    },
+    {
+      "nm": 656.2725,
+      "weight": 1.0
+    }
+  ]
+}

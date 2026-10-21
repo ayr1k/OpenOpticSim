@@ -21,6 +21,7 @@ const order = [
   "aperture",
   "optimization",
   "groups",
+  "spatial",
   "motion",
   "study",
   "versions",

@@ -93,73 +93,120 @@ pub fn trace_ray(
     clip: bool,
     until: Option<usize>,
 ) -> RayPath {
-    let mut q = origin;
-    let mut d = direction.normalize();
-    let mut n = 1.;
-    let mut out = RayPath {
-        points: vec![q.into()],
-        direction: d.into(),
-        optical_path: 0.,
-        wavelength_nm: nm,
-        status: RayStatus::Complete,
-        surface: None,
-        stage: TraceStage::Trace,
-        aiming: None,
-    };
-    for (i, (s, z)) in p.surfaces.iter().zip(p.vertices()).enumerate() {
-        let (hit, normal, t) = match intersect(s, z, q, d) {
-            Ok(v) => v,
-            Err(e) => {
-                out.status = e;
+    PreparedTrace::new(p, nm).trace(origin, direction, clip, until)
+}
+/// Immutable per-wavelength preparation. Rebuild after any prescription edit.
+pub struct PreparedTrace<'a> {
+    p: &'a Project,
+    nm: f64,
+    vertices: Vec<f64>,
+    indices: Vec<Option<f64>>,
+    launch_z: f64,
+}
+impl<'a> PreparedTrace<'a> {
+    pub fn new(p: &'a Project, nm: f64) -> Self {
+        let launch_z = p
+            .surfaces
+            .first()
+            .map(|s| {
+                (0..=32)
+                    .filter_map(|i| s.sag(s.semi_aperture * i as f64 / 32.).map(|v| v.0))
+                    .fold(0., f64::min)
+                    - 0.5
+            })
+            .unwrap_or(-0.5);
+        Self {
+            p,
+            nm,
+            vertices: p.vertices(),
+            indices: p
+                .surfaces
+                .iter()
+                .map(|s| p.materials.get(s.material).and_then(|m| m.index(nm).ok()))
+                .collect(),
+            launch_z,
+        }
+    }
+    pub fn launch(&self, field: f64, xy: [f64; 2]) -> (V3, V3) {
+        let q = V3::new(xy[0], xy[1], self.launch_z);
+        let d = if let Some(dist) = self.p.object_distance {
+            (q - V3::new(0., -dist * field.tan(), -dist)).normalize()
+        } else {
+            V3::new(0., field.sin(), field.cos())
+        };
+        (q, d)
+    }
+    pub fn trace(&self, origin: V3, direction: V3, clip: bool, until: Option<usize>) -> RayPath {
+        let p = self.p;
+        let nm = self.nm;
+        let mut q = origin;
+        let mut d = direction.normalize();
+        let mut n = 1.;
+        let mut out = RayPath {
+            points: vec![q.into()],
+            direction: d.into(),
+            optical_path: 0.,
+            wavelength_nm: nm,
+            status: RayStatus::Complete,
+            surface: None,
+            stage: TraceStage::Trace,
+            aiming: None,
+        };
+        for (i, (s, &z)) in p.surfaces.iter().zip(&self.vertices).enumerate() {
+            let (hit, normal, t) = match intersect(s, z, q, d) {
+                Ok(v) => v,
+                Err(e) => {
+                    out.status = e;
+                    out.surface = Some(i);
+                    return out;
+                }
+            };
+            out.optical_path += n * t;
+            out.points.push(hit.into());
+            q = hit;
+            if clip && q.x.hypot(q.y) > s.semi_aperture + 1e-8 {
+                out.status = RayStatus::Blocked;
                 out.surface = Some(i);
                 return out;
             }
-        };
-        out.optical_path += n * t;
-        out.points.push(hit.into());
-        q = hit;
-        if clip && q.x.hypot(q.y) > s.semi_aperture + 1e-8 {
-            out.status = RayStatus::Blocked;
-            out.surface = Some(i);
-            return out;
-        }
-        if until == Some(i) {
+            if until == Some(i) {
+                out.direction = d.into();
+                return out;
+            }
+            let n2 = match self.indices[i] {
+                Some(v) => v,
+                None => {
+                    out.status = RayStatus::InvalidMaterial;
+                    out.surface = Some(i);
+                    return out;
+                }
+            };
+            d = match refract(d, normal, n, n2) {
+                Some(v) => v,
+                None => {
+                    out.status = RayStatus::TotalInternalReflection;
+                    out.surface = Some(i);
+                    return out;
+                }
+            };
+            n = n2;
             out.direction = d.into();
+        }
+        if d.z <= 1e-12 {
+            out.status = RayStatus::Missed;
             return out;
         }
-        let n2 = match p.materials.get(s.material).and_then(|m| m.index(nm).ok()) {
-            Some(v) => v,
-            None => {
-                out.status = RayStatus::InvalidMaterial;
-                out.surface = Some(i);
-                return out;
-            }
-        };
-        d = match refract(d, normal, n, n2) {
-            Some(v) => v,
-            None => {
-                out.status = RayStatus::TotalInternalReflection;
-                out.surface = Some(i);
-                return out;
-            }
-        };
-        n = n2;
+        let t = (p.image_z() - q.z) / d.z;
+        if t < 0. {
+            out.status = RayStatus::Missed;
+            return out;
+        }
+        q += t * d;
+        out.optical_path += n * t;
+        out.points.push(q.into());
         out.direction = d.into();
+        out
     }
-    if d.z <= 1e-12 {
-        out.status = RayStatus::Missed;
-        return out;
-    }
-    let t = (p.image_z() - q.z) / d.z;
-    if t < 0. {
-        out.status = RayStatus::Missed;
-        return out;
-    }
-    q += t * d;
-    out.optical_path += n * t;
-    out.points.push(q.into());
-    out.direction = d.into();
-    out
 }
 pub fn launch(p: &Project, field: f64, xy: [f64; 2]) -> (V3, V3) {
     let s = &p.surfaces[0];

@@ -1,0 +1,10 @@
+{
+  "browser": "local in-app browser with development CLI bridge",
+  "saved_and_reopened": true,
+  "offset_x_mm": 0.1,
+  "complete_rays": 5,
+  "first_opl_mm": 159.65358633652934,
+  "screenshot": "docs/screenshots/wollaston-2.0.png",
+  "saved_project_sha256": "be6fb523b786dbdd5ba6b68e7d04ecfa309e4d435ef298d186725180ac59f39d",
+  "native_dialog_tested": false
+}

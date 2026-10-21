@@ -1,0 +1,13 @@
+[package]
+name = "oos-wollaston"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Independent sequential optical simulation and design framework"
+[lib]
+name = "wollaston"
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+nalgebra = "0.33"
+rustfft = "6"

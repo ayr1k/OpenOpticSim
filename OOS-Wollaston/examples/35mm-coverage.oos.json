@@ -1,0 +1,124 @@
+{
+  "description": "Original OSS synthetic singlet, EFL 35 mm, f/35, monochromatic d line. Not a corrected photographic lens. Actual chief-ray image-height targeting demonstrates distortion and sensor coverage. Apache-2.0.",
+  "fields": [
+    0,
+    0.33029735482925365,
+    0.4750107562650968,
+    0.5536181472226009
+  ],
+  "materials": [
+    {
+      "n": 1.0,
+      "name": "Air",
+      "range_nm": [
+        380.0,
+        780.0
+      ],
+      "sellmeier": null,
+      "source": "Ideal vacuum approximation n=1"
+    },
+    {
+      "n": 1.52,
+      "name": "Teaching crown",
+      "range_nm": [
+        380.0,
+        780.0
+      ],
+      "sellmeier": [
+        [
+          1.04,
+          0.23,
+          1.01
+        ],
+        [
+          0.006,
+          0.02,
+          103.0
+        ]
+      ],
+      "source": "OSS synthetic teaching material; not a commercial glass"
+    },
+    {
+      "n": 1.62,
+      "name": "Teaching flint",
+      "range_nm": [
+        380.0,
+        780.0
+      ],
+      "sellmeier": [
+        [
+          1.3,
+          0.3,
+          1.1
+        ],
+        [
+          0.009,
+          0.04,
+          110.0
+        ]
+      ],
+      "source": "OSS synthetic teaching material; not a commercial glass"
+    }
+  ],
+  "name": "35 mm · 全画幅覆盖验证",
+  "object_distance": null,
+  "schema_version": 3,
+  "sensor": [
+    36.0,
+    24.0
+  ],
+  "stop": 0,
+  "surfaces": [
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": 0.0,
+      "material": 0,
+      "name": "光阑",
+      "semi_aperture": 0.5,
+      "thickness": 1.4259289273678943
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": 0.028051889005320577,
+      "material": 1,
+      "name": "前表面",
+      "semi_aperture": 8.555573564207366,
+      "thickness": 2.8518578547357887
+    },
+    {
+      "asphere": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conic": 0.0,
+      "curvature": -0.028051889005320577,
+      "material": 0,
+      "name": "后表面",
+      "semi_aperture": 8.555573564207366,
+      "thickness": 32.79636532946157
+    }
+  ],
+  "wavelengths": [
+    {
+      "nm": 587.5618,
+      "weight": 1
+    }
+  ],
+  "field_spec": {
+    "mode": "sensor"
+  }
+}

@@ -45,7 +45,7 @@ pub struct DesignOutcome {
 pub fn seed(kind: &str) -> Result<Project, String> {
     let mut p = examples().remove(3);
     let catalog: serde_json::Value =
-        serde_json::from_str(include_str!("../../../src/data/glass-catalog.json")).unwrap();
+        serde_json::from_str(include_str!("../../../data/glass-catalog.json")).unwrap();
     for (index, name) in [(1, "SCHOTT N-BK7"), (2, "SCHOTT N-F2")] {
         let item = catalog["entries"]
             .as_array()

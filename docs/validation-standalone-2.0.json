@@ -1,0 +1,9 @@
+{
+  "outside_parent_checkout": true,
+  "locked_offline_build": true,
+  "full_framework_tests_passed": true,
+  "standalone_cli_analyze": true,
+  "used_parent_target": false,
+  "source_folder": "OOS-Wollaston",
+  "temporary_copy_retained": true
+}

@@ -1,0 +1,229 @@
+{
+  "baseline_sha256": "a957d1507b04c800287b40e08777d9e2df4d331b7f022dc2bf790a444967810b",
+  "current_sha256": "d268a8aac8064563a81ddeb4a904771420b4b76330e54ef369a841af4cbc081f",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "AMD64 Family 26 Model 68 Stepping 0, AuthenticAMD",
+  "method": "One warmup, five interleaved repetitions; median wall time includes CLI startup and JSON serialization. Same requests, double precision, no relaxed tolerances. No concurrent benchmark workloads.",
+  "results": [
+    {
+      "case": "tessar-50mm-1.3",
+      "operation": "analyze",
+      "source_sha256": "2acec00d5106b634a5d028428d434fc3b0538d37f1a6605c07415436e5043d64",
+      "request_sha256": "1e38cf8528c4264e3304293b8121bc0d7fbe9f3480294a685f6fc621ae3697cd",
+      "max_absolute_difference": 0.0,
+      "baseline_seconds": [
+        0.1036796000553295,
+        0.10317030001897365,
+        0.1046453999588266,
+        0.10496789996977895,
+        0.10364029998891056
+      ],
+      "current_seconds": [
+        0.08534730004612356,
+        0.08493939996697009,
+        0.08436799992341548,
+        0.08460379997268319,
+        0.08516189991496503
+      ],
+      "speedup": 1.2206302386836594
+    },
+    {
+      "case": "tessar-50mm-1.3",
+      "operation": "wave",
+      "source_sha256": "2acec00d5106b634a5d028428d434fc3b0538d37f1a6605c07415436e5043d64",
+      "request_sha256": "fc5b1c4da1b1a24aef071d3bc553a49f5ac9bc7402be6bdcf5d9e2e46555f223",
+      "max_absolute_difference": 0,
+      "baseline_seconds": [
+        0.3196961999638006,
+        0.32039090001489967,
+        0.31961820006836206,
+        0.320547700044699,
+        0.3197117999661714
+      ],
+      "current_seconds": [
+        0.2695289000403136,
+        0.26977929996792227,
+        0.2657018000027165,
+        0.2693578000180423,
+        0.26733020006213337
+      ],
+      "speedup": 1.1869409385759617
+    },
+    {
+      "case": "tessar-50mm-1.3",
+      "operation": "preview",
+      "source_sha256": "2acec00d5106b634a5d028428d434fc3b0538d37f1a6605c07415436e5043d64",
+      "request_sha256": "81241d144d6e699eff5501c19f80b8826c54984ea003cabf46c58601c5751ded",
+      "max_absolute_difference": 0.0,
+      "baseline_seconds": [
+        1.0503437999868765,
+        1.0595617999788374,
+        1.0528505999827757,
+        1.0564289999892935,
+        1.052355399937369
+      ],
+      "current_seconds": [
+        0.8930844999849796,
+        0.8989429000066593,
+        0.8872627000091597,
+        0.8876622000243515,
+        0.8955091999378055
+      ],
+      "speedup": 1.1788924788197346
+    },
+    {
+      "case": "planar-50mm-1.3",
+      "operation": "analyze",
+      "source_sha256": "3e28bc0fcd462e76d523d6a5a7e7160f9efbf4f801d2f65edaf6990d35dcedda",
+      "request_sha256": "f675e89ea51a4ab67705779d829e71fa9c3d05942bb2d6d1c021fbd4f173daa2",
+      "max_absolute_difference": 0.0,
+      "baseline_seconds": [
+        0.09603429993148893,
+        0.09689520008396357,
+        0.09661750006489456,
+        0.096820899983868,
+        0.09651010006200522
+      ],
+      "current_seconds": [
+        0.08029039995744824,
+        0.08068899996578693,
+        0.08100020000711083,
+        0.08169050002470613,
+        0.08059069991577417
+      ],
+      "speedup": 1.1974060913614184
+    },
+    {
+      "case": "double_gauss-50mm-1.3",
+      "operation": "analyze",
+      "source_sha256": "de15a2b0de7829666ff52dcd06d646a3479761aa1d63db25d9e2f1cc1ba381e7",
+      "request_sha256": "57834a8b9148f5a1567928c389e8750e9ff08223a46f1b1b25a3792a7d35691a",
+      "max_absolute_difference": 0.0,
+      "baseline_seconds": [
+        0.1057705000275746,
+        0.10482789995148778,
+        0.10617669997736812,
+        0.10507390007842332,
+        0.10533199994824827
+      ],
+      "current_seconds": [
+        0.09158240002579987,
+        0.0900141999591142,
+        0.08966229995712638,
+        0.08958479994907975,
+        0.08982919994741678
+      ],
+      "speedup": 1.172580853552145
+    },
+    {
+      "case": "sonnar-50mm-1.3",
+      "operation": "analyze",
+      "source_sha256": "323a9405df5b202cdbed6bbe809a9b9f10c56fc18091cb73372138069a7db77b",
+      "request_sha256": "80148417bb4b3f6d8bfe7772fda4c54df6aee68be161cf32a45bb62a604c55f9",
+      "max_absolute_difference": 0.0,
+      "baseline_seconds": [
+        0.12283909996040165,
+        0.12218639999628067,
+        0.12219150003511459,
+        0.12283239990938455,
+        0.12256170006003231
+      ],
+      "current_seconds": [
+        0.10389919998124242,
+        0.10335150000173599,
+        0.10454239998944104,
+        0.10256279993336648,
+        0.10459899995476007
+      ],
+      "speedup": 1.1796212105787065
+    },
+    {
+      "case": "24-70mm-zoom",
+      "operation": "analyze",
+      "source_sha256": "5057950dba58edc0c8caee5dead249f12e64c33830205de80c30f74b449c6dc9",
+      "request_sha256": "58c9f48fcf97965a1351f4c57d4f4ef8228b06e1d64c3564cb68046cda73c9ea",
+      "max_absolute_difference": 0.0,
+      "baseline_seconds": [
+        0.05333010002505034,
+        0.05217930010985583,
+        0.05277790001127869,
+        0.052618800080381334,
+        0.05285210011061281
+      ],
+      "current_seconds": [
+        0.03620619990397245,
+        0.03606069996021688,
+        0.03591460001189262,
+        0.03655299998354167,
+        0.03608460002578795
+      ],
+      "speedup": 1.462615630312123
+    },
+    {
+      "case": "400mm-repaired",
+      "operation": "analyze",
+      "source_sha256": "7f5310b18d175a8329236db5fb8c2b055563733b65d81d82b034b62f97e0f51b",
+      "request_sha256": "7d0004a8abf1961767419e546fab7cb70dcfbf18482001c7b6c75c8cd35741c7",
+      "max_absolute_difference": 0.0,
+      "baseline_seconds": [
+        0.21615830005612224,
+        0.21542409993708134,
+        0.2161130999447778,
+        0.21723089995793998,
+        0.21585349994711578
+      ],
+      "current_seconds": [
+        0.1972322000656277,
+        0.19713929994031787,
+        0.19802659994456917,
+        0.19715629995334893,
+        0.19770050002261996
+      ],
+      "speedup": 1.0957292971070018
+    },
+    {
+      "case": "400mm-repaired",
+      "operation": "wave",
+      "source_sha256": "7f5310b18d175a8329236db5fb8c2b055563733b65d81d82b034b62f97e0f51b",
+      "request_sha256": "97011a04910489333fa60913918fe02b11d9f782281fc60c55b4fc6e36aad2f8",
+      "max_absolute_difference": 0,
+      "baseline_seconds": [
+        0.8272768999449909,
+        0.8289141999557614,
+        0.8296039000852033,
+        0.8256104999454692,
+        0.8250062000006437
+      ],
+      "current_seconds": [
+        0.7625417000381276,
+        0.7631954000098631,
+        0.7595699999947101,
+        0.7611342000309378,
+        0.7648718000855297
+      ],
+      "speedup": 1.08489398009791
+    },
+    {
+      "case": "400mm-repaired",
+      "operation": "preview",
+      "source_sha256": "7f5310b18d175a8329236db5fb8c2b055563733b65d81d82b034b62f97e0f51b",
+      "request_sha256": "ae705f7cf69c5a7f1191db602d3f4b1f77bcf8643111a72f4f44dd3f89c36fe5",
+      "max_absolute_difference": 0.0,
+      "baseline_seconds": [
+        3.419636099948548,
+        3.425234700087458,
+        3.4120048999320716,
+        3.4191631000721827,
+        3.414093599887565
+      ],
+      "current_seconds": [
+        3.2028123000636697,
+        3.2001142000081018,
+        3.194275700021535,
+        3.207232299959287,
+        3.1963817999931052
+      ],
+      "speedup": 1.0684503384483985
+    }
+  ]
+}

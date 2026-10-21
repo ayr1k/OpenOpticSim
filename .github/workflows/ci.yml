@@ -30,6 +30,8 @@ jobs:
       - run: pnpm build
       - run: cargo test -p openoptics --locked --release
       - run: cargo check -p openopticsim-desktop --locked
+      - run: cargo test --manifest-path OOS-Wollaston/Cargo.toml --workspace --locked --release
+      - run: cargo clippy --manifest-path OOS-Wollaston/Cargo.toml --workspace --all-targets --locked -- -D warnings
       - run: cargo test -p openopticsim-desktop --locked --release
       - run: cargo clippy --workspace --all-targets --locked -- -D warnings
       - run: cargo build -p oos-cli --locked

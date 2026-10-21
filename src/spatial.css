@@ -1,0 +1,9 @@
+.spatial-panel { padding: 22px; }
+.spatial-panel > p { max-width: 100ch; line-height: 1.8; color: var(--muted, #9fb2ba); }
+.spatial-panel > button { margin: 8px 8px 12px 0; }
+.spatial-panel > div:not([style]) { display: flex; flex-wrap: wrap; gap: 16px; margin: 12px 0; }
+.spatial-panel label { display: inline-flex; align-items: center; gap: 8px; margin: 6px 16px 6px 0; }
+.spatial-panel input[type=number] { width: 108px; min-width: 0; padding: 8px; }
+.spatial-panel details { padding: 12px 0; }
+.spatial-panel details input[type=number] { width: 80px; margin: 4px; }
+.spatial-panel svg { display: block; border: 1px solid #30434c; border-radius: 8px; margin: 12px 0; }

@@ -1,0 +1,2127 @@
+{
+  "schema_version": 3,
+  "name": "400 mm · 传感器覆盖工作区",
+  "description": "0.9 coverage workflow. Preserves the 0.7 repaired optical prescription. f/16, synthetic teaching materials, not a Canon f/2.8 replica.",
+  "materials": [
+    {
+      "name": "Air",
+      "n": 1,
+      "sellmeier": null,
+      "range_nm": [
+        380,
+        780
+      ],
+      "source": "Ideal vacuum approximation n=1"
+    },
+    {
+      "name": "Teaching crown",
+      "n": 1.52,
+      "sellmeier": [
+        [
+          1.04,
+          0.23,
+          1.01
+        ],
+        [
+          0.006,
+          0.02,
+          103
+        ]
+      ],
+      "range_nm": [
+        380,
+        780
+      ],
+      "source": "OSS synthetic teaching material; not a commercial glass"
+    },
+    {
+      "name": "Teaching flint",
+      "n": 1.62,
+      "sellmeier": [
+        [
+          1.3,
+          0.3,
+          1.1
+        ],
+        [
+          0.009,
+          0.04,
+          110
+        ]
+      ],
+      "range_nm": [
+        380,
+        780
+      ],
+      "source": "OSS synthetic teaching material; not a commercial glass"
+    }
+  ],
+  "surfaces": [
+    {
+      "name": "前镜组 · 前面",
+      "curvature": 0.0005943040373063071,
+      "thickness": 7,
+      "material": 1,
+      "semi_aperture": 35,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 35,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "前镜组· 后面",
+      "curvature": 0.0016483345427980743,
+      "thickness": 60,
+      "material": 0,
+      "semi_aperture": 35,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 35,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "双凸透镜 · 前面",
+      "curvature": 0.0008486319997615321,
+      "thickness": 7,
+      "material": 2,
+      "semi_aperture": 20,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 20,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "双凸透镜 · 后面",
+      "curvature": -0.0007840588903977271,
+      "thickness": 0.1,
+      "material": 0,
+      "semi_aperture": 20,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 20,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "双凹透镜 · 前面",
+      "curvature": -0.001037479509367551,
+      "thickness": 2,
+      "material": 1,
+      "semi_aperture": 20,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 22.5,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "双凹透镜 · 后面",
+      "curvature": 0.0022187912515047215,
+      "thickness": 0.1,
+      "material": 0,
+      "semi_aperture": 18.5,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 22.5,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "平凸透镜 · 前面",
+      "curvature": 0.0019242247846174754,
+      "thickness": 6,
+      "material": 2,
+      "semi_aperture": 18.5,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 18.5,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "平凸透镜 · 后面",
+      "curvature": 0.0,
+      "thickness": 12,
+      "material": 0,
+      "semi_aperture": 18.5,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 18.5,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "弯月透镜 · 前面",
+      "curvature": 0.0024297849942807666,
+      "thickness": 3,
+      "material": 1,
+      "semi_aperture": 17.5,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 17.5,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "弯月透镜 · 后面",
+      "curvature": 0.0020918439864446876,
+      "thickness": 0.1,
+      "material": 0,
+      "semi_aperture": 17.5,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 17.5,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "弯月透镜 · 前面",
+      "curvature": 0.003214383672033722,
+      "thickness": 1,
+      "material": 1,
+      "semi_aperture": 16.5,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 16.5,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "弯月透镜 · 后面",
+      "curvature": 0.004017655294029518,
+      "thickness": 0.1,
+      "material": 0,
+      "semi_aperture": 15,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 16.5,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "弯月透镜 · 前面",
+      "curvature": 0.008161437671506844,
+      "thickness": 6,
+      "material": 1,
+      "semi_aperture": 15,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "弯月透镜 · 后面",
+      "curvature": 0.0033529061471674147,
+      "thickness": 6,
+      "material": 0,
+      "semi_aperture": 15,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "独立光阑",
+      "curvature": 0.0,
+      "thickness": 2,
+      "material": 0,
+      "semi_aperture": 12.44782123167043,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15.0,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "双凹透镜 · 前面",
+      "curvature": -0.0015863212543551085,
+      "thickness": 1,
+      "material": 1,
+      "semi_aperture": 15.0,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15.0,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "双凹透镜 · 后面",
+      "curvature": 0.0037874218556329794,
+      "thickness": 18,
+      "material": 0,
+      "semi_aperture": 15.0,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15.0,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "弯月透镜 · 前面",
+      "curvature": 0.002897934378487237,
+      "thickness": 1,
+      "material": 1,
+      "semi_aperture": 15.0,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15.0,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "弯月透镜 · 后面",
+      "curvature": 0.004781032961455678,
+      "thickness": 0.1,
+      "material": 0,
+      "semi_aperture": 15.0,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15.0,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "双凸透镜 · 前面",
+      "curvature": 0.004336990312526639,
+      "thickness": 4,
+      "material": 1,
+      "semi_aperture": 15.0,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15.0,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "双凸透镜 · 后面",
+      "curvature": -0.00276671474275618,
+      "thickness": 0.5,
+      "material": 0,
+      "semi_aperture": 15.0,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15.0,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "胶合双片 · 前面",
+      "curvature": 0.0047921047306888,
+      "thickness": 3,
+      "material": 1,
+      "semi_aperture": 15.0,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15.0,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "胶合双片 · 胶合面",
+      "curvature": -0.006737570605622539,
+      "thickness": 1,
+      "material": 2,
+      "semi_aperture": 15.0,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15.0,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "胶合双片 · 后面",
+      "curvature": 0.0029159707286003336,
+      "thickness": 3,
+      "material": 0,
+      "semi_aperture": 15.0,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15.0,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "双凹透镜 · 前面",
+      "curvature": -0.004217381436693089,
+      "thickness": 1,
+      "material": 1,
+      "semi_aperture": 15.0,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15.0,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "双凹透镜 · 后面",
+      "curvature": 0.0055571467965197605,
+      "thickness": 3,
+      "material": 0,
+      "semi_aperture": 15.0,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15.0,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "平凸透镜 · 前面",
+      "curvature": 0.0022642493869791153,
+      "thickness": 3,
+      "material": 1,
+      "semi_aperture": 15.0,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15.0,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "平凸透镜 · 后面",
+      "curvature": 0.0,
+      "thickness": 1,
+      "material": 0,
+      "semi_aperture": 15.0,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15.0,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "双凸透镜 · 前面",
+      "curvature": 0.002334583818903134,
+      "thickness": 5.5,
+      "material": 1,
+      "semi_aperture": 15.0,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15.0,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "双凸透镜 · 后面",
+      "curvature": -0.006154987284917934,
+      "thickness": 0.1,
+      "material": 0,
+      "semi_aperture": 15.0,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15.0,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "平凹透镜 · 前面",
+      "curvature": -0.0004790463724761449,
+      "thickness": 1,
+      "material": 1,
+      "semi_aperture": 15.0,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15.0,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "平凹透镜 · 后面",
+      "curvature": 0.0,
+      "thickness": 5,
+      "material": 0,
+      "semi_aperture": 15.0,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15.0,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "平凸透镜 · 前面",
+      "curvature": 0.0,
+      "thickness": 0.3,
+      "material": 1,
+      "semi_aperture": 15,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15,
+        "shape": "flat"
+      }
+    },
+    {
+      "name": "平凸透镜 · 后面",
+      "curvature": 0.0,
+      "thickness": 388.7863114888424,
+      "material": 0,
+      "semi_aperture": 15,
+      "conic": 0,
+      "asphere": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mechanical": {
+        "semi_diameter": 15,
+        "shape": "flat"
+      }
+    }
+  ],
+  "stop": 14,
+  "object_distance": null,
+  "sensor": [
+    36,
+    24
+  ],
+  "fields": [
+    0,
+    0.0299910048568779,
+    0.044969661852327585,
+    0.05403063029487964
+  ],
+  "wavelengths": [
+    {
+      "nm": 486.1327,
+      "weight": 1
+    },
+    {
+      "nm": 587.5618,
+      "weight": 1
+    },
+    {
+      "nm": 656.2725,
+      "weight": 1
+    }
+  ],
+  "workspace": {
+    "schema_version": 1,
+    "versions": [
+      {
+        "id": "supplied-original",
+        "name": "用户原始处方",
+        "created_at": "2026-10-19T05:17:48.588620+00:00",
+        "note": "原始 34 面、光阑半径 1.2 mm、旧视场和 50 mm 像距。存在虚像与瞄准失败。",
+        "prescription": {
+          "schema_version": 2,
+          "name": "400mm f不知道多少 没有IS 也没有USM Laji",
+          "description": "用户创建的镜头设计",
+          "materials": [
+            {
+              "name": "Air",
+              "n": 1,
+              "sellmeier": null,
+              "range_nm": [
+                380,
+                780
+              ],
+              "source": "Ideal vacuum approximation n=1"
+            },
+            {
+              "name": "Teaching crown",
+              "n": 1.52,
+              "sellmeier": [
+                [
+                  1.04,
+                  0.23,
+                  1.01
+                ],
+                [
+                  0.006,
+                  0.02,
+                  103
+                ]
+              ],
+              "range_nm": [
+                380,
+                780
+              ],
+              "source": "OSS synthetic teaching material; not a commercial glass"
+            },
+            {
+              "name": "Teaching flint",
+              "n": 1.62,
+              "sellmeier": [
+                [
+                  1.3,
+                  0.3,
+                  1.1
+                ],
+                [
+                  0.009,
+                  0.04,
+                  110
+                ]
+              ],
+              "range_nm": [
+                380,
+                780
+              ],
+              "source": "OSS synthetic teaching material; not a commercial glass"
+            }
+          ],
+          "surfaces": [
+            {
+              "name": "前镜组 · 前面",
+              "curvature": 0.013333333333333334,
+              "thickness": 7,
+              "material": 1,
+              "semi_aperture": 35,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "name": "前镜组· 后面",
+              "curvature": 0.0044444444444444444,
+              "thickness": 60,
+              "material": 0,
+              "semi_aperture": 35,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "name": "双凸透镜 · 前面",
+              "curvature": 0.02,
+              "thickness": 7,
+              "material": 2,
+              "semi_aperture": 20,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "name": "双凸透镜 · 后面",
+              "curvature": -0.01,
+              "thickness": 0.1,
+              "material": 0,
+              "semi_aperture": 20,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "name": "双凹透镜 · 前面",
+              "curvature": -0.01,
+              "thickness": 2,
+              "material": 1,
+              "semi_aperture": 20,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 22.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "双凹透镜 · 后面",
+              "curvature": 0.02857142857142857,
+              "thickness": 0.1,
+              "material": 0,
+              "semi_aperture": 18.5,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 22.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "平凸透镜 · 前面",
+              "curvature": 0.02857142857142857,
+              "thickness": 6,
+              "material": 2,
+              "semi_aperture": 18.5,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 18.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "平凸透镜 · 后面",
+              "curvature": 0,
+              "thickness": 12,
+              "material": 0,
+              "semi_aperture": 18.5,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 18.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "弯月透镜 · 前面",
+              "curvature": 0.025,
+              "thickness": 3,
+              "material": 1,
+              "semi_aperture": 17.5,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "name": "弯月透镜 · 后面",
+              "curvature": 0.01,
+              "thickness": 0.1,
+              "material": 0,
+              "semi_aperture": 17.5,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "name": "弯月透镜 · 前面",
+              "curvature": 0.02857142857142857,
+              "thickness": 1,
+              "material": 1,
+              "semi_aperture": 16.5,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "name": "弯月透镜 · 后面",
+              "curvature": 0.05,
+              "thickness": 0.1,
+              "material": 0,
+              "semi_aperture": 15,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 16.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "弯月透镜 · 前面",
+              "curvature": 0.05,
+              "thickness": 6,
+              "material": 1,
+              "semi_aperture": 15,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "name": "弯月透镜 · 后面",
+              "curvature": 0.02,
+              "thickness": 6,
+              "material": 0,
+              "semi_aperture": 15,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "name": "弯月透镜 · 前面",
+              "curvature": 0,
+              "thickness": 2,
+              "material": 0,
+              "semi_aperture": 1.2,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 10,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "双凹透镜 · 前面",
+              "curvature": -0.006666666666666667,
+              "thickness": 1,
+              "material": 1,
+              "semi_aperture": 12.5,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "name": "双凹透镜 · 后面",
+              "curvature": 0.025,
+              "thickness": 18,
+              "material": 0,
+              "semi_aperture": 11,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 12.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "弯月透镜 · 前面",
+              "curvature": 0.02857142857142857,
+              "thickness": 1,
+              "material": 1,
+              "semi_aperture": 10,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "name": "弯月透镜 · 后面",
+              "curvature": 0.037037037037037035,
+              "thickness": 0.1,
+              "material": 0,
+              "semi_aperture": 9,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 10,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "双凸透镜 · 前面",
+              "curvature": 0.037037037037037035,
+              "thickness": 4,
+              "material": 1,
+              "semi_aperture": 9,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "name": "双凸透镜 · 后面",
+              "curvature": -0.037037037037037035,
+              "thickness": 0.5,
+              "material": 0,
+              "semi_aperture": 9,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "name": "胶合双片 · 前面",
+              "curvature": 0.03333333333333333,
+              "thickness": 3,
+              "material": 1,
+              "semi_aperture": 8,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 8,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "胶合双片 · 胶合面",
+              "curvature": -0.03333333333333333,
+              "thickness": 1,
+              "material": 2,
+              "semi_aperture": 8,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 8,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "胶合双片 · 后面",
+              "curvature": 0.04,
+              "thickness": 3,
+              "material": 0,
+              "semi_aperture": 8,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 8,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "双凹透镜 · 前面",
+              "curvature": -0.04,
+              "thickness": 1,
+              "material": 1,
+              "semi_aperture": 8,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 9,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "双凹透镜 · 后面",
+              "curvature": 0.04,
+              "thickness": 3,
+              "material": 0,
+              "semi_aperture": 9,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 9,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "平凸透镜 · 前面",
+              "curvature": 0.02,
+              "thickness": 3,
+              "material": 1,
+              "semi_aperture": 11.5,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 11.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "平凸透镜 · 后面",
+              "curvature": 0,
+              "thickness": 1,
+              "material": 0,
+              "semi_aperture": 11.5,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 11.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "双凸透镜 · 前面",
+              "curvature": 0.02,
+              "thickness": 5.5,
+              "material": 1,
+              "semi_aperture": 11.5,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 11.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "双凸透镜 · 后面",
+              "curvature": -0.03333333333333333,
+              "thickness": 0.1,
+              "material": 0,
+              "semi_aperture": 11.5,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 11.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "平凸透镜 · 前面",
+              "curvature": -0.03333333333333333,
+              "thickness": 1,
+              "material": 1,
+              "semi_aperture": 11.5,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 12.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "平凸透镜 · 后面",
+              "curvature": 0,
+              "thickness": 5,
+              "material": 0,
+              "semi_aperture": 12.5,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 12.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "平凸透镜 · 前面",
+              "curvature": 0,
+              "thickness": 0.3,
+              "material": 1,
+              "semi_aperture": 15,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "平凸透镜 · 后面",
+              "curvature": 0,
+              "thickness": 50,
+              "material": 0,
+              "semi_aperture": 15,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15,
+                "shape": "flat"
+              }
+            }
+          ],
+          "stop": 14,
+          "object_distance": null,
+          "sensor": [
+            36,
+            24
+          ],
+          "fields": [
+            0,
+            0.07000515629749256,
+            0.10000736613927509
+          ],
+          "wavelengths": [
+            {
+              "nm": 486.1327,
+              "weight": 1
+            },
+            {
+              "nm": 587.5618,
+              "weight": 1
+            },
+            {
+              "nm": 656.2725,
+              "weight": 1
+            }
+          ]
+        },
+        "analysis_preset": "balanced"
+      },
+      {
+        "id": "repaired-400mm-f16",
+        "name": "400 mm f/16 实像修正版",
+        "created_at": "2026-10-19T05:17:48.588620+00:00",
+        "note": "经过 65×65、F/d/C、全画幅对角视场和多色 PSF/MTF 验证；不承诺商业镜头画质或制造可行性。",
+        "prescription": {
+          "schema_version": 2,
+          "name": "400 mm 实像修正版 · f/16",
+          "description": "保留用户的 34 面顺序、教学材料和内部轴向间隔；重新分配曲率、扩大部分后组有效/机械口径并设置后方实像面。名义 400 mm、f/16，覆盖全画幅对角视场的旋转对称教学设计；不是佳能处方或 400 mm f/2.8 复原。原始处方随版本保存。",
+          "materials": [
+            {
+              "name": "Air",
+              "n": 1,
+              "sellmeier": null,
+              "range_nm": [
+                380,
+                780
+              ],
+              "source": "Ideal vacuum approximation n=1"
+            },
+            {
+              "name": "Teaching crown",
+              "n": 1.52,
+              "sellmeier": [
+                [
+                  1.04,
+                  0.23,
+                  1.01
+                ],
+                [
+                  0.006,
+                  0.02,
+                  103
+                ]
+              ],
+              "range_nm": [
+                380,
+                780
+              ],
+              "source": "OSS synthetic teaching material; not a commercial glass"
+            },
+            {
+              "name": "Teaching flint",
+              "n": 1.62,
+              "sellmeier": [
+                [
+                  1.3,
+                  0.3,
+                  1.1
+                ],
+                [
+                  0.009,
+                  0.04,
+                  110
+                ]
+              ],
+              "range_nm": [
+                380,
+                780
+              ],
+              "source": "OSS synthetic teaching material; not a commercial glass"
+            }
+          ],
+          "surfaces": [
+            {
+              "name": "前镜组 · 前面",
+              "curvature": 0.0005943040373063071,
+              "thickness": 7,
+              "material": 1,
+              "semi_aperture": 35,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 35,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "前镜组· 后面",
+              "curvature": 0.0016483345427980743,
+              "thickness": 60,
+              "material": 0,
+              "semi_aperture": 35,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 35,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "双凸透镜 · 前面",
+              "curvature": 0.0008486319997615321,
+              "thickness": 7,
+              "material": 2,
+              "semi_aperture": 20,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 20,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "双凸透镜 · 后面",
+              "curvature": -0.0007840588903977271,
+              "thickness": 0.1,
+              "material": 0,
+              "semi_aperture": 20,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 20,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "双凹透镜 · 前面",
+              "curvature": -0.001037479509367551,
+              "thickness": 2,
+              "material": 1,
+              "semi_aperture": 20,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 22.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "双凹透镜 · 后面",
+              "curvature": 0.0022187912515047215,
+              "thickness": 0.1,
+              "material": 0,
+              "semi_aperture": 18.5,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 22.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "平凸透镜 · 前面",
+              "curvature": 0.0019242247846174754,
+              "thickness": 6,
+              "material": 2,
+              "semi_aperture": 18.5,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 18.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "平凸透镜 · 后面",
+              "curvature": 0.0,
+              "thickness": 12,
+              "material": 0,
+              "semi_aperture": 18.5,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 18.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "弯月透镜 · 前面",
+              "curvature": 0.0024297849942807666,
+              "thickness": 3,
+              "material": 1,
+              "semi_aperture": 17.5,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 17.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "弯月透镜 · 后面",
+              "curvature": 0.0020918439864446876,
+              "thickness": 0.1,
+              "material": 0,
+              "semi_aperture": 17.5,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 17.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "弯月透镜 · 前面",
+              "curvature": 0.003214383672033722,
+              "thickness": 1,
+              "material": 1,
+              "semi_aperture": 16.5,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 16.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "弯月透镜 · 后面",
+              "curvature": 0.004017655294029518,
+              "thickness": 0.1,
+              "material": 0,
+              "semi_aperture": 15,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 16.5,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "弯月透镜 · 前面",
+              "curvature": 0.008161437671506844,
+              "thickness": 6,
+              "material": 1,
+              "semi_aperture": 15,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "弯月透镜 · 后面",
+              "curvature": 0.0033529061471674147,
+              "thickness": 6,
+              "material": 0,
+              "semi_aperture": 15,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "独立光阑",
+              "curvature": 0.0,
+              "thickness": 2,
+              "material": 0,
+              "semi_aperture": 12.44782123167043,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15.0,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "双凹透镜 · 前面",
+              "curvature": -0.0015863212543551085,
+              "thickness": 1,
+              "material": 1,
+              "semi_aperture": 15.0,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15.0,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "双凹透镜 · 后面",
+              "curvature": 0.0037874218556329794,
+              "thickness": 18,
+              "material": 0,
+              "semi_aperture": 15.0,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15.0,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "弯月透镜 · 前面",
+              "curvature": 0.002897934378487237,
+              "thickness": 1,
+              "material": 1,
+              "semi_aperture": 15.0,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15.0,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "弯月透镜 · 后面",
+              "curvature": 0.004781032961455678,
+              "thickness": 0.1,
+              "material": 0,
+              "semi_aperture": 15.0,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15.0,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "双凸透镜 · 前面",
+              "curvature": 0.004336990312526639,
+              "thickness": 4,
+              "material": 1,
+              "semi_aperture": 15.0,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15.0,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "双凸透镜 · 后面",
+              "curvature": -0.00276671474275618,
+              "thickness": 0.5,
+              "material": 0,
+              "semi_aperture": 15.0,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15.0,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "胶合双片 · 前面",
+              "curvature": 0.0047921047306888,
+              "thickness": 3,
+              "material": 1,
+              "semi_aperture": 15.0,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15.0,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "胶合双片 · 胶合面",
+              "curvature": -0.006737570605622539,
+              "thickness": 1,
+              "material": 2,
+              "semi_aperture": 15.0,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15.0,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "胶合双片 · 后面",
+              "curvature": 0.0029159707286003336,
+              "thickness": 3,
+              "material": 0,
+              "semi_aperture": 15.0,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15.0,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "双凹透镜 · 前面",
+              "curvature": -0.004217381436693089,
+              "thickness": 1,
+              "material": 1,
+              "semi_aperture": 15.0,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15.0,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "双凹透镜 · 后面",
+              "curvature": 0.0055571467965197605,
+              "thickness": 3,
+              "material": 0,
+              "semi_aperture": 15.0,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15.0,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "平凸透镜 · 前面",
+              "curvature": 0.0022642493869791153,
+              "thickness": 3,
+              "material": 1,
+              "semi_aperture": 15.0,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15.0,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "平凸透镜 · 后面",
+              "curvature": 0.0,
+              "thickness": 1,
+              "material": 0,
+              "semi_aperture": 15.0,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15.0,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "双凸透镜 · 前面",
+              "curvature": 0.002334583818903134,
+              "thickness": 5.5,
+              "material": 1,
+              "semi_aperture": 15.0,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15.0,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "双凸透镜 · 后面",
+              "curvature": -0.006154987284917934,
+              "thickness": 0.1,
+              "material": 0,
+              "semi_aperture": 15.0,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15.0,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "平凹透镜 · 前面",
+              "curvature": -0.0004790463724761449,
+              "thickness": 1,
+              "material": 1,
+              "semi_aperture": 15.0,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15.0,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "平凹透镜 · 后面",
+              "curvature": 0.0,
+              "thickness": 5,
+              "material": 0,
+              "semi_aperture": 15.0,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15.0,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "平凸透镜 · 前面",
+              "curvature": 0.0,
+              "thickness": 0.3,
+              "material": 1,
+              "semi_aperture": 15,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15,
+                "shape": "flat"
+              }
+            },
+            {
+              "name": "平凸透镜 · 后面",
+              "curvature": 0.0,
+              "thickness": 388.7863114888424,
+              "material": 0,
+              "semi_aperture": 15,
+              "conic": 0,
+              "asphere": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "mechanical": {
+                "semi_diameter": 15,
+                "shape": "flat"
+              }
+            }
+          ],
+          "stop": 14,
+          "object_distance": null,
+          "sensor": [
+            36,
+            24
+          ],
+          "fields": [
+            0.0,
+            0.03782144120641574,
+            0.05403063029487964
+          ],
+          "wavelengths": [
+            {
+              "nm": 486.1327,
+              "weight": 1
+            },
+            {
+              "nm": 587.5618,
+              "weight": 1
+            },
+            {
+              "nm": 656.2725,
+              "weight": 1
+            }
+          ]
+        },
+        "analysis_preset": "balanced"
+      }
+    ],
+    "focus": {
+      "min_mm": 386.7863114888424,
+      "max_mm": 390.7863114888424,
+      "steps": 41,
+      "sampling": 33,
+      "criterion": "balanced"
+    },
+    "constraints": {
+      "target_efl_mm": 400.0,
+      "efl_tolerance_mm": 0.1,
+      "max_length_mm": 600.0,
+      "min_center_mm": 0.25,
+      "min_edge_mm": 0.02,
+      "min_air_mm": 0.02,
+      "design": {
+        "f_number": 16.0,
+        "f_tolerance": 0.1,
+        "min_bfl_mm": 1.0,
+        "max_front_diameter_mm": 70.0
+      }
+    },
+    "optimization": {
+      "variables": [
+        {
+          "variable": {
+            "kind": "thickness",
+            "surface": 33
+          },
+          "min": 383.7863114888424,
+          "max": 393.7863114888424,
+          "locked": false
+        }
+      ],
+      "preset": "balanced",
+      "max_iterations": 25,
+      "quality": {
+        "max_rms_um": [],
+        "max_degradation_percent": 0
+      },
+      "staged": false,
+      "refocus_each_stage": false
+    },
+    "aperture": {
+      "f_numbers": [
+        4.0,
+        8.0,
+        11.0,
+        16.0,
+        22.0
+      ],
+      "refocus": false,
+      "sampling": 17,
+      "mtf": true
+    },
+    "groups": [
+      {
+        "id": "middle-pair",
+        "name": "中前组（第 2–3 枚）",
+        "start": 2,
+        "end": 5
+      }
+    ]
+  },
+  "field_spec": {
+    "mode": "sensor"
+  }
+}

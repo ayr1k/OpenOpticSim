@@ -1,0 +1,8 @@
+[package]
+name = "wollaston-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+[dependencies]
+wollaston = { package = "oos-wollaston", path = "../core" }
+serde_json.workspace = true

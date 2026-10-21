@@ -303,12 +303,17 @@ fn inside(poly: &[[f64; 2]], q: [f64; 2]) -> bool {
     }
     true
 }
-fn inverse_ray(p: &Project, g: &Geometry, target: [f64; 2]) -> Result<(RayPath, f64, f64), String> {
+fn inverse_ray(
+    p: &Project,
+    prepared: &PreparedTrace<'_>,
+    g: &Geometry,
+    target: [f64; 2],
+) -> Result<(RayPath, f64, f64), String> {
     let mut xy = g.launch;
     let mut orientation = 0.;
     for _ in 0..16 {
-        let (q, d) = launch(p, g.field, xy);
-        let ray = trace_ray(p, q, d, g.nm, false, None);
+        let (q, d) = prepared.launch(g.field, xy);
+        let ray = prepared.trace(q, d, false, None);
         let (point, opl) = on_sphere(p, &ray, g.image, g.radius, g.field)?;
         let e = [point.x - target[0], point.y - target[1]];
         if e[0].hypot(e[1]) < 1e-9 && g.method == WaveMethod::Fast {
@@ -318,8 +323,8 @@ fn inverse_ray(p: &Project, g: &Geometry, target: [f64; 2]) -> Result<(RayPath, 
         for k in 0..2 {
             let mut x = xy;
             x[k] += 1e-5;
-            let (q, d) = launch(p, g.field, x);
-            let ray = trace_ray(p, q, d, g.nm, false, None);
+            let (q, d) = prepared.launch(g.field, x);
+            let ray = prepared.trace(q, d, false, None);
             let (probe, _) = on_sphere(p, &ray, g.image, g.radius, g.field)?;
             j[0][k] = (probe.x - point.x) / 1e-5;
             j[1][k] = (probe.y - point.y) / 1e-5;
@@ -344,6 +349,7 @@ fn inverse_ray(p: &Project, g: &Geometry, target: [f64; 2]) -> Result<(RayPath, 
 }
 fn sample(p: &Project, g: &Geometry, pitch: f64, cancel: &AtomicBool) -> Result<PupilGrid, String> {
     let size = 2 * ((g.width / pitch / 2.).ceil() as usize) + 1;
+    let prepared = PreparedTrace::new(p, g.nm);
     let mut grid = PupilGrid {
         sphere_points_mm: (g.method == WaveMethod::SphereKirchhoff)
             .then(|| vec![None; size * size]),
@@ -371,7 +377,7 @@ fn sample(p: &Project, g: &Geometry, pitch: f64, cancel: &AtomicBool) -> Result<
             if !inside(&g.boundary, target) {
                 continue;
             }
-            let (ray, opd, inverse_area) = inverse_ray(p, g, target)?;
+            let (ray, opd, inverse_area) = inverse_ray(p, &prepared, g, target)?;
             if p.surfaces.iter().enumerate().any(|(i, s)| {
                 ray.points[i + 1][0].hypot(ray.points[i + 1][1]) > s.semi_aperture + 1e-8
             }) {
@@ -394,10 +400,10 @@ fn sample(p: &Project, g: &Geometry, pitch: f64, cancel: &AtomicBool) -> Result<
                 // |det d(launch_xy)/d(sphere_xy)| includes pupil aberration;
                 // dA_sphere=dX dY/n_z. No Fresnel losses or polarization.
                 let origin = V3::from(ray.points[0]);
-                let incoming = launch(p, g.field, [origin.x, origin.y]).1;
+                let incoming = prepared.launch(g.field, [origin.x, origin.y]).1;
                 let relative_intensity = if let Some(distance) = p.object_distance {
                     let object = V3::new(0., -distance * g.field.tan(), -distance);
-                    let chief_origin = launch(p, g.field, g.launch).0;
+                    let chief_origin = prepared.launch(g.field, g.launch).0;
                     (chief_origin - object).norm_squared() / (origin - object).norm_squared()
                 } else {
                     1.

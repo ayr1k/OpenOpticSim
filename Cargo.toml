@@ -1,10 +1,11 @@
 [workspace]
 members = ["crates/optics", "crates/cli", "src-tauri"]
 default-members = ["crates/optics", "crates/cli"]
+exclude = ["OOS-Wollaston"]
 resolver = "2"
 
 [workspace.package]
-version = "1.5.0"
+version = "2.0.0"
 edition = "2021"
 license = "Apache-2.0"
 
@@ -13,6 +14,6 @@ serde = { version = "1", features = ["derive"] }
 serde_json = { version = "1", features = ["float_roundtrip"] }
 
 # Keep interactive numerical previews usable in the development desktop bridge.
-[profile.dev.package.openoptics]
+[profile.dev.package.oos-wollaston]
 opt-level = 2
 

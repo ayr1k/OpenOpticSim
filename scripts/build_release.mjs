@@ -39,9 +39,11 @@ function run(command, args) {
 
 run("cargo", ["test", "--workspace", "--locked", "--release"]);
 run("cargo", ["build", "-p", "oos-cli", "--locked", "--release"]);
+run("cargo", ["test", "--manifest-path", "OOS-Wollaston/Cargo.toml", "--workspace", "--locked", "--release"]);
+run("cargo", ["build", "--manifest-path", "OOS-Wollaston/Cargo.toml", "--workspace", "--locked", "--release"]);
 // Static command only: no paths or user input are interpolated into the shell.
 run(process.env.ComSpec || "cmd.exe", ["/d", "/s", "/c", "pnpm tauri build --bundles nsis"]);
-for (const name of ["openopticsim-desktop.exe", "oos-cli.exe"]) {
+for (const name of ["openopticsim-desktop.exe", "oos-cli.exe", "../../OOS-Wollaston/target/release/wollaston_ffi.dll", "../../OOS-Wollaston/target/release/wollaston-cli.exe"]) {
   const data = readFileSync(resolve(root, "target/release", name));
   const ascii = data.toString("latin1").match(/[A-Z]:[\\/]+Users[\\/]+[^\\/\0\r\n]+/gi) || [];
   const utf16 = data.toString("utf16le").match(/[A-Z]:[\\/]+Users[\\/]+[^\\/\0\r\n]+/gi) || [];

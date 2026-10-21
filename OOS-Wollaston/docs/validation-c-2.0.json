@@ -1,0 +1,7 @@
+{
+  "dll_sha256": "b2bc1caed72edb8c6adff815b9b8458f2bb4a7ca359f3403d42257f86f889fb9",
+  "cpp_compiled_and_ran": true,
+  "compiler": "MSVC x64 /W4 /WX",
+  "c_compiled_and_ran": true,
+  "abi": 1
+}

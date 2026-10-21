@@ -1,0 +1,11 @@
+[package]
+name = "wollaston-ffi"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+[lib]
+name = "wollaston_ffi"
+crate-type = ["cdylib", "rlib"]
+[dependencies]
+wollaston = { package = "oos-wollaston", path = "../core" }
+serde_json.workspace = true

@@ -1,0 +1,117 @@
+{
+  "version": "2.0.0",
+  "framework_version": "1.0.0",
+  "date": "2026-10-21",
+  "frontend_tests": 76,
+  "rust_desktop_tests": 98,
+  "standalone_framework_tests": 104,
+  "typescript": "passed",
+  "production_frontend": "passed",
+  "clippy_warnings_denied": "passed",
+  "windows_nsis_build": "passed",
+  "packaged_cli_sha256": "d2a7f5d6147b6795ad38536442f821c42060dcb115a1a187ef3b05bdf651cd6a",
+  "packaged_dll_sha256": "b2bc1caed72edb8c6adff815b9b8458f2bb4a7ca359f3403d42257f86f889fb9",
+  "final_binary_vs_v15": [
+    {
+      "case": "tessar-50mm-1.3",
+      "operation": "analyze",
+      "max_absolute_difference": 0.0
+    },
+    {
+      "case": "tessar-50mm-1.3",
+      "operation": "wave",
+      "max_absolute_difference": 0
+    },
+    {
+      "case": "tessar-50mm-1.3",
+      "operation": "preview",
+      "max_absolute_difference": 0.0
+    },
+    {
+      "case": "planar-50mm-1.3",
+      "operation": "analyze",
+      "max_absolute_difference": 0.0
+    },
+    {
+      "case": "double_gauss-50mm-1.3",
+      "operation": "analyze",
+      "max_absolute_difference": 0.0
+    },
+    {
+      "case": "sonnar-50mm-1.3",
+      "operation": "analyze",
+      "max_absolute_difference": 0.0
+    },
+    {
+      "case": "24-70mm-zoom",
+      "operation": "analyze",
+      "max_absolute_difference": 0.0
+    },
+    {
+      "case": "400mm-repaired",
+      "operation": "analyze",
+      "max_absolute_difference": 0.0
+    },
+    {
+      "case": "400mm-repaired",
+      "operation": "wave",
+      "max_absolute_difference": 0
+    },
+    {
+      "case": "400mm-repaired",
+      "operation": "preview",
+      "max_absolute_difference": 0.0
+    }
+  ],
+  "framework_interfaces": {
+    "cli_python_cabi_identical": true,
+    "independent_reference": "RayOptics profiles + bend with NumPy frame transforms",
+    "transformed_surfaces": 8,
+    "max_hit_error_mm": 1.5108375915914693e-11,
+    "cancelled": true,
+    "malformed_requests": 100,
+    "spatial_options_rejected_for_wave": true,
+    "dll_sha256": "b2bc1caed72edb8c6adff815b9b8458f2bb4a7ca359f3403d42257f86f889fb9"
+  },
+  "standalone": {
+    "outside_parent_checkout": true,
+    "locked_offline_build": true,
+    "full_framework_tests_passed": true,
+    "standalone_cli_analyze": true,
+    "used_parent_target": false,
+    "source_folder": "OOS-Wollaston",
+    "temporary_copy_retained": true
+  },
+  "c_cpp_clients": {
+    "dll_sha256": "b2bc1caed72edb8c6adff815b9b8458f2bb4a7ca359f3403d42257f86f889fb9",
+    "cpp_compiled_and_ran": true,
+    "compiler": "MSVC x64 /W4 /WX",
+    "c_compiled_and_ran": true,
+    "abi": 1
+  },
+  "legacy_400mm_samples_unchanged": 38508,
+  "ui": {
+    "browser": "local in-app browser with development CLI bridge",
+    "saved_and_reopened": true,
+    "offset_x_mm": 0.1,
+    "complete_rays": 5,
+    "first_opl_mm": 159.65358633652934,
+    "screenshot": "docs/screenshots/wollaston-2.0.png",
+    "saved_project_sha256": "be6fb523b786dbdd5ba6b68e7d04ecfa309e4d435ef298d186725180ac59f39d",
+    "native_dialog_tested": false
+  },
+  "clean_windows_install_or_upgrade_tested": false,
+  "signed": false,
+  "remote_ci_tested": false,
+  "evidence": [
+    "docs/benchmark-2.0.json",
+    "docs/validation-study-2.0.json",
+    "docs/validation-diffraction-2.0.json",
+    "docs/validation-design-saved-1.0.json"
+  ],
+  "limitations": [
+    "3D explicit-ray geometry only; existing quality/optimization/PDF remain axisymmetric.",
+    "No GPU, nonsequential paths, spatial pupil aiming, spatial MTF or automatic 3D collision certification.",
+    "Benchmark includes CLI startup/JSON and does not imply all-hardware speedup."
+  ]
+}

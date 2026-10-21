@@ -1,5 +1,5 @@
 //! Connected-chief-branch shooting. Never export Newton trial paths as physical rays.
-use crate::{launch, trace_ray, AimInfo, Project, RayPath, RayStatus, TraceStage};
+use crate::{AimInfo, PreparedTrace, Project, RayPath, RayStatus, TraceStage};
 use nalgebra::{Matrix2, Vector2};
 
 #[derive(Clone)]
@@ -33,6 +33,7 @@ pub struct PupilAimer<'a> {
     seed_b: f64,
     chief: Option<Result<Solution, Failure>>,
     iterations: usize,
+    prepared: PreparedTrace<'a>,
 }
 impl<'a> PupilAimer<'a> {
     pub fn new(p: &'a Project, field: f64, nm: f64) -> Self {
@@ -51,7 +52,8 @@ impl<'a> PupilAimer<'a> {
             m = Matrix2::new(1., s.thickness / n2, 0., 1.) * m;
             n = n2;
         }
-        let (origin, _) = launch(p, field, [0., 0.]);
+        let prepared = PreparedTrace::new(p, nm);
+        let (origin, _) = prepared.launch(field, [0., 0.]);
         let a = m[(0, 0)];
         let b = m[(0, 1)] - a * origin.z;
         let (seed_a, seed_b) = if let Some(dist) = p.object_distance {
@@ -70,11 +72,14 @@ impl<'a> PupilAimer<'a> {
             seed_b,
             chief: None,
             iterations: 0,
+            prepared,
         }
     }
     fn evaluate(&self, xy: Vector2<f64>) -> Result<Vector2<f64>, Failure> {
-        let (origin, direction) = launch(self.p, self.field, xy.into());
-        let r = trace_ray(self.p, origin, direction, self.nm, false, Some(self.p.stop));
+        let (origin, direction) = self.prepared.launch(self.field, xy.into());
+        let r = self
+            .prepared
+            .trace(origin, direction, false, Some(self.p.stop));
         if r.status != RayStatus::Complete {
             return Err(Failure {
                 residual: None,
@@ -291,8 +296,8 @@ impl<'a> PupilAimer<'a> {
         match result {
             Err(e) => self.failure_path(target, e, method),
             Ok(s) => {
-                let (origin, direction) = launch(self.p, self.field, s.xy.into());
-                let mut ray = trace_ray(self.p, origin, direction, self.nm, clip, None);
+                let (origin, direction) = self.prepared.launch(self.field, s.xy.into());
+                let mut ray = self.prepared.trace(origin, direction, clip, None);
                 ray.aiming = Some(AimInfo {
                     target_mm: target,
                     residual_mm: Some(s.residual),

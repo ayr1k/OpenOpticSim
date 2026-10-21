@@ -1,4 +1,5 @@
 import QualityReportPanel from "./QualityReportPanel";
+import SpatialPanel from "./SpatialPanel";
 import TaskPanel from "./TaskPanel";
 import MotionPanel from "./MotionPanel";
 import { synchronizeMotion } from "./motion";
@@ -710,7 +711,7 @@ export default function App() {
           <div>
             OpenOpticSim <small>光学工作室</small>
           </div>
-          <span className="alpha">1.5</span>
+          <span className="alpha">2.0</span>
         </div>
         <div className="toolbar">
           <button
@@ -1247,6 +1248,9 @@ export default function App() {
               />
             )}
             {tab === "motion" && <MotionPanel project={project} edit={edit} />}
+            {tab === "spatial" && (
+              <SpatialPanel project={project} edit={edit} />
+            )}
             {tab === "groups" && (
               <GroupPanel
                 project={project}

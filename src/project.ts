@@ -1,4 +1,5 @@
 import { validTask } from "./designTask";
+import { validSpatial } from "./spatial";
 import { validCheckpoint } from "./searchCheckpoint";
 import { validMotion } from "./motion";
 import { validCoating } from "./coatings";
@@ -121,6 +122,8 @@ export function projectFromJson(text: string, nested = false): Project {
   }
   if (p.workspace !== undefined) {
     const w = p.workspace;
+    if (w?.spatial !== undefined && !validSpatial(w.spatial))
+      throw Error("三维追迹配置无效");
     if (
       nested ||
       !w ||

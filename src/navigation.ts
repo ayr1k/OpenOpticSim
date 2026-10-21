@@ -9,6 +9,7 @@ export const sections = [
       ["coatings", "镀膜与透射", "coatings"],
       ["prescription", "镜头处方", "editing"],
       ["groups", "镜组管理", "groups"],
+      ["spatial", "三维追迹与调试", "spatial"],
       ["geometry", "几何检查", "mechanics"],
     ],
   },

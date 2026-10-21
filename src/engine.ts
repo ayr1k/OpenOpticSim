@@ -100,6 +100,7 @@ async function computeDirect<T>(
   signal: AbortSignal,
   extras: {
     sampling?: number;
+    spatial_options?: import('./spatial').SpatialOptions;
     diffraction?: boolean;
     variables?: Variable[];
     target_efl?: number;

@@ -5,8 +5,7 @@ edition.workspace = true
 license.workspace = true
 
 [dependencies]
-serde.workspace = true
+wollaston = { package = "oos-wollaston", path = "../../OOS-Wollaston/crates/core" }
 serde_json.workspace = true
 nalgebra = "0.33"
 rustfft = "6"
-

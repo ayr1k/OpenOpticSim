@@ -1,0 +1,832 @@
+{
+  "commit": "c5c2f188e848453def5970e347399d653df2ffc2",
+  "license": "CC0-1.0",
+  "retrieved": "2026-10-20",
+  "entries": [
+    {
+      "name": "SCHOTT N-BK7",
+      "n": 1.5168,
+      "sellmeier": [
+        [
+          1.03961212,
+          0.231792344,
+          1.01046945
+        ],
+        [
+          0.00600069867,
+          0.0200179144,
+          103.560653
+        ]
+      ],
+      "range_nm": [
+        300.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-BK7.yml; SHA256 87da400af68251beaeb605a85fb949483fa082c609a5b1d78b4823cb9f4f65b8",
+      "nd_reference": 1.5168,
+      "vd_reference": 64.17,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-BK7.yml",
+      "sha256": "87da400af68251beaeb605a85fb949483fa082c609a5b1d78b4823cb9f4f65b8"
+    },
+    {
+      "name": "SCHOTT N-BAK4",
+      "n": 1.56883,
+      "sellmeier": [
+        [
+          1.28834642,
+          0.132817724,
+          0.945395373
+        ],
+        [
+          0.00779980626,
+          0.0315631177,
+          105.965875
+        ]
+      ],
+      "range_nm": [
+        334.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-BAK4.yml; SHA256 adf40f1b4ac4eefeea588a9f9cdb6c7bae3e1b286e369bb0f6d74fe202070d9f",
+      "nd_reference": 1.56883,
+      "vd_reference": 55.98,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-BAK4.yml",
+      "sha256": "adf40f1b4ac4eefeea588a9f9cdb6c7bae3e1b286e369bb0f6d74fe202070d9f"
+    },
+    {
+      "name": "SCHOTT N-SK16",
+      "n": 1.62041,
+      "sellmeier": [
+        [
+          1.34317774,
+          0.241144399,
+          0.994317969
+        ],
+        [
+          0.00704687339,
+          0.0229005,
+          92.7508526
+        ]
+      ],
+      "range_nm": [
+        310.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SK16.yml; SHA256 82055b448e31f6a53deed2e4f6281d5230cb6d8d93fb40755b5b523b5197348b",
+      "nd_reference": 1.62041,
+      "vd_reference": 60.32,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SK16.yml",
+      "sha256": "82055b448e31f6a53deed2e4f6281d5230cb6d8d93fb40755b5b523b5197348b"
+    },
+    {
+      "name": "SCHOTT N-LAK22",
+      "n": 1.65113,
+      "sellmeier": [
+        [
+          1.14229781,
+          0.535138441,
+          1.04088385
+        ],
+        [
+          0.00585778594,
+          0.0198546147,
+          100.834017
+        ]
+      ],
+      "range_nm": [
+        310.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LAK22.yml; SHA256 43eabf62811cb25166b419caf7df4831eff3126fa44805d9ad840de3453effaa",
+      "nd_reference": 1.65113,
+      "vd_reference": 55.89,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LAK22.yml",
+      "sha256": "43eabf62811cb25166b419caf7df4831eff3126fa44805d9ad840de3453effaa"
+    },
+    {
+      "name": "SCHOTT N-F2",
+      "n": 1.62005,
+      "sellmeier": [
+        [
+          1.39757037,
+          0.159201403,
+          1.2686543
+        ],
+        [
+          0.00995906143,
+          0.0546931752,
+          119.248346
+        ]
+      ],
+      "range_nm": [
+        365.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-F2.yml; SHA256 85c50ba2f37383a07a3e7dd85cea8c25ef9c7e090500e73ac8398315fe6ddd0a",
+      "nd_reference": 1.62005,
+      "vd_reference": 36.43,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-F2.yml",
+      "sha256": "85c50ba2f37383a07a3e7dd85cea8c25ef9c7e090500e73ac8398315fe6ddd0a"
+    },
+    {
+      "name": "SCHOTT N-SF5",
+      "n": 1.67271,
+      "sellmeier": [
+        [
+          1.52481889,
+          0.187085527,
+          1.42729015
+        ],
+        [
+          0.011254756,
+          0.0588995392,
+          129.141675
+        ]
+      ],
+      "range_nm": [
+        370.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF5.yml; SHA256 92bc99e37f6b53bdd22d4de226b91e5e1712f5517b44a8a2a43d910c807b4cc2",
+      "nd_reference": 1.67271,
+      "vd_reference": 32.25,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF5.yml",
+      "sha256": "92bc99e37f6b53bdd22d4de226b91e5e1712f5517b44a8a2a43d910c807b4cc2"
+    },
+    {
+      "name": "SCHOTT N-SF10",
+      "n": 1.72828,
+      "sellmeier": [
+        [
+          1.62153902,
+          0.256287842,
+          1.64447552
+        ],
+        [
+          0.0122241457,
+          0.0595736775,
+          147.468793
+        ]
+      ],
+      "range_nm": [
+        380.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF10.yml; SHA256 903b0d75860715c557b451d9ec47221fe0c336e8cf42b6dc8ca991b5fb531a5e",
+      "nd_reference": 1.72828,
+      "vd_reference": 28.53,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF10.yml",
+      "sha256": "903b0d75860715c557b451d9ec47221fe0c336e8cf42b6dc8ca991b5fb531a5e"
+    },
+    {
+      "name": "SCHOTT N-SF11",
+      "n": 1.78472,
+      "sellmeier": [
+        [
+          1.73759695,
+          0.313747346,
+          1.89878101
+        ],
+        [
+          0.013188707,
+          0.0623068142,
+          155.23629
+        ]
+      ],
+      "range_nm": [
+        370.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF11.yml; SHA256 367d46bc83845957fcd9e0585ad3f34e960b33d935c7b799d888e831cd52abbc",
+      "nd_reference": 1.78472,
+      "vd_reference": 25.68,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF11.yml",
+      "sha256": "367d46bc83845957fcd9e0585ad3f34e960b33d935c7b799d888e831cd52abbc"
+    },
+    {
+      "name": "SCHOTT N-BAF4",
+      "n": 1.60568,
+      "sellmeier": [
+        [
+          1.42056328,
+          0.102721269,
+          1.14380976
+        ],
+        [
+          0.00942015382,
+          0.0531087291,
+          110.278856
+        ]
+      ],
+      "range_nm": [
+        365.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-BAF4.yml; SHA256 f65f0c05c53cf914fe763c8ebb8c578c3e463dc9f3caa06b0bddf4d68db08d94",
+      "nd_reference": 1.60568,
+      "vd_reference": 43.72,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-BAF4.yml",
+      "sha256": "f65f0c05c53cf914fe763c8ebb8c578c3e463dc9f3caa06b0bddf4d68db08d94"
+    },
+    {
+      "name": "SCHOTT N-BAF10",
+      "n": 1.67003,
+      "sellmeier": [
+        [
+          1.5851495,
+          0.143559385,
+          1.08521269
+        ],
+        [
+          0.00926681282,
+          0.0424489805,
+          105.613573
+        ]
+      ],
+      "range_nm": [
+        350.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-BAF10.yml; SHA256 276fdcdb039e68a5d1c81a7386e69f0165022453040e3bfecc143342ec62a9d4",
+      "nd_reference": 1.67003,
+      "vd_reference": 47.11,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-BAF10.yml",
+      "sha256": "276fdcdb039e68a5d1c81a7386e69f0165022453040e3bfecc143342ec62a9d4"
+    },
+    {
+      "name": "SCHOTT N-BAK1",
+      "n": 1.5725,
+      "sellmeier": [
+        [
+          1.12365662,
+          0.309276848,
+          0.881511957
+        ],
+        [
+          0.00644742752,
+          0.0222284402,
+          107.297751
+        ]
+      ],
+      "range_nm": [
+        300.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-BAK1.yml; SHA256 f1363598b06c11e66eae2534b5db5d189f9ab3572f270803178a90febcb25120",
+      "nd_reference": 1.5725,
+      "vd_reference": 57.55,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-BAK1.yml",
+      "sha256": "f1363598b06c11e66eae2534b5db5d189f9ab3572f270803178a90febcb25120"
+    },
+    {
+      "name": "SCHOTT N-BALF4",
+      "n": 1.57956,
+      "sellmeier": [
+        [
+          1.31004128,
+          0.142038259,
+          0.964929351
+        ],
+        [
+          0.0079659645,
+          0.0330672072,
+          109.19732
+        ]
+      ],
+      "range_nm": [
+        350.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-BALF4.yml; SHA256 ac96f39980b457efccb6cab68deead5c9153578e3b787b34df24c43fde875a30",
+      "nd_reference": 1.57956,
+      "vd_reference": 53.87,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-BALF4.yml",
+      "sha256": "ac96f39980b457efccb6cab68deead5c9153578e3b787b34df24c43fde875a30"
+    },
+    {
+      "name": "SCHOTT N-FK5",
+      "n": 1.48749,
+      "sellmeier": [
+        [
+          0.844309338,
+          0.344147824,
+          0.910790213
+        ],
+        [
+          0.00475111955,
+          0.0149814849,
+          97.8600293
+        ]
+      ],
+      "range_nm": [
+        260.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-FK5.yml; SHA256 bc17efa7c6df47355adaa96cbb44b9d64830d74b70895efababcdaad239e697e",
+      "nd_reference": 1.48749,
+      "vd_reference": 70.41,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-FK5.yml",
+      "sha256": "bc17efa7c6df47355adaa96cbb44b9d64830d74b70895efababcdaad239e697e"
+    },
+    {
+      "name": "SCHOTT N-FK51A",
+      "n": 1.48656,
+      "sellmeier": [
+        [
+          0.971247817,
+          0.216901417,
+          0.904651666
+        ],
+        [
+          0.00472301995,
+          0.0153575612,
+          168.68133
+        ]
+      ],
+      "range_nm": [
+        290.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-FK51A.yml; SHA256 28c827abfac451eda58b1653a68eebe6dd4761dbc1df54e2ae08360e047c9059",
+      "nd_reference": 1.48656,
+      "vd_reference": 84.47,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-FK51A.yml",
+      "sha256": "28c827abfac451eda58b1653a68eebe6dd4761dbc1df54e2ae08360e047c9059"
+    },
+    {
+      "name": "SCHOTT N-LAK8",
+      "n": 1.713,
+      "sellmeier": [
+        [
+          1.33183167,
+          0.546623206,
+          1.19084015
+        ],
+        [
+          0.00620023871,
+          0.0216465439,
+          82.5827736
+        ]
+      ],
+      "range_nm": [
+        310.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LAK8.yml; SHA256 81c1475fcfddf70697bec16c9a4f3a7bfa07634079dad02c2460a51c0823b1d7",
+      "nd_reference": 1.713,
+      "vd_reference": 53.83,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LAK8.yml",
+      "sha256": "81c1475fcfddf70697bec16c9a4f3a7bfa07634079dad02c2460a51c0823b1d7"
+    },
+    {
+      "name": "SCHOTT N-LAK10",
+      "n": 1.72003,
+      "sellmeier": [
+        [
+          1.72878017,
+          0.169257825,
+          1.19386956
+        ],
+        [
+          0.00886014635,
+          0.0363416509,
+          82.9009069
+        ]
+      ],
+      "range_nm": [
+        350.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LAK10.yml; SHA256 860adfb2150548eeeeb537fe2778c1f3fac301d4c6ce9a56fbeecf696961b709",
+      "nd_reference": 1.72003,
+      "vd_reference": 50.62,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LAK10.yml",
+      "sha256": "860adfb2150548eeeeb537fe2778c1f3fac301d4c6ce9a56fbeecf696961b709"
+    },
+    {
+      "name": "SCHOTT N-LAK12",
+      "n": 1.6779,
+      "sellmeier": [
+        [
+          1.17365704,
+          0.588992398,
+          0.978014394
+        ],
+        [
+          0.00577031797,
+          0.0200401678,
+          95.4873482
+        ]
+      ],
+      "range_nm": [
+        320.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LAK12.yml; SHA256 46a148a686f750d78462a396bac7bf990c3377d9afe0e8046de9826ad6d4fdcf",
+      "nd_reference": 1.6779,
+      "vd_reference": 55.2,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LAK12.yml",
+      "sha256": "46a148a686f750d78462a396bac7bf990c3377d9afe0e8046de9826ad6d4fdcf"
+    },
+    {
+      "name": "SCHOTT N-LAK14",
+      "n": 1.6968,
+      "sellmeier": [
+        [
+          1.50781212,
+          0.318866829,
+          1.14287213
+        ],
+        [
+          0.00746098727,
+          0.0242024834,
+          80.9565165
+        ]
+      ],
+      "range_nm": [
+        310.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LAK14.yml; SHA256 8d13376c9429fdebde88583f276b2ebdbad1bc6f5354524f8617b6dfc690bc44",
+      "nd_reference": 1.6968,
+      "vd_reference": 55.41,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LAK14.yml",
+      "sha256": "8d13376c9429fdebde88583f276b2ebdbad1bc6f5354524f8617b6dfc690bc44"
+    },
+    {
+      "name": "SCHOTT N-LAK21",
+      "n": 1.64049,
+      "sellmeier": [
+        [
+          1.22718116,
+          0.420783743,
+          1.01284843
+        ],
+        [
+          0.00602075682,
+          0.0196862889,
+          88.4370099
+        ]
+      ],
+      "range_nm": [
+        320.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LAK21.yml; SHA256 1cf1a364c59ce33b06cf6c846bd42adee1cef72fe6b9ce2b04a9a7b3fe08f97a",
+      "nd_reference": 1.64049,
+      "vd_reference": 60.1,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LAK21.yml",
+      "sha256": "1cf1a364c59ce33b06cf6c846bd42adee1cef72fe6b9ce2b04a9a7b3fe08f97a"
+    },
+    {
+      "name": "SCHOTT N-LASF9",
+      "n": 1.85025,
+      "sellmeier": [
+        [
+          2.00029547,
+          0.298926886,
+          1.80691843
+        ],
+        [
+          0.0121426017,
+          0.0538736236,
+          156.530829
+        ]
+      ],
+      "range_nm": [
+        365.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LASF9.yml; SHA256 62f81be46c57d0e48eaa55d8bce3158231dd757e422c8f7800e9c251c21ce497",
+      "nd_reference": 1.85025,
+      "vd_reference": 32.17,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LASF9.yml",
+      "sha256": "62f81be46c57d0e48eaa55d8bce3158231dd757e422c8f7800e9c251c21ce497"
+    },
+    {
+      "name": "SCHOTT N-LASF31A",
+      "n": 1.883,
+      "sellmeier": [
+        [
+          1.96485075,
+          0.475231259,
+          1.48360109
+        ],
+        [
+          0.00982060155,
+          0.0344713438,
+          110.739863
+        ]
+      ],
+      "range_nm": [
+        250.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LASF31A.yml; SHA256 10f64d191b8757f8c7ec93290ff10d1bac840ad33aebc45210ae899654e5f6d0",
+      "nd_reference": 1.883,
+      "vd_reference": 40.76,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LASF31A.yml",
+      "sha256": "10f64d191b8757f8c7ec93290ff10d1bac840ad33aebc45210ae899654e5f6d0"
+    },
+    {
+      "name": "SCHOTT N-LASF44",
+      "n": 1.8042,
+      "sellmeier": [
+        [
+          1.78897105,
+          0.38675867,
+          1.30506243
+        ],
+        [
+          0.00872506277,
+          0.0308085023,
+          92.7743824
+        ]
+      ],
+      "range_nm": [
+        334.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LASF44.yml; SHA256 569f71720eab61a1b2b25dcef4fb388463e997d32ecae3f2bcef5069f4e7f7c2",
+      "nd_reference": 1.8042,
+      "vd_reference": 46.5,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LASF44.yml",
+      "sha256": "569f71720eab61a1b2b25dcef4fb388463e997d32ecae3f2bcef5069f4e7f7c2"
+    },
+    {
+      "name": "SCHOTT N-PSK3",
+      "n": 1.55232,
+      "sellmeier": [
+        [
+          0.88727211,
+          0.489592425,
+          1.04865296
+        ],
+        [
+          0.00469824067,
+          0.0161818463,
+          104.374975
+        ]
+      ],
+      "range_nm": [
+        300.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-PSK3.yml; SHA256 11948e1aad763ce6bdb6d70206a75439f2abaa416e2b164c9547b2119c462b9d",
+      "nd_reference": 1.55232,
+      "vd_reference": 63.46,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-PSK3.yml",
+      "sha256": "11948e1aad763ce6bdb6d70206a75439f2abaa416e2b164c9547b2119c462b9d"
+    },
+    {
+      "name": "SCHOTT N-PSK53A",
+      "n": 1.618,
+      "sellmeier": [
+        [
+          1.38121836,
+          0.196745645,
+          0.886089205
+        ],
+        [
+          0.00706416337,
+          0.0233251345,
+          97.4847345
+        ]
+      ],
+      "range_nm": [
+        320.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-PSK53A.yml; SHA256 02df5e0c8025d7d1b5071f3c6fb3e47c7ab8faad168b689b45e1d901d7cca3d6",
+      "nd_reference": 1.618,
+      "vd_reference": 63.39,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-PSK53A.yml",
+      "sha256": "02df5e0c8025d7d1b5071f3c6fb3e47c7ab8faad168b689b45e1d901d7cca3d6"
+    },
+    {
+      "name": "SCHOTT N-SF1",
+      "n": 1.71736,
+      "sellmeier": [
+        [
+          1.60865158,
+          0.237725916,
+          1.51530653
+        ],
+        [
+          0.0119654879,
+          0.0590589722,
+          135.521676
+        ]
+      ],
+      "range_nm": [
+        370.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF1.yml; SHA256 3fc4a25dcbcac54f2fb92ea4cfe6fa140ad59ea7a420bcdb23c0548bb5a7283a",
+      "nd_reference": 1.71736,
+      "vd_reference": 29.62,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF1.yml",
+      "sha256": "3fc4a25dcbcac54f2fb92ea4cfe6fa140ad59ea7a420bcdb23c0548bb5a7283a"
+    },
+    {
+      "name": "SCHOTT N-SF2",
+      "n": 1.64769,
+      "sellmeier": [
+        [
+          1.47343127,
+          0.163681849,
+          1.36920899
+        ],
+        [
+          0.0109019098,
+          0.0585683687,
+          127.404933
+        ]
+      ],
+      "range_nm": [
+        365.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF2.yml; SHA256 04e2539c1a90c11d2eb5e55915f532cdcb508e119ef75de042f9755ffb7caad9",
+      "nd_reference": 1.64769,
+      "vd_reference": 33.82,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF2.yml",
+      "sha256": "04e2539c1a90c11d2eb5e55915f532cdcb508e119ef75de042f9755ffb7caad9"
+    },
+    {
+      "name": "SCHOTT N-SF4",
+      "n": 1.75513,
+      "sellmeier": [
+        [
+          1.67780282,
+          0.282849893,
+          1.63539276
+        ],
+        [
+          0.012679345,
+          0.0602038419,
+          145.760496
+        ]
+      ],
+      "range_nm": [
+        365.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF4.yml; SHA256 df2e93154ded7ed2e59a994e3955a0d148730ba2050a4cb430053c0bba215d29",
+      "nd_reference": 1.75513,
+      "vd_reference": 27.38,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF4.yml",
+      "sha256": "df2e93154ded7ed2e59a994e3955a0d148730ba2050a4cb430053c0bba215d29"
+    },
+    {
+      "name": "SCHOTT N-SF6",
+      "n": 1.80518,
+      "sellmeier": [
+        [
+          1.77931763,
+          0.338149866,
+          2.08734474
+        ],
+        [
+          0.0133714182,
+          0.0617533621,
+          174.01759
+        ]
+      ],
+      "range_nm": [
+        370.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF6.yml; SHA256 ac1d8ab1f1621dd6e8fde81744157b9efe5496d9587decc6a39d9bef018b47f1",
+      "nd_reference": 1.80518,
+      "vd_reference": 25.36,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF6.yml",
+      "sha256": "ac1d8ab1f1621dd6e8fde81744157b9efe5496d9587decc6a39d9bef018b47f1"
+    },
+    {
+      "name": "SCHOTT N-SF8",
+      "n": 1.68894,
+      "sellmeier": [
+        [
+          1.55075812,
+          0.209816918,
+          1.46205491
+        ],
+        [
+          0.0114338344,
+          0.0582725652,
+          133.24165
+        ]
+      ],
+      "range_nm": [
+        370.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF8.yml; SHA256 c79733633d88d515c73961b4f328df842a0f9e759df2fb059aa11b3cc1b1891e",
+      "nd_reference": 1.68894,
+      "vd_reference": 31.31,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF8.yml",
+      "sha256": "c79733633d88d515c73961b4f328df842a0f9e759df2fb059aa11b3cc1b1891e"
+    },
+    {
+      "name": "SCHOTT N-SK2",
+      "n": 1.60738,
+      "sellmeier": [
+        [
+          1.28189012,
+          0.257738258,
+          0.96818604
+        ],
+        [
+          0.0072719164,
+          0.0242823527,
+          110.377773
+        ]
+      ],
+      "range_nm": [
+        310.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SK2.yml; SHA256 301d8856bf13d8896cfd877c5f724f652687ece3ac69570faa999d6c40492f2c",
+      "nd_reference": 1.60738,
+      "vd_reference": 56.65,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SK2.yml",
+      "sha256": "301d8856bf13d8896cfd877c5f724f652687ece3ac69570faa999d6c40492f2c"
+    },
+    {
+      "name": "SCHOTT N-SK4",
+      "n": 1.61272,
+      "sellmeier": [
+        [
+          1.32993741,
+          0.228542996,
+          0.988465211
+        ],
+        [
+          0.00716874107,
+          0.0246455892,
+          100.886364
+        ]
+      ],
+      "range_nm": [
+        334.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SK4.yml; SHA256 3190265eb9cd127888e2d838e4eadc8dfb2eca962d820a0aec319b60a3524e4c",
+      "nd_reference": 1.61272,
+      "vd_reference": 58.63,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SK4.yml",
+      "sha256": "3190265eb9cd127888e2d838e4eadc8dfb2eca962d820a0aec319b60a3524e4c"
+    },
+    {
+      "name": "SCHOTT N-SK5",
+      "n": 1.58913,
+      "sellmeier": [
+        [
+          0.991463823,
+          0.495982121,
+          0.987393925
+        ],
+        [
+          0.00522730467,
+          0.0172733646,
+          98.3594579
+        ]
+      ],
+      "range_nm": [
+        300.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SK5.yml; SHA256 c5c13d10b9ce0d83abb653b4590437127cef0c557fad9855fefb8e402783068f",
+      "nd_reference": 1.58913,
+      "vd_reference": 61.27,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SK5.yml",
+      "sha256": "c5c13d10b9ce0d83abb653b4590437127cef0c557fad9855fefb8e402783068f"
+    },
+    {
+      "name": "SCHOTT N-SSK2",
+      "n": 1.62229,
+      "sellmeier": [
+        [
+          1.4306027,
+          0.153150554,
+          1.01390904
+        ],
+        [
+          0.00823982975,
+          0.0333736841,
+          106.870822
+        ]
+      ],
+      "range_nm": [
+        350.0,
+        2500.0
+      ],
+      "source": "refractiveindex.info CC0-1.0; SCHOTT catalog 2017-01-20b; 293 K; https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SSK2.yml; SHA256 97a846283c8c743bc716aedd154db463e0c9bf2c29ff08ba66382c021df47121",
+      "nd_reference": 1.62229,
+      "vd_reference": 53.27,
+      "url": "https://raw.githubusercontent.com/polyanskiy/refractiveindex.info-database/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SSK2.yml",
+      "sha256": "97a846283c8c743bc716aedd154db463e0c9bf2c29ff08ba66382c021df47121"
+    }
+  ]
+}

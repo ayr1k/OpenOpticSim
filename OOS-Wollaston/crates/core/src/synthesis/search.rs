@@ -23,7 +23,7 @@ pub(super) const PAIRS: [(&str, &str); 3] = [
 ];
 pub(super) fn catalog_material(name: &str) -> Result<Material, String> {
     let data: serde_json::Value =
-        serde_json::from_str(include_str!("../../../../src/data/glass-catalog.json"))
+        serde_json::from_str(include_str!("../../../../data/glass-catalog.json"))
             .map_err(|e| e.to_string())?;
     let item = data["entries"]
         .as_array()
