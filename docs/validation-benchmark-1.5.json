@@ -1,0 +1,427 @@
+{
+  "version": "1.5.0",
+  "cases": [
+    {
+      "brief": {
+        "structure": "tessar",
+        "focal_length_mm": 50,
+        "f_number": 8,
+        "sensor_mm": [
+          6,
+          4
+        ],
+        "half_field_deg": 5,
+        "max_length_mm": 150,
+        "max_rms_um": 25,
+        "iterations": 25,
+        "starts": 1,
+        "require_sensor_coverage": true,
+        "glass_search": false
+      },
+      "v14_passed": false,
+      "v15_passed": true,
+      "v14_seconds": 4.84242160001304,
+      "v15_seconds": 10.630306400009431,
+      "v15_verification": {
+        "sampling": 49,
+        "fields_rms_um": [
+          0.7222476396041451,
+          0.6679283309676917,
+          0.9159274156399194,
+          1.2431395909170184
+        ],
+        "rayoptics": {
+          "name": "tessar · 50 mm · SCHOTT N-BK7 / SCHOTT N-F2 · 原结构 / 原玻璃",
+          "rays": 84,
+          "max_intersection_error_mm": 5.100986300021759e-11,
+          "max_optical_path_error_mm": 4.7336357056337874e-11,
+          "max_direction_error": 1.1431133817296768e-13
+        }
+      }
+    },
+    {
+      "brief": {
+        "structure": "tessar",
+        "focal_length_mm": 50,
+        "f_number": 4,
+        "sensor_mm": [
+          6,
+          4
+        ],
+        "half_field_deg": 5,
+        "max_length_mm": 150,
+        "max_rms_um": 25,
+        "iterations": 25,
+        "starts": 1,
+        "require_sensor_coverage": true,
+        "glass_search": false
+      },
+      "v14_passed": false,
+      "v15_passed": true,
+      "v14_seconds": 0.013841299922205508,
+      "v15_seconds": 10.563991899951361,
+      "v15_verification": {
+        "sampling": 49,
+        "fields_rms_um": [
+          8.606810533762099,
+          6.749517192829704,
+          7.168874933979035,
+          10.396919726240242
+        ],
+        "rayoptics": {
+          "name": "tessar · 50 mm · SCHOTT N-BK7 / SCHOTT N-F2 · 原结构 / 原玻璃",
+          "rays": 84,
+          "max_intersection_error_mm": 7.014300251739769e-11,
+          "max_optical_path_error_mm": 3.920774815924233e-11,
+          "max_direction_error": 3.0542235407438056e-13
+        }
+      }
+    },
+    {
+      "brief": {
+        "structure": "tessar",
+        "focal_length_mm": 50,
+        "f_number": 8,
+        "sensor_mm": [
+          36,
+          24
+        ],
+        "half_field_deg": 5,
+        "max_length_mm": 150,
+        "max_rms_um": 25,
+        "iterations": 25,
+        "starts": 1,
+        "require_sensor_coverage": true,
+        "glass_search": false
+      },
+      "v14_passed": false,
+      "v15_passed": true,
+      "v14_seconds": 2.2925247999373823,
+      "v15_seconds": 21.64216559997294,
+      "v15_verification": {
+        "sampling": 49,
+        "fields_rms_um": [
+          5.374422495705654,
+          15.07632309370807,
+          17.18328963440941,
+          13.896615606882305
+        ],
+        "rayoptics": {
+          "name": "tessar · 50 mm · SCHOTT N-BK7 / SCHOTT N-F2 · 原结构 / 原玻璃",
+          "rays": 84,
+          "max_intersection_error_mm": 8.197531542464276e-11,
+          "max_optical_path_error_mm": 5.39159827894764e-11,
+          "max_direction_error": 7.259193246511586e-13
+        }
+      }
+    },
+    {
+      "brief": {
+        "structure": "planar",
+        "focal_length_mm": 50,
+        "f_number": 8,
+        "sensor_mm": [
+          6,
+          4
+        ],
+        "half_field_deg": 5,
+        "max_length_mm": 150,
+        "max_rms_um": 25,
+        "iterations": 25,
+        "starts": 1,
+        "require_sensor_coverage": true,
+        "glass_search": false
+      },
+      "v14_passed": true,
+      "v15_passed": true,
+      "v14_seconds": 5.203706899890676,
+      "v15_seconds": 11.87083549995441,
+      "v15_verification": {
+        "sampling": 49,
+        "fields_rms_um": [
+          0.6832707421410258,
+          0.6275292440680676,
+          0.8255775615530936,
+          1.0986098807362399
+        ],
+        "rayoptics": {
+          "name": "planar · 50 mm · SCHOTT N-BK7 / SCHOTT N-F2 · 原结构 / 原玻璃",
+          "rays": 84,
+          "max_intersection_error_mm": 8.518785676869811e-11,
+          "max_optical_path_error_mm": 5.7696070143720135e-11,
+          "max_direction_error": 3.069072773698167e-14
+        }
+      }
+    },
+    {
+      "brief": {
+        "structure": "planar",
+        "focal_length_mm": 50,
+        "f_number": 4,
+        "sensor_mm": [
+          6,
+          4
+        ],
+        "half_field_deg": 5,
+        "max_length_mm": 150,
+        "max_rms_um": 25,
+        "iterations": 25,
+        "starts": 1,
+        "require_sensor_coverage": true,
+        "glass_search": false
+      },
+      "v14_passed": false,
+      "v15_passed": true,
+      "v14_seconds": 0.013815299957059324,
+      "v15_seconds": 11.826986900065094,
+      "v15_verification": {
+        "sampling": 49,
+        "fields_rms_um": [
+          7.074050546704972,
+          3.123143281374481,
+          4.638518004137017,
+          8.978671653753114
+        ],
+        "rayoptics": {
+          "name": "planar · 50 mm · SCHOTT N-BK7 / SCHOTT N-F2 · 原结构 / 原玻璃",
+          "rays": 84,
+          "max_intersection_error_mm": 9.627854069549358e-11,
+          "max_optical_path_error_mm": 5.5422333389287814e-11,
+          "max_direction_error": 3.4303115903355774e-13
+        }
+      }
+    },
+    {
+      "brief": {
+        "structure": "planar",
+        "focal_length_mm": 50,
+        "f_number": 8,
+        "sensor_mm": [
+          36,
+          24
+        ],
+        "half_field_deg": 5,
+        "max_length_mm": 150,
+        "max_rms_um": 25,
+        "iterations": 25,
+        "starts": 1,
+        "require_sensor_coverage": true,
+        "glass_search": false
+      },
+      "v14_passed": false,
+      "v15_passed": false,
+      "v14_seconds": 0.013022799976170063,
+      "v15_seconds": 12.753528299974278,
+      "v15_verification": null
+    },
+    {
+      "brief": {
+        "structure": "double_gauss",
+        "focal_length_mm": 50,
+        "f_number": 8,
+        "sensor_mm": [
+          6,
+          4
+        ],
+        "half_field_deg": 5,
+        "max_length_mm": 150,
+        "max_rms_um": 25,
+        "iterations": 25,
+        "starts": 1,
+        "require_sensor_coverage": true,
+        "glass_search": false
+      },
+      "v14_passed": true,
+      "v15_passed": true,
+      "v14_seconds": 5.694184200023301,
+      "v15_seconds": 13.679189400048926,
+      "v15_verification": {
+        "sampling": 49,
+        "fields_rms_um": [
+          0.5841458968829112,
+          0.6477483024070101,
+          0.9112001848057736,
+          1.1864575333640677
+        ],
+        "rayoptics": {
+          "name": "double_gauss · 50 mm · SCHOTT N-BK7 / SCHOTT N-F2 · 原结构 / 原玻璃",
+          "rays": 84,
+          "max_intersection_error_mm": 9.895373409563035e-11,
+          "max_optical_path_error_mm": 6.73310296406271e-11,
+          "max_direction_error": 9.324485628070533e-14
+        }
+      }
+    },
+    {
+      "brief": {
+        "structure": "double_gauss",
+        "focal_length_mm": 50,
+        "f_number": 4,
+        "sensor_mm": [
+          6,
+          4
+        ],
+        "half_field_deg": 5,
+        "max_length_mm": 150,
+        "max_rms_um": 25,
+        "iterations": 25,
+        "starts": 1,
+        "require_sensor_coverage": true,
+        "glass_search": false
+      },
+      "v14_passed": false,
+      "v15_passed": true,
+      "v14_seconds": 0.01439250004477799,
+      "v15_seconds": 13.725158600020222,
+      "v15_verification": {
+        "sampling": 49,
+        "fields_rms_um": [
+          3.7059809131595034,
+          2.1588482326789333,
+          3.2623099344238846,
+          5.400370662108137
+        ],
+        "rayoptics": {
+          "name": "double_gauss · 50 mm · SCHOTT N-BK7 / SCHOTT N-F2 · 原结构 / 原玻璃",
+          "rays": 84,
+          "max_intersection_error_mm": 9.965717140403285e-11,
+          "max_optical_path_error_mm": 5.155698090675287e-11,
+          "max_direction_error": 2.13690176664727e-13
+        }
+      }
+    },
+    {
+      "brief": {
+        "structure": "double_gauss",
+        "focal_length_mm": 50,
+        "f_number": 8,
+        "sensor_mm": [
+          36,
+          24
+        ],
+        "half_field_deg": 5,
+        "max_length_mm": 150,
+        "max_rms_um": 25,
+        "iterations": 25,
+        "starts": 1,
+        "require_sensor_coverage": true,
+        "glass_search": false
+      },
+      "v14_passed": false,
+      "v15_passed": false,
+      "v14_seconds": 5.548039400018752,
+      "v15_seconds": 16.24337360006757,
+      "v15_verification": null
+    },
+    {
+      "brief": {
+        "structure": "sonnar",
+        "focal_length_mm": 50,
+        "f_number": 8,
+        "sensor_mm": [
+          6,
+          4
+        ],
+        "half_field_deg": 5,
+        "max_length_mm": 150,
+        "max_rms_um": 25,
+        "iterations": 25,
+        "starts": 1,
+        "require_sensor_coverage": true,
+        "glass_search": false
+      },
+      "v14_passed": true,
+      "v15_passed": true,
+      "v14_seconds": 5.57584169995971,
+      "v15_seconds": 14.149122299975716,
+      "v15_verification": {
+        "sampling": 49,
+        "fields_rms_um": [
+          1.121773017686994,
+          0.8146535438194727,
+          1.4127456212200287,
+          2.152186489355771
+        ],
+        "rayoptics": {
+          "name": "sonnar · 50 mm · SCHOTT N-BK7 / SCHOTT N-F2 · 原结构 / 原玻璃",
+          "rays": 84,
+          "max_intersection_error_mm": 8.048317567954655e-11,
+          "max_optical_path_error_mm": 4.177991286269389e-11,
+          "max_direction_error": 5.5871973714261e-14
+        }
+      }
+    },
+    {
+      "brief": {
+        "structure": "sonnar",
+        "focal_length_mm": 50,
+        "f_number": 4,
+        "sensor_mm": [
+          6,
+          4
+        ],
+        "half_field_deg": 5,
+        "max_length_mm": 150,
+        "max_rms_um": 25,
+        "iterations": 25,
+        "starts": 1,
+        "require_sensor_coverage": true,
+        "glass_search": false
+      },
+      "v14_passed": true,
+      "v15_passed": true,
+      "v14_seconds": 6.226625100011006,
+      "v15_seconds": 14.845089300069958,
+      "v15_verification": {
+        "sampling": 49,
+        "fields_rms_um": [
+          3.9430874266916227,
+          2.4040073344188295,
+          3.004873002616859,
+          4.749379787566499
+        ],
+        "rayoptics": {
+          "name": "sonnar · 50 mm · SCHOTT N-BK7 / SCHOTT N-F2 · 原结构 / 原玻璃",
+          "rays": 84,
+          "max_intersection_error_mm": 8.661515948915621e-11,
+          "max_optical_path_error_mm": 4.810374321095878e-11,
+          "max_direction_error": 7.576578253676303e-14
+        }
+      }
+    },
+    {
+      "brief": {
+        "structure": "sonnar",
+        "focal_length_mm": 50,
+        "f_number": 8,
+        "sensor_mm": [
+          36,
+          24
+        ],
+        "half_field_deg": 5,
+        "max_length_mm": 150,
+        "max_rms_um": 25,
+        "iterations": 25,
+        "starts": 1,
+        "require_sensor_coverage": true,
+        "glass_search": false
+      },
+      "v14_passed": false,
+      "v15_passed": false,
+      "v14_seconds": 4.221095599932596,
+      "v15_seconds": 13.657616200041957,
+      "v15_verification": null
+    }
+  ],
+  "v14_successes": 4,
+  "v15_successes": 9,
+  "total": 12,
+  "v14_median_seconds": 4.531758599972818,
+  "v15_median_seconds": 13.668402800045442,
+  "scope": "Four classic topologies; 50mm; F8 6x4, F4 6x4, F8 36x24; one start, fixed glass, original topology, 25 iterations/stage. This is a small fixed benchmark, not a general success probability.",
+  "differences": "Same user-visible iteration budget, not equal evaluations or wall time. 1.5 adds restoration and up to two retry stages, uses explicit 0.5mm center/0.1mm body minimum; 1.4 scaled minima with seed. Times on shared development hardware are indicative, not a speed comparison.",
+  "executable_hashes": {
+    "1.4": "8382d0f0b222dec39d393932ff23d870b7e2d482f8061ba74a130da1a3c2618d",
+    "1.5": "956e63ce3f9aebd8ed84ae6d7debee98d5a6215a28400fe6b43bbab1873731a1"
+  }
+}

@@ -115,7 +115,7 @@ pub enum Variable {
     Aperture { surface: usize },
     Asphere { surface: usize, coefficient: usize },
 }
-fn value(p: &Project, v: &Variable) -> Option<f64> {
+pub(crate) fn value(p: &Project, v: &Variable) -> Option<f64> {
     match *v {
         Variable::Curvature { surface } => p.surfaces.get(surface).map(|s| s.curvature),
         Variable::Thickness { surface } => p.surfaces.get(surface).map(|s| s.thickness),
@@ -131,7 +131,7 @@ fn value(p: &Project, v: &Variable) -> Option<f64> {
             .and_then(|s| s.asphere.get(coefficient).copied()),
     }
 }
-fn set(p: &mut Project, v: &Variable, x: f64) {
+pub(crate) fn set(p: &mut Project, v: &Variable, x: f64) {
     match *v {
         Variable::Curvature { surface } => p.surfaces[surface].curvature = x,
         Variable::Thickness { surface } => p.surfaces[surface].thickness = x,
@@ -361,6 +361,27 @@ pub fn optimize_configured(
     }
     constraints.validate()?;
     if !p.validate_optical().is_empty() {
+        if p.validate_structure().is_empty() && !p.surfaces.is_empty() {
+            let mut repaired = p.clone();
+            // Bounds/references are checked by the recursive call. Reject malformed
+            // settings before any restoration can index a non-existent surface.
+            if options.variables.iter().all(|s| {
+                value(p, &s.variable).is_some()
+                    && s.min.is_none_or(|v| v.is_finite())
+                    && s.max.is_none_or(|v| v.is_finite())
+                    && !matches!((s.min,s.max),(Some(a),Some(b)) if a>=b)
+            }) {
+                crate::restoration::restore(&mut repaired, &options.variables, constraints);
+                if repaired.validate_optical().is_empty() {
+                    let mut result =
+                        optimize_configured(&repaired, options, constraints, cancel, progress)?;
+                    result.note.push_str(
+                        " 原始几何无效，先在允许变量范围内恢复；前后 RMS 以修复后处方为起点。",
+                    );
+                    return Ok(result);
+                }
+            }
+        }
         return Err("Invalid project".into());
     }
     if options.max_iterations == 0 || options.max_iterations > 100 || options.variables.len() > 100
@@ -390,6 +411,23 @@ pub fn optimize_configured(
         return Err("请选择 1–32 个未锁定的优化变量。".into());
     }
     let variables: Vec<_> = settings.iter().map(|s| &s.variable).collect();
+    let mut recoverable = p.clone();
+    crate::restoration::restore(&mut recoverable, &options.variables, constraints);
+    if crate::fields::resolve(p, cancel).is_err()
+        || checked_analysis(p, options.quality.as_ref(), cancel).is_err()
+    {
+        if cancel.load(Ordering::Relaxed) {
+            return Err("Cancelled".into());
+        }
+        if recoverable.validate_optical().is_empty()
+            && checked_analysis(&recoverable, options.quality.as_ref(), cancel).is_ok()
+        {
+            let mut c = optimize_configured(&recoverable, options, constraints, cancel, progress)?;
+            c.note
+                .push_str(" 原始追迹失败，先恢复约束；前后 RMS 以恢复后的处方为起点。");
+            return Ok(c);
+        }
+    }
     let resolved = crate::fields::resolve(p, cancel)?;
     if let Some(g) = &options.quality {
         g.validate(resolved.fields.len())?;
@@ -398,6 +436,13 @@ pub fn optimize_configured(
     let before_analysis = checked_analysis(p, options.quality.as_ref(), cancel)?;
     let before = balanced_rms(&before_analysis).ok_or("No valid rays")?;
     let mut best = p.clone();
+    crate::restoration::restore(&mut best, &options.variables, constraints);
+    // Keep the original analysis as the quality-protection baseline.
+    if !best.validate_optical().is_empty()
+        || checked_analysis(&best, options.quality.as_ref(), cancel).is_err()
+    {
+        best = p.clone();
+    }
     let baseline = analyze(p, 7, cancel)?;
     let mut eval = residuals(
         &best,
@@ -407,6 +452,13 @@ pub fn optimize_configured(
         &baseline,
         cancel,
     )?;
+    let mut feasible: Option<(Project, Analysis)> = None;
+    if final_checks(p, options, constraints, &before_analysis, &before_analysis)
+        .iter()
+        .all(|c| c.passed)
+    {
+        feasible = Some((p.clone(), before_analysis.clone()));
+    }
     let mut damping = 0.01;
     let mut iterations = 0;
     let mut history = vec![];
@@ -478,6 +530,11 @@ pub fn optimize_configured(
                                     }
                                     let mut q = best.clone();
                                     set(&mut q, v, next);
+                                    crate::restoration::restore(
+                                        &mut q,
+                                        &options.variables,
+                                        constraints,
+                                    );
                                     residuals(
                                         &q,
                                         constraints,
@@ -538,6 +595,7 @@ pub fn optimize_configured(
                 movement = movement.max((next - old).abs() / scales[i]);
                 set(&mut trial, v, next);
             }
+            crate::restoration::restore(&mut trial, &options.variables, constraints);
             if let Ok(rr) = residuals(
                 &trial,
                 constraints,
@@ -546,7 +604,12 @@ pub fn optimize_configured(
                 &baseline,
                 cancel,
             ) {
-                if rr.residual.norm_squared() < r.norm_squared() {
+                let old_violation = crate::restoration::violation(&best, constraints);
+                let new_violation = crate::restoration::violation(&trial, constraints);
+                if new_violation < old_violation - 1e-9
+                    || (new_violation <= old_violation + 1e-9
+                        && rr.residual.norm_squared() < r.norm_squared())
+                {
                     best = trial;
                     eval = rr;
                     step_accepted = true;
@@ -559,6 +622,19 @@ pub fn optimize_configured(
             damping *= 10.;
         }
         iterations += 1;
+        if step_accepted && crate::restoration::violation(&best, constraints) == 0. {
+            if let Ok(dense) = analyze(&best, 33, cancel) {
+                if final_checks(&best, options, constraints, &before_analysis, &dense)
+                    .iter()
+                    .all(|c| c.passed)
+                    && feasible
+                        .as_ref()
+                        .is_none_or(|(_, a)| balanced_rms(&dense) < balanced_rms(a))
+                {
+                    feasible = Some((best.clone(), dense));
+                }
+            }
+        }
         record(iterations, &eval, &best, step_accepted);
         if damping > 1e10 {
             stop_reason = "连续试步未改善目标或几何无效，阻尼达到上限".into();
@@ -572,7 +648,24 @@ pub fn optimize_configured(
     if cancel.load(Ordering::Relaxed) {
         return Err("Cancelled".into());
     }
-    let after_analysis = analyze(&best, 33, cancel)?;
+    let mut after_analysis = analyze(&best, 33, cancel)?;
+    if let Some((saved, analysis)) = feasible {
+        if !final_checks(
+            &best,
+            options,
+            constraints,
+            &before_analysis,
+            &after_analysis,
+        )
+        .iter()
+        .all(|c| c.passed)
+            || balanced_rms(&analysis) < balanced_rms(&after_analysis)
+        {
+            best = saved;
+            after_analysis = analysis;
+            stop_reason.push_str("；保留已通过完整验收的最佳候选");
+        }
+    }
     let after = balanced_rms(&after_analysis).ok_or("No valid rays")?;
     let checks = final_checks(
         &best,
@@ -806,7 +899,7 @@ fn staged_optimize(
     candidate.project.fields = p.fields.clone();
     Ok(candidate)
 }
-fn balanced_rms(a: &Analysis) -> Option<f64> {
+pub(crate) fn balanced_rms(a: &Analysis) -> Option<f64> {
     a.fields
         .iter()
         .map(|f| f.polychromatic_rms_um)

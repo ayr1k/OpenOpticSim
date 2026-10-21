@@ -1,0 +1,1434 @@
+{
+  "version": "1.5.0",
+  "unchanged_examples": [
+    {
+      "example": "24-70mm-zoom",
+      "unchanged_rms": true,
+      "source_sha256": "5057950dba58edc0c8caee5dead249f12e64c33830205de80c30f74b449c6dc9",
+      "rayoptics": {
+        "name": "24–70 mm · 双镜组教学变焦",
+        "rays": 84,
+        "max_intersection_error_mm": 9.958078805993864e-11,
+        "max_optical_path_error_mm": 2.69579913947382e-11,
+        "max_direction_error": 3.2633618030075695e-14
+      }
+    },
+    {
+      "example": "400mm-repaired",
+      "unchanged_rms": true,
+      "source_sha256": "7f5310b18d175a8329236db5fb8c2b055563733b65d81d82b034b62f97e0f51b",
+      "rayoptics": {
+        "name": "400 mm 实像修正版 · f/16",
+        "rays": 63,
+        "max_intersection_error_mm": 9.904965736495797e-11,
+        "max_optical_path_error_mm": 1.6552803572267294e-10,
+        "max_direction_error": 3.2460145682478014e-14
+      }
+    },
+    {
+      "example": "tessar-50mm-1.3",
+      "unchanged_rms": true,
+      "source_sha256": "2acec00d5106b634a5d028428d434fc3b0538d37f1a6605c07415436e5043d64",
+      "rayoptics": {
+        "name": "tessar · 50 mm F8 · 5deg teaching design",
+        "rays": 63,
+        "max_intersection_error_mm": 9.828404756717646e-11,
+        "max_optical_path_error_mm": 5.375255796025158e-11,
+        "max_direction_error": 9.707512571566213e-14
+      }
+    },
+    {
+      "example": "planar-50mm-1.3",
+      "unchanged_rms": true,
+      "source_sha256": "3e28bc0fcd462e76d523d6a5a7e7160f9efbf4f801d2f65edaf6990d35dcedda",
+      "rayoptics": {
+        "name": "planar · 50 mm F8 · 5deg teaching design",
+        "rays": 63,
+        "max_intersection_error_mm": 8.850031818496973e-11,
+        "max_optical_path_error_mm": 4.531841568677919e-11,
+        "max_direction_error": 2.709915625231929e-13
+      }
+    },
+    {
+      "example": "double_gauss-50mm-1.3",
+      "unchanged_rms": true,
+      "source_sha256": "de15a2b0de7829666ff52dcd06d646a3479761aa1d63db25d9e2f1cc1ba381e7",
+      "rayoptics": {
+        "name": "double_gauss · 50 mm F8 · 5deg teaching design",
+        "rays": 63,
+        "max_intersection_error_mm": 8.996536848826509e-11,
+        "max_optical_path_error_mm": 4.462208380573429e-11,
+        "max_direction_error": 1.8299251003384143e-13
+      }
+    },
+    {
+      "example": "sonnar-50mm-1.3",
+      "unchanged_rms": true,
+      "source_sha256": "323a9405df5b202cdbed6bbe809a9b9f10c56fc18091cb73372138069a7db77b",
+      "rayoptics": {
+        "name": "sonnar · 50 mm F8 · 5deg teaching design",
+        "rays": 63,
+        "max_intersection_error_mm": 9.166001291305292e-11,
+        "max_optical_path_error_mm": 5.049116680311272e-11,
+        "max_direction_error": 1.364186541508161e-13
+      }
+    }
+  ],
+  "search": {
+    "brief": {
+      "structure": "tessar",
+      "focal_length_mm": 50,
+      "f_number": 8,
+      "sensor_mm": [
+        6,
+        4
+      ],
+      "half_field_deg": 5,
+      "max_length_mm": 150,
+      "max_rms_um": 25,
+      "iterations": 10,
+      "starts": 1,
+      "require_sensor_coverage": true,
+      "glass_search": false,
+      "exploration": "expanded",
+      "element_glass": true,
+      "max_attempts": 6,
+      "min_center_mm": 0.5,
+      "min_edge_mm": 0.1
+    },
+    "elapsed_seconds": 40.29398550000042,
+    "attempts": [
+      "原结构 / 原玻璃 · tessar · SCHOTT N-BK7/SCHOTT N-F2 · 起点 1：目标检查通过；RMS 0.946 µm",
+      "移动光阑 / 原玻璃 · tessar · SCHOTT N-BK7/SCHOTT N-F2 · 起点 1：目标检查通过；RMS 0.949 µm",
+      "后置校正片 / 原玻璃 · tessar · SCHOTT N-BK7/SCHOTT N-F2 · 起点 1：目标检查通过；RMS 1.022 µm",
+      "前置负透镜 / 原玻璃 · tessar · SCHOTT N-BK7/SCHOTT N-F2 · 起点 1：阶段 6.2% 在恢复预算内未求解：Invalid project",
+      "原结构 / 第 1 片独立换玻璃 · tessar · SCHOTT N-BK7/SCHOTT N-F2 · 起点 1：目标检查通过；RMS 0.943 µm",
+      "移动光阑 / 第 1 片独立换玻璃 · tessar · SCHOTT N-BK7/SCHOTT N-F2 · 起点 1：目标检查通过；RMS 0.951 µm"
+    ],
+    "candidates": [
+      {
+        "name": "tessar · 50 mm · SCHOTT N-BK7 / SCHOTT N-F2 · 原结构 / 第 1 片独立换玻璃",
+        "accepted": true,
+        "rms_um": 0.9431196342031907,
+        "surface_count": 8,
+        "checks": [
+          {
+            "actual": 0.001477840398990793,
+            "limit": 0.5,
+            "name": "efl_error_mm",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 57.96733841673638,
+            "limit": 150.0,
+            "name": "total_length_mm",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 0.0,
+            "limit": 0.24,
+            "name": "f_number_error",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 42.105268872312195,
+            "limit": 0.01,
+            "name": "bfl_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": null
+          },
+          {
+            "actual": 12.692220510185596,
+            "limit": 1000.0,
+            "name": "front_diameter_mm",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 3.4297932889432796,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 0
+          },
+          {
+            "actual": 2.0423425735219674,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S1–S2：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 0
+          },
+          {
+            "actual": 2.191274845886662,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S2–S3：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 1
+          },
+          {
+            "actual": 1.013377364182542,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 2
+          },
+          {
+            "actual": 1.013377364182542,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S3–S4：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 2
+          },
+          {
+            "actual": 1.558012568643133,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S4–S5：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 3
+          },
+          {
+            "actual": 1.743186794119108,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S5–S6：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 4
+          },
+          {
+            "actual": 0.987093661786691,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 5
+          },
+          {
+            "actual": 0.8628214535633663,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S6–S7：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 5
+          },
+          {
+            "actual": 4.125913922377819,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 6
+          },
+          {
+            "actual": 2.8107030807700295,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S7–S8：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 6
+          },
+          {
+            "actual": 2.609420766475907,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S4–S6：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 3
+          },
+          {
+            "actual": 42.09162760703232,
+            "limit": 0.0,
+            "name": "image_gap_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 7
+          },
+          {
+            "actual": 1.29721166829151,
+            "limit": 25.0,
+            "name": "最差视场 RMS µm",
+            "passed": true,
+            "reason": "约束最差视场，不使用平均 RMS 替代。",
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 1.0,
+            "limit": 1.0,
+            "name": "传感器覆盖检查点 1",
+            "passed": true,
+            "reason": "必须在实际像高中验证短边、长边、角落，且全部采样光线通过。MTF 另行验收。",
+            "relation": "min",
+            "surface": null
+          },
+          {
+            "actual": 1.0,
+            "limit": 1.0,
+            "name": "传感器覆盖检查点 2",
+            "passed": true,
+            "reason": "必须在实际像高中验证短边、长边、角落，且全部采样光线通过。MTF 另行验收。",
+            "relation": "min",
+            "surface": null
+          },
+          {
+            "actual": 1.0,
+            "limit": 1.0,
+            "name": "传感器覆盖检查点 3",
+            "passed": true,
+            "reason": "必须在实际像高中验证短边、长边、角落，且全部采样光线通过。MTF 另行验收。",
+            "relation": "min",
+            "surface": null
+          },
+          {
+            "actual": 0.0,
+            "limit": 0.0,
+            "name": "failed_rays",
+            "passed": true,
+            "reason": "断点恢复时重新追迹",
+            "relation": "max",
+            "surface": null
+          }
+        ]
+      },
+      {
+        "name": "tessar · 50 mm · SCHOTT N-BK7 / SCHOTT N-F2 · 原结构 / 原玻璃",
+        "accepted": true,
+        "rms_um": 0.9464129000226694,
+        "surface_count": 8,
+        "checks": [
+          {
+            "actual": 9.621806530191179e-05,
+            "limit": 0.5,
+            "name": "efl_error_mm",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 56.47761952589258,
+            "limit": 150.0,
+            "name": "total_length_mm",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 0.0,
+            "limit": 0.24,
+            "name": "f_number_error",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 39.03668620074627,
+            "limit": 0.01,
+            "name": "bfl_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": null
+          },
+          {
+            "actual": 12.692220510185596,
+            "limit": 1000.0,
+            "name": "front_diameter_mm",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 6.188853248034521,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 0
+          },
+          {
+            "actual": 4.752070178193249,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S1–S2：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 0
+          },
+          {
+            "actual": 1.6188784985075346,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S2–S3：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 1
+          },
+          {
+            "actual": 0.7935754694933159,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 2
+          },
+          {
+            "actual": 0.7935754694933159,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S3–S4：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 2
+          },
+          {
+            "actual": 1.2212744184406132,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S4–S5：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 3
+          },
+          {
+            "actual": 1.481722409524373,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S5–S6：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 4
+          },
+          {
+            "actual": 0.7802249206568259,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 5
+          },
+          {
+            "actual": 0.3036704781763324,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S6–S7：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 5
+          },
+          {
+            "actual": 4.324068024564985,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 6
+          },
+          {
+            "actual": 2.9638552921573877,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S7–S8：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 6
+          },
+          {
+            "actual": 2.007830528089176,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S4–S6：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 3
+          },
+          {
+            "actual": 39.019649117166,
+            "limit": 0.0,
+            "name": "image_gap_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 7
+          },
+          {
+            "actual": 1.2992884641808788,
+            "limit": 25.0,
+            "name": "最差视场 RMS µm",
+            "passed": true,
+            "reason": "约束最差视场，不使用平均 RMS 替代。",
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 1.0,
+            "limit": 1.0,
+            "name": "传感器覆盖检查点 1",
+            "passed": true,
+            "reason": "必须在实际像高中验证短边、长边、角落，且全部采样光线通过。MTF 另行验收。",
+            "relation": "min",
+            "surface": null
+          },
+          {
+            "actual": 1.0,
+            "limit": 1.0,
+            "name": "传感器覆盖检查点 2",
+            "passed": true,
+            "reason": "必须在实际像高中验证短边、长边、角落，且全部采样光线通过。MTF 另行验收。",
+            "relation": "min",
+            "surface": null
+          },
+          {
+            "actual": 1.0,
+            "limit": 1.0,
+            "name": "传感器覆盖检查点 3",
+            "passed": true,
+            "reason": "必须在实际像高中验证短边、长边、角落，且全部采样光线通过。MTF 另行验收。",
+            "relation": "min",
+            "surface": null
+          },
+          {
+            "actual": 0.0,
+            "limit": 0.0,
+            "name": "failed_rays",
+            "passed": true,
+            "reason": "断点恢复时重新追迹",
+            "relation": "max",
+            "surface": null
+          }
+        ]
+      },
+      {
+        "name": "tessar · 50 mm · SCHOTT N-BK7 / SCHOTT N-F2 · 移动光阑 / 原玻璃",
+        "accepted": true,
+        "rms_um": 0.9487546999304504,
+        "surface_count": 8,
+        "checks": [
+          {
+            "actual": 0.00012007384881229655,
+            "limit": 0.5,
+            "name": "efl_error_mm",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 56.80944608409368,
+            "limit": 150.0,
+            "name": "total_length_mm",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 8.881784197001252e-16,
+            "limit": 0.24,
+            "name": "f_number_error",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 39.77141949818722,
+            "limit": 0.01,
+            "name": "bfl_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": null
+          },
+          {
+            "actual": 12.692220510185596,
+            "limit": 1000.0,
+            "name": "front_diameter_mm",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 6.313622948339442,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 0
+          },
+          {
+            "actual": 4.977371668899368,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S1–S2：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 0
+          },
+          {
+            "actual": 1.446031847427256,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S2–S3：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 1
+          },
+          {
+            "actual": 0.8084489062011855,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 2
+          },
+          {
+            "actual": 0.8084489062011855,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S3–S4：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 2
+          },
+          {
+            "actual": 1.4942141934129656,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S4–S5：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 3
+          },
+          {
+            "actual": 0.7441609149317987,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S5–S6：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 4
+          },
+          {
+            "actual": 0.7865659260845046,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 5
+          },
+          {
+            "actual": 0.2946053761227462,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S6–S7：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 5
+          },
+          {
+            "actual": 4.451772670429634,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 6
+          },
+          {
+            "actual": 3.156356125062903,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S7–S8：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 6
+          },
+          {
+            "actual": 1.6730379286502035,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S4–S6：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 3
+          },
+          {
+            "actual": 39.74617997254375,
+            "limit": 0.0,
+            "name": "image_gap_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 7
+          },
+          {
+            "actual": 1.2114960162527777,
+            "limit": 25.0,
+            "name": "最差视场 RMS µm",
+            "passed": true,
+            "reason": "约束最差视场，不使用平均 RMS 替代。",
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 1.0,
+            "limit": 1.0,
+            "name": "传感器覆盖检查点 1",
+            "passed": true,
+            "reason": "必须在实际像高中验证短边、长边、角落，且全部采样光线通过。MTF 另行验收。",
+            "relation": "min",
+            "surface": null
+          },
+          {
+            "actual": 1.0,
+            "limit": 1.0,
+            "name": "传感器覆盖检查点 2",
+            "passed": true,
+            "reason": "必须在实际像高中验证短边、长边、角落，且全部采样光线通过。MTF 另行验收。",
+            "relation": "min",
+            "surface": null
+          },
+          {
+            "actual": 1.0,
+            "limit": 1.0,
+            "name": "传感器覆盖检查点 3",
+            "passed": true,
+            "reason": "必须在实际像高中验证短边、长边、角落，且全部采样光线通过。MTF 另行验收。",
+            "relation": "min",
+            "surface": null
+          },
+          {
+            "actual": 0.0,
+            "limit": 0.0,
+            "name": "failed_rays",
+            "passed": true,
+            "reason": "断点恢复时重新追迹",
+            "relation": "max",
+            "surface": null
+          }
+        ]
+      },
+      {
+        "name": "tessar · 50 mm · SCHOTT N-BK7 / SCHOTT N-F2 · 移动光阑 / 第 1 片独立换玻璃",
+        "accepted": true,
+        "rms_um": 0.9512645233567489,
+        "surface_count": 8,
+        "checks": [
+          {
+            "actual": 0.0012186690182645066,
+            "limit": 0.5,
+            "name": "efl_error_mm",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 57.42081403715405,
+            "limit": 150.0,
+            "name": "total_length_mm",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 1.7763568394002505e-15,
+            "limit": 0.24,
+            "name": "f_number_error",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 41.688617250401784,
+            "limit": 0.01,
+            "name": "bfl_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": null
+          },
+          {
+            "actual": 12.692220510185596,
+            "limit": 1000.0,
+            "name": "front_diameter_mm",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 3.6984228367367615,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 0
+          },
+          {
+            "actual": 2.250399399770762,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S1–S2：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 0
+          },
+          {
+            "actual": 1.7469593528843097,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S2–S3：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 1
+          },
+          {
+            "actual": 1.0558015970802659,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 2
+          },
+          {
+            "actual": 1.0558015970802659,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S3–S4：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 2
+          },
+          {
+            "actual": 2.057104955843907,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S4–S5：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 3
+          },
+          {
+            "actual": 0.933289981505883,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S5–S6：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 4
+          },
+          {
+            "actual": 1.0030895697383748,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 5
+          },
+          {
+            "actual": 0.8480376271418162,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S6–S7：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 5
+          },
+          {
+            "actual": 4.4637190208575035,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 6
+          },
+          {
+            "actual": 3.239449871788479,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S7–S8：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 6
+          },
+          {
+            "actual": 2.2586830353103164,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S4–S6：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 3
+          },
+          {
+            "actual": 41.67365219691911,
+            "limit": 0.0,
+            "name": "image_gap_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 7
+          },
+          {
+            "actual": 1.3184615652668252,
+            "limit": 25.0,
+            "name": "最差视场 RMS µm",
+            "passed": true,
+            "reason": "约束最差视场，不使用平均 RMS 替代。",
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 0.0,
+            "limit": 0.0,
+            "name": "failed_rays",
+            "passed": true,
+            "reason": "全部配置视场与波长，33×33 瞳采样；失败光线包括遮挡、未命中、全反射与数值失败。",
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 3.6984228367367615,
+            "limit": 0.5,
+            "name": "bound_thickness",
+            "passed": true,
+            "relation": "min",
+            "surface": 0
+          },
+          {
+            "actual": 3.6984228367367615,
+            "limit": 6.941946800724549,
+            "name": "bound_thickness",
+            "passed": true,
+            "relation": "max",
+            "surface": 0
+          },
+          {
+            "actual": 0.06636994584818726,
+            "limit": 0.022945554813355196,
+            "name": "bound_curvature",
+            "passed": true,
+            "relation": "min",
+            "surface": 0
+          },
+          {
+            "actual": 0.06636994584818726,
+            "limit": 0.10728195913169661,
+            "name": "bound_curvature",
+            "passed": true,
+            "relation": "max",
+            "surface": 0
+          },
+          {
+            "actual": 2.310024159620693,
+            "limit": 0.01,
+            "name": "bound_thickness",
+            "passed": true,
+            "relation": "min",
+            "surface": 1
+          },
+          {
+            "actual": 2.310024159620693,
+            "limit": 4.636465184529836,
+            "name": "bound_thickness",
+            "passed": true,
+            "relation": "max",
+            "surface": 1
+          },
+          {
+            "actual": -0.0023023759825025066,
+            "limit": -0.04254407197992482,
+            "name": "bound_curvature",
+            "passed": true,
+            "relation": "min",
+            "surface": 1
+          },
+          {
+            "actual": -0.0023023759825025066,
+            "limit": 0.041792332338416595,
+            "name": "bound_curvature",
+            "passed": true,
+            "relation": "max",
+            "surface": 1
+          },
+          {
+            "actual": 1.0558015970802659,
+            "limit": 0.5,
+            "name": "bound_thickness",
+            "passed": true,
+            "relation": "min",
+            "surface": 2
+          },
+          {
+            "actual": 1.0558015970802659,
+            "limit": 2.2326776026951363,
+            "name": "bound_thickness",
+            "passed": true,
+            "relation": "max",
+            "surface": 2
+          },
+          {
+            "actual": -0.029988260077025014,
+            "limit": -0.07296182203484249,
+            "name": "bound_curvature",
+            "passed": true,
+            "relation": "min",
+            "surface": 2
+          },
+          {
+            "actual": -0.029988260077025014,
+            "limit": 0.011374582283498927,
+            "name": "bound_curvature",
+            "passed": true,
+            "relation": "max",
+            "surface": 2
+          },
+          {
+            "actual": 2.282814674695463,
+            "limit": 0.01,
+            "name": "bound_thickness",
+            "passed": true,
+            "relation": "min",
+            "surface": 3
+          },
+          {
+            "actual": 2.282814674695463,
+            "limit": 3.7957189358469012,
+            "name": "bound_thickness",
+            "passed": true,
+            "relation": "max",
+            "surface": 3
+          },
+          {
+            "actual": 0.06693343766621776,
+            "limit": 0.022659154628820594,
+            "name": "bound_curvature",
+            "passed": true,
+            "relation": "min",
+            "surface": 3
+          },
+          {
+            "actual": 0.06693343766621776,
+            "limit": 0.106995558947162,
+            "name": "bound_curvature",
+            "passed": true,
+            "relation": "max",
+            "surface": 3
+          },
+          {
+            "actual": 0.9332899815058836,
+            "limit": 0.01,
+            "name": "bound_thickness",
+            "passed": true,
+            "relation": "min",
+            "surface": 4
+          },
+          {
+            "actual": 0.9332899815058836,
+            "limit": 1.6822679829482527,
+            "name": "bound_thickness",
+            "passed": true,
+            "relation": "max",
+            "surface": 4
+          },
+          {
+            "actual": 2.587152666231799,
+            "limit": 0.001,
+            "name": "bound_aperture",
+            "passed": true,
+            "relation": "min",
+            "surface": 4
+          },
+          {
+            "actual": 2.587152666231799,
+            "limit": 12.692220510185596,
+            "name": "bound_aperture",
+            "passed": true,
+            "relation": "max",
+            "surface": 4
+          },
+          {
+            "actual": 1.003089569738374,
+            "limit": 0.5,
+            "name": "bound_thickness",
+            "passed": true,
+            "relation": "min",
+            "surface": 5
+          },
+          {
+            "actual": 1.003089569738374,
+            "limit": 2.0157467609609956,
+            "name": "bound_thickness",
+            "passed": true,
+            "relation": "max",
+            "surface": 5
+          },
+          {
+            "actual": 0.022596347720085355,
+            "limit": -0.01911713898491608,
+            "name": "bound_curvature",
+            "passed": true,
+            "relation": "min",
+            "surface": 5
+          },
+          {
+            "actual": 0.022596347720085355,
+            "limit": 0.06521926533342533,
+            "name": "bound_curvature",
+            "passed": true,
+            "relation": "max",
+            "surface": 5
+          },
+          {
+            "actual": 4.463719020857503,
+            "limit": 0.5,
+            "name": "bound_thickness",
+            "passed": true,
+            "relation": "min",
+            "surface": 6
+          },
+          {
+            "actual": 4.463719020857503,
+            "limit": 8.769535894009806,
+            "name": "bound_thickness",
+            "passed": true,
+            "relation": "max",
+            "surface": 6
+          },
+          {
+            "actual": 0.014979702483663484,
+            "limit": -0.02753982004091421,
+            "name": "bound_curvature",
+            "passed": true,
+            "relation": "min",
+            "surface": 6
+          },
+          {
+            "actual": 0.014979702483663484,
+            "limit": 0.0567965842774272,
+            "name": "bound_curvature",
+            "passed": true,
+            "relation": "max",
+            "surface": 6
+          },
+          {
+            "actual": 41.67365219691911,
+            "limit": 0.01,
+            "name": "bound_thickness",
+            "passed": true,
+            "relation": "min",
+            "surface": 7
+          },
+          {
+            "actual": 41.67365219691911,
+            "limit": 85.00870188798683,
+            "name": "bound_thickness",
+            "passed": true,
+            "relation": "max",
+            "surface": 7
+          },
+          {
+            "actual": -0.04483830171563261,
+            "limit": -0.08916441235522327,
+            "name": "bound_curvature",
+            "passed": true,
+            "relation": "min",
+            "surface": 7
+          },
+          {
+            "actual": -0.04483830171563261,
+            "limit": -0.00482800803688186,
+            "name": "bound_curvature",
+            "passed": true,
+            "relation": "max",
+            "surface": 7
+          },
+          {
+            "actual": 1.0,
+            "limit": 1.0,
+            "name": "传感器覆盖 · 短边中点 (2.000 mm)",
+            "passed": true,
+            "reason": "33×33 共用平面像面；sampled_clear；MTF 独立验收",
+            "relation": "min",
+            "surface": null
+          },
+          {
+            "actual": 1.0,
+            "limit": 1.0,
+            "name": "传感器覆盖 · 长边中点 (3.000 mm)",
+            "passed": true,
+            "reason": "33×33 共用平面像面；sampled_clear；MTF 独立验收",
+            "relation": "min",
+            "surface": null
+          },
+          {
+            "actual": 1.0,
+            "limit": 1.0,
+            "name": "传感器覆盖 · 画面角落 (3.606 mm)",
+            "passed": true,
+            "reason": "33×33 共用平面像面；sampled_clear；MTF 独立验收",
+            "relation": "min",
+            "surface": null
+          }
+        ]
+      },
+      {
+        "name": "tessar · 50 mm · SCHOTT N-BK7 / SCHOTT N-F2 · 后置校正片 / 原玻璃",
+        "accepted": true,
+        "rms_um": 1.0224771684394067,
+        "surface_count": 10,
+        "checks": [
+          {
+            "actual": 0.007328357959153209,
+            "limit": 0.5,
+            "name": "efl_error_mm",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 61.37197244522295,
+            "limit": 150.0,
+            "name": "total_length_mm",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 0.0,
+            "limit": 0.24,
+            "name": "f_number_error",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 37.65820008987025,
+            "limit": 0.01,
+            "name": "bfl_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": null
+          },
+          {
+            "actual": 12.692220510185596,
+            "limit": 1000.0,
+            "name": "front_diameter_mm",
+            "passed": true,
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 3.946152065021895,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 0
+          },
+          {
+            "actual": 2.800456894605367,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S1–S2：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 0
+          },
+          {
+            "actual": 5.0576920611769856,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S2–S3：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 1
+          },
+          {
+            "actual": 1.38785159862646,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 2
+          },
+          {
+            "actual": 1.38785159862646,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S3–S4：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 2
+          },
+          {
+            "actual": 2.0470811466936056,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S4–S5：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 3
+          },
+          {
+            "actual": 2.070394628238782,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S5–S6：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 4
+          },
+          {
+            "actual": 1.3567297564973995,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 5
+          },
+          {
+            "actual": 1.3196369637111256,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S6–S7：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 5
+          },
+          {
+            "actual": 2.8192396145456797,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 6
+          },
+          {
+            "actual": 1.7607838943427827,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S7–S8：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 6
+          },
+          {
+            "actual": 2.943340928031411,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S8–S9：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 7
+          },
+          {
+            "actual": 1.2862707135906817,
+            "limit": 0.5,
+            "name": "center_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 8
+          },
+          {
+            "actual": 0.901964306664417,
+            "limit": 0.1,
+            "name": "body_min_mm",
+            "passed": true,
+            "reason": "S9–S10：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 8
+          },
+          {
+            "actual": 3.6228452218914695,
+            "limit": 0.0,
+            "name": "air_min_mm",
+            "passed": true,
+            "reason": "S4–S6：显示值为离散采样估计；判定使用完整半径上的连续区间检查。最小间距已确认。",
+            "relation": "min",
+            "surface": 3
+          },
+          {
+            "actual": 37.65340253287737,
+            "limit": 0.0,
+            "name": "image_gap_mm",
+            "passed": true,
+            "relation": "min",
+            "surface": 9
+          },
+          {
+            "actual": 1.459762477885386,
+            "limit": 25.0,
+            "name": "最差视场 RMS µm",
+            "passed": true,
+            "reason": "约束最差视场，不使用平均 RMS 替代。",
+            "relation": "max",
+            "surface": null
+          },
+          {
+            "actual": 1.0,
+            "limit": 1.0,
+            "name": "传感器覆盖检查点 1",
+            "passed": true,
+            "reason": "必须在实际像高中验证短边、长边、角落，且全部采样光线通过。MTF 另行验收。",
+            "relation": "min",
+            "surface": null
+          },
+          {
+            "actual": 1.0,
+            "limit": 1.0,
+            "name": "传感器覆盖检查点 2",
+            "passed": true,
+            "reason": "必须在实际像高中验证短边、长边、角落，且全部采样光线通过。MTF 另行验收。",
+            "relation": "min",
+            "surface": null
+          },
+          {
+            "actual": 1.0,
+            "limit": 1.0,
+            "name": "传感器覆盖检查点 3",
+            "passed": true,
+            "reason": "必须在实际像高中验证短边、长边、角落，且全部采样光线通过。MTF 另行验收。",
+            "relation": "min",
+            "surface": null
+          },
+          {
+            "actual": 0.0,
+            "limit": 0.0,
+            "name": "failed_rays",
+            "passed": true,
+            "reason": "断点恢复时重新追迹",
+            "relation": "max",
+            "surface": null
+          }
+        ]
+      }
+    ],
+    "best_rayoptics": {
+      "name": "tessar · 50 mm · SCHOTT N-BK7 / SCHOTT N-F2 · 原结构 / 第 1 片独立换玻璃",
+      "rays": 84,
+      "max_intersection_error_mm": 9.879030926640553e-11,
+      "max_optical_path_error_mm": 9.326583949587075e-11,
+      "max_direction_error": 7.263634138610087e-14
+    },
+    "verification_sampling": 49,
+    "best_fields_rms_um": [
+      0.7715388029402811,
+      0.6546128066101834,
+      0.9227732880744252,
+      1.297449884414077
+    ]
+  },
+  "checkpoint_roundtrip_and_revalidation": true,
+  "impossible_length_rejected": true
+}

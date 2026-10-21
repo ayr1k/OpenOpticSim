@@ -1,0 +1,47 @@
+{
+  "version": "1.5.0",
+  "date": "2026-10-20",
+  "frontend_tests": 74,
+  "rust_desktop_tests": 100,
+  "typescript": "passed",
+  "production_frontend": "passed",
+  "clippy_warnings_denied": "passed",
+  "windows_nsis_build": "passed",
+  "design_benchmark": {
+    "cases": 12,
+    "v14_successes": 4,
+    "v15_successes": 9,
+    "extra_sampling": 49,
+    "independent_rayoptics": true,
+    "equal_wall_time_budget": false
+  },
+  "packaged_cli_sha256": "a957d1507b04c800287b40e08777d9e2df4d331b7f022dc2bf790a444967810b",
+  "packaged_cli_reproduces_all_nine_benchmark_rms": true,
+  "checkpoint_revalidated_with_packaged_cli": true,
+  "modified_object_distance_checkpoint_rejected": true,
+  "evidence": [
+    "docs/validation-benchmark-1.5.json",
+    "docs/validation-design-1.5.json",
+    "docs/validation-study-1.5.json",
+    "docs/validation-diffraction-1.5.json",
+    "docs/validation-design-saved-1.0.json",
+    "docs/validation-ui-1.5.json"
+  ],
+  "legacy_zoom_rms_errors_um": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "legacy_400mm_samples_unchanged": 38508,
+  "independent_diffraction_cases": 8,
+  "native_startup": "see matching executable hash in build-report",
+  "clean_windows_install_or_upgrade_tested": false,
+  "signed": false,
+  "limitations": [
+    "Bounded structure exploration; each mutation adds at most one element; per-element glass replacement is not combinatorial global material search.",
+    "Checkpoint retains best eight candidates and completed deterministic attempts; interrupted attempt restarts.",
+    "Same user iteration settings but more restoration evaluations and explicit thickness minima; not equal-compute comparison.",
+    "Native dialogs and clean offline Windows install/upgrade not end-to-end tested."
+  ]
+}

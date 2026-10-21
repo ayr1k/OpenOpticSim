@@ -2,6 +2,11 @@ import type { Candidate, Project } from "./types";
 import { defaultConstraints, ensureWorkspace } from "./versions";
 import { defaultOptimization } from "./optimization";
 export interface DesignBrief {
+  exploration?: "fixed" | "expanded";
+  element_glass?: boolean;
+  max_attempts?: number;
+  min_center_mm?: number;
+  min_edge_mm?: number;
   structure: string;
   focal_length_mm: number;
   f_number: number;
@@ -15,6 +20,11 @@ export interface DesignBrief {
   glass_search: boolean;
 }
 export const defaultTask: DesignBrief = {
+  exploration: "fixed",
+  element_glass: false,
+  max_attempts: 36,
+  min_center_mm: 0.5,
+  min_edge_mm: 0.1,
   structure: "tessar",
   focal_length_mm: 50,
   f_number: 8,
@@ -68,6 +78,18 @@ export function projectFromCandidate(
 export function validTask(b: DesignBrief) {
   return (
     !!b &&
+    (b.exploration === undefined ||
+      ["fixed", "expanded"].includes(b.exploration)) &&
+    (b.element_glass === undefined || typeof b.element_glass === "boolean") &&
+    Number.isInteger(b.max_attempts ?? 36) &&
+    (b.max_attempts ?? 36) >= 1 &&
+    (b.max_attempts ?? 36) <= 240 &&
+    Number.isFinite(b.min_center_mm ?? 0.5) &&
+    (b.min_center_mm ?? 0.5) >= 0.01 &&
+    (b.min_center_mm ?? 0.5) <= 100 &&
+    Number.isFinite(b.min_edge_mm ?? 0.1) &&
+    (b.min_edge_mm ?? 0.1) >= 0 &&
+    (b.min_edge_mm ?? 0.1) <= (b.min_center_mm ?? 0.5) &&
     ["auto", "tessar", "planar", "double_gauss", "sonnar"].includes(
       b.structure,
     ) &&
@@ -106,6 +128,8 @@ export function applyTask(p: Project, task: DesignBrief) {
   w.design_task = structuredClone(task);
   w.constraints = {
     ...(w.constraints ?? defaultConstraints(p)),
+    min_center_mm: task.min_center_mm ?? 0.5,
+    min_edge_mm: task.min_edge_mm ?? 0.1,
     target_efl_mm: task.focal_length_mm,
     efl_tolerance_mm: task.focal_length_mm * 0.01,
     max_length_mm: task.max_length_mm,

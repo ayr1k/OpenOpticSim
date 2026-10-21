@@ -73,6 +73,11 @@ fn classic_topologies_and_cancelled_search() {
         assert_eq!(p.surfaces.len(), count);
         assert!(p.validate().is_empty(), "{kind}: {:?}", p.validate());
         let brief = synthesis::DesignBrief {
+            exploration: synthesis::Exploration::Fixed,
+            element_glass: false,
+            max_attempts: 36,
+            min_center_mm: 0.5,
+            min_edge_mm: 0.1,
             require_sensor_coverage: false,
             glass_search: false,
             structure: kind.into(),

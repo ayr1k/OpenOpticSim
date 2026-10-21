@@ -59,6 +59,7 @@ fn run() -> Result<serde_json::Value, String> {
             motion_options: None,
             study_options: None,
             design_brief: None,
+            search_checkpoint: None,
             coating_options: None,
         },
         &AtomicBool::new(false),

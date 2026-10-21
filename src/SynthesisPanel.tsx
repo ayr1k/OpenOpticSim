@@ -9,6 +9,7 @@ import {
   applyTask,
   projectFromCandidate,
 } from "./designTask";
+import type { SearchCheckpoint } from "./searchCheckpoint";
 import { ensureWorkspace } from "./versions";
 export type { DesignBrief } from "./designTask";
 interface Outcome {
@@ -45,10 +46,11 @@ export default function SynthesisPanel({
     setBusy(false);
     setResult(null);
     edit((p) => {
+      delete ensureWorkspace(p).search_checkpoint;
       ensureWorkspace(p).design_task = { ...brief, ...v };
     });
   };
-  const run = async () => {
+  const run = async (resume = false) => {
     ctrl.current?.abort();
     const c = new AbortController();
     ctrl.current = c;
@@ -57,18 +59,37 @@ export default function SynthesisPanel({
     setResult(null);
     setProgress("");
     try {
-      const r = await compute<Outcome>(
-        crypto.randomUUID(),
-        "synthesize",
-        project,
-        c.signal,
-        { design_brief: brief },
-        (p) =>
-          setProgress(
-            `当前阶段 ${p.iteration}/${p.max_iterations} · RMS ${p.weighted_rms_um.toFixed(2)} µm`,
-          ),
-      );
-      if (!c.signal.aborted) setResult(r);
+      let checkpoint = resume
+        ? project.workspace?.search_checkpoint
+        : undefined;
+      if (!resume)
+        edit((p) => {
+          delete ensureWorkspace(p).search_checkpoint;
+        });
+      while (!c.signal.aborted) {
+        const r = await compute<{
+          outcome: Outcome;
+          checkpoint: SearchCheckpoint;
+          done: boolean;
+        }>(
+          crypto.randomUUID(),
+          "synthesize_step",
+          project,
+          c.signal,
+          { design_brief: brief, search_checkpoint: checkpoint },
+          (p) =>
+            setProgress(
+              `尝试 ${(checkpoint?.cursor ?? 0) + 1} · 当前阶段 ${p.iteration}/${p.max_iterations} · RMS ${p.weighted_rms_um.toFixed(2)} µm`,
+            ),
+        );
+        if (c.signal.aborted) break;
+        checkpoint = r.checkpoint;
+        setResult(r.outcome);
+        edit((p) => {
+          ensureWorkspace(p).search_checkpoint = r.checkpoint;
+        });
+        if (r.done) break;
+      }
     } catch (e) {
       if (!c.signal.aborted) setError(String(e));
     } finally {
@@ -107,6 +128,33 @@ export default function SynthesisPanel({
       <p>
         选择结构与目标 → 生成多个初值 → 逐步扩大孔径和视场 →
         全目标复核。当前项目保持打开，确认后创建独立项目。
+      </p>
+      <label>
+        结构探索
+        <select
+          value={brief.exploration ?? "fixed"}
+          disabled={busy}
+          onChange={(e) =>
+            patch({ exploration: e.target.value as "fixed" | "expanded" })
+          }
+        >
+          <option value="fixed">保留经典结构</option>
+          <option value="expanded">
+            扩展结构：移动光阑、后置校正片、前置负透镜
+          </option>
+        </select>
+      </label>
+      <label style={{ display: "block", marginBottom: 8 }}>
+        <input
+          type="checkbox"
+          checked={brief.element_glass ?? false}
+          disabled={busy}
+          onChange={(e) => patch({ element_glass: e.target.checked })}
+        />
+        镜片级玻璃搜索：逐片替换目录玻璃，其他镜片保持不变
+      </label>
+      <p className="hint">
+        每次结构变化最多增加一片，仍是旋转对称折射镜头。先轮流比较各经典结构，再比较扩展与逐片材料变体；预算较小时可能尚未运行材料变体。每个尝试均重新优化并验收。
       </p>
       <label>
         经典结构
@@ -177,6 +225,32 @@ export default function SynthesisPanel({
           />
         ))}
       </div>
+      <div className="dialog-grid">
+        <Num
+          label="最多搜索尝试"
+          unit=""
+          min={1}
+          max={240}
+          value={brief.max_attempts ?? 36}
+          onChange={(v) => patch({ max_attempts: Math.round(v) })}
+        />
+        <Num
+          label="最小中心厚度"
+          unit="mm"
+          min={0.01}
+          max={100}
+          value={brief.min_center_mm ?? 0.5}
+          onChange={(v) => patch({ min_center_mm: v })}
+        />
+        <Num
+          label="最小实体厚度（含边缘）"
+          unit="mm"
+          min={0}
+          max={100}
+          value={brief.min_edge_mm ?? 0.1}
+          onChange={(v) => patch({ min_edge_mm: v })}
+        />
+      </div>
       <p className="hint">
         覆盖验收开启时，以实际像高为目标，逐步扩展至传感器检查点；角度设置仅用于关闭覆盖验收的模式。几何通过不代表
         MTF 或制造公差通过。
@@ -188,8 +262,23 @@ export default function SynthesisPanel({
         将任务应用到当前镜头的设计目标与优化约束
       </button>
       <button disabled={busy} onClick={() => void run()}>
-        生成并优化设计
+        开始新搜索
       </button>
+      {project.workspace?.search_checkpoint && (
+        <div>
+          <p>
+            已完成 {project.workspace.search_checkpoint.cursor}/
+            {project.workspace.search_checkpoint.total}{" "}
+            个尝试。断点随项目保存；暂停时保留已完成尝试，未完成的尝试下次重新计算。恢复时会重新验证保留候选。
+          </p>
+          <button disabled={busy} onClick={() => void run(true)}>
+            {project.workspace.search_checkpoint.cursor ===
+            project.workspace.search_checkpoint.total
+              ? "重新验证已保存结果"
+              : "从断点继续"}
+          </button>
+        </div>
+      )}
       {busy && (
         <>
           <button
@@ -198,7 +287,7 @@ export default function SynthesisPanel({
               setBusy(false);
             }}
           >
-            取消
+            暂停并保留断点
           </button>
           <p role="status">{progress || "正在建立初值…"}</p>
         </>

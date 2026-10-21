@@ -1,0 +1,39 @@
+{
+  "version": "1.5.0",
+  "surface": "local production browser against release CLI",
+  "saved_project_sha256": "339c58f799d9fc9c5dd500fc1c09b4ab748ce837a82fc50ea7fed7591597e1df",
+  "saved_bytes": 170320,
+  "search_brief": {
+    "element_glass": true,
+    "exploration": "expanded",
+    "f_number": 8,
+    "focal_length_mm": 50,
+    "glass_search": true,
+    "half_field_deg": 5,
+    "iterations": 10,
+    "max_attempts": 6,
+    "max_length_mm": 150,
+    "max_rms_um": 25,
+    "min_center_mm": 0.5,
+    "min_edge_mm": 0.1,
+    "require_sensor_coverage": true,
+    "sensor_mm": [
+      6,
+      4
+    ],
+    "starts": 1,
+    "structure": "tessar"
+  },
+  "completed_attempts": 6,
+  "candidates": 6,
+  "all_candidates_accepted": true,
+  "project_download_reopened_through_file_chooser": true,
+  "restored_search_settings": true,
+  "results_hidden_until_revalidation": true,
+  "revalidated_checks_passed": 23,
+  "revalidated_checks_failed": 0,
+  "best_rms_um": 0.8947471372278459,
+  "screenshot": "docs/screenshots/search-resume-1.5.png",
+  "native_dialogs_tested": false,
+  "limitations": "Completed checkpoint reopened in UI. Interrupted checkpoint, deterministic continuation, cancellation and malformed state separately covered by engine tests."
+}

@@ -35,6 +35,10 @@ export default function OptimizationEditor({
   const weights = fieldWeights(resolvedFields ?? project.fields, value.preset);
   return (
     <>
+      <p className="hint">
+        约束恢复只使用已选择且未锁定的变量。焦距需要曲率变量；F
+        数需要光阑半径变量；厚度/间隙需要对应厚度变量。上下限不会自动放宽，失败时请先检查这些自由度。
+      </p>
       <QualityEditor project={project} value={value} onChange={onChange} />
       <label className="text-label">
         画质目标预设

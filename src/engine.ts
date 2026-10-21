@@ -112,6 +112,7 @@ async function computeDirect<T>(
     motion_options?: import("./types").MotionOptions;
     study_options?: import("./types").StudyOptions;
     design_brief?: import("./SynthesisPanel").DesignBrief;
+    search_checkpoint?: import("./searchCheckpoint").SearchCheckpoint;
     group_move?: { start: number; end: number; delta_mm: number };
   } = {},
   onProgress?: (p: OptimizationProgress) => void,

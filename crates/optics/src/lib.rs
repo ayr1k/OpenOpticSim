@@ -11,6 +11,7 @@ pub mod motion;
 pub mod optimize;
 pub mod preview;
 pub mod quality;
+pub mod restoration;
 pub mod study;
 pub mod synthesis;
 pub mod trace;
@@ -45,6 +46,7 @@ pub struct Request {
     pub motion_options: Option<motion::MotionOptions>,
     pub study_options: Option<study::StudyOptions>,
     pub design_brief: Option<synthesis::DesignBrief>,
+    pub search_checkpoint: Option<synthesis::Checkpoint>,
     pub coating_options: Option<coating::CoatingOptions>,
 }
 fn default_sampling() -> usize {
@@ -62,6 +64,17 @@ pub fn execute_with_progress(
     progress: &mut dyn FnMut(&OptimizationProgress),
 ) -> Result<serde_json::Value, String> {
     let p = &request.project;
+    if request.operation == "synthesize_step" {
+        return Ok(serde_json::json!(synthesis::step(
+            request
+                .design_brief
+                .as_ref()
+                .ok_or("Design brief required")?,
+            request.search_checkpoint.as_ref(),
+            cancel,
+            progress
+        )?));
+    }
     if request.operation == "synthesize" {
         return Ok(serde_json::json!(synthesis::run(
             request
@@ -85,7 +98,11 @@ pub fn execute_with_progress(
         }
         return Ok(serde_json::json!(geometry::inspect(p)));
     }
-    let errors = p.validate();
+    let errors = if request.operation == "optimize" && request.optimization.is_some() {
+        p.validate_structure()
+    } else {
+        p.validate()
+    };
     if !errors.is_empty() {
         return Err(serde_json::to_string(&errors).unwrap());
     }

@@ -48,3 +48,4 @@ jobs:
       - run: python scripts/validate_study.py
       - run: python scripts/validate_design13.py
       - run: python scripts/validate_design14.py
+      - run: python scripts/validate_design15.py

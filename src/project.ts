@@ -1,4 +1,5 @@
 import { validTask } from "./designTask";
+import { validCheckpoint } from "./searchCheckpoint";
 import { validMotion } from "./motion";
 import { validCoating } from "./coatings";
 import type { Project } from "./types";
@@ -10,6 +11,16 @@ export function projectFromJson(text: string, nested = false): Project {
   if (new TextEncoder().encode(text).length > 4_000_000)
     throw Error("项目文件不能超过 4 MB");
   const p = JSON.parse(text);
+  if (p?.workspace?.search_checkpoint !== undefined) {
+    const checkpoint = p.workspace.search_checkpoint;
+    if (nested || !validCheckpoint(checkpoint))
+      throw Error("搜索断点格式无效或版本不兼容");
+    for (const candidate of checkpoint.candidates) {
+      if (candidate.project?.workspace)
+        throw Error("搜索断点候选不能嵌套工作区");
+      projectFromJson(JSON.stringify(candidate.project), true);
+    }
+  }
   if (
     ![1, 2, 3].includes(p?.schema_version) ||
     !Array.isArray(p.surfaces) ||

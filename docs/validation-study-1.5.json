@@ -1,0 +1,88 @@
+{
+  "version": "1.5.0",
+  "scan_points": 13,
+  "scan_passed": true,
+  "trajectory_points": 7,
+  "trajectory_passed": true,
+  "trajectory_17_to_33_max_rms_change_um": 0.016452809816533964,
+  "trajectory_rayoptics": [
+    {
+      "name": "24–70 mm · 双镜组教学变焦",
+      "rays": 84,
+      "max_intersection_error_mm": 9.151975705057325e-11,
+      "max_optical_path_error_mm": 7.73283659327717e-11,
+      "max_direction_error": 2.247295231849744e-13
+    },
+    {
+      "name": "24–70 mm · 双镜组教学变焦",
+      "rays": 84,
+      "max_intersection_error_mm": 9.634959496906959e-11,
+      "max_optical_path_error_mm": 3.355182798259193e-11,
+      "max_direction_error": 5.004330283497893e-14
+    },
+    {
+      "name": "24–70 mm · 双镜组教学变焦",
+      "rays": 84,
+      "max_intersection_error_mm": 9.92796955756603e-11,
+      "max_optical_path_error_mm": 2.6929569685307797e-11,
+      "max_direction_error": 3.256422909103662e-14
+    }
+  ],
+  "optimization_before_rms_um": [
+    5.078234672485542,
+    4.251138090480422,
+    3.804620321144693,
+    2.481321188298421
+  ],
+  "optimization_after_rms_um": [
+    5.078234672485542,
+    3.994455978835195,
+    3.3594794291845274,
+    2.3171932436670915
+  ],
+  "optimization_all_fields_protected": true,
+  "focus400": [
+    {
+      "distance_mm": null,
+      "positions_mm": [
+        0.01953125
+      ],
+      "rms_um": 10.618832070194768
+    },
+    {
+      "distance_mm": 100000.0,
+      "positions_mm": [
+        -1.58203125
+      ],
+      "rms_um": 10.6592394212724
+    },
+    {
+      "distance_mm": 31622.776601683796,
+      "positions_mm": [
+        -5.078125
+      ],
+      "rms_um": 10.747073198821264
+    },
+    {
+      "distance_mm": 10000.0,
+      "positions_mm": [
+        -16.40625
+      ],
+      "rms_um": 11.073343818068752
+    }
+  ],
+  "focus400_rayoptics": {
+    "name": "400 mm 实像修正版 · f/16",
+    "rays": 63,
+    "max_intersection_error_mm": 9.839595804805867e-11,
+    "max_optical_path_error_mm": 1.6052581486292183e-10,
+    "max_direction_error": 3.0676849949173857e-14
+  },
+  "legacy_zoom_rms_errors_um": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "scope": "Fixed-sensor geometric studies; finite sampled positions only; not continuous parfocality or diffraction certification"
+}
