@@ -5,7 +5,10 @@ describe("1.2 navigation and offline documentation", () => {
   it("keeps all 0.9 tools and adds optimization and drawing workspaces", () => {
     expect(allTabs.map((t) => t[0]).sort()).toEqual(
       [
-        "spots", "synthesis", "coatings",
+        "spots",
+        "synthesis",
+        "coatings",
+        "quality_report",
         "focus",
         "aperture",
         "goals",

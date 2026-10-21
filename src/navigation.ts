@@ -18,6 +18,7 @@ export const sections = [
     hint: "先检查通光，再评估几何与衍射画质",
     tabs: [
       ["spots", "点列图", "analysis"],
+      ["quality_report", "画质验收报告", "analysis"],
       ["pupil", "瞳面图", "pupil"],
       ["aberration", "像差与通光", "analysis"],
       ["wave", "PSF / MTF", "diffraction"],

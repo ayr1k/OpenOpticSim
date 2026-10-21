@@ -39,6 +39,7 @@ export const candidateKey = (p: Project) =>
     p.schema_version,
     p.name,
     p.description,
+    p.workspace?.design_task,
     p.workspace?.constraints,
     p.workspace?.optimization,
   ]);

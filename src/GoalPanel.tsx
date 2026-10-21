@@ -7,6 +7,7 @@ import { opticalKey } from "./design";
 import { ConstraintEditor, ConstraintTable } from "./ConstraintEditor";
 import { Num } from "./Num";
 import { explainError } from "./errors";
+import { validTask, applyTask } from "./designTask";
 import FieldPanel from "./FieldPanel";
 export default function GoalPanel({
   project,
@@ -53,7 +54,17 @@ export default function GoalPanel({
   }, [key]);
   const set = (value: typeof c) =>
     edit((p) => {
-      ensureWorkspace(p).constraints = value;
+      const w = ensureWorkspace(p);
+      w.constraints = value;
+      if (w.design_task) {
+        const task = {
+          ...w.design_task,
+          focal_length_mm: value.target_efl_mm,
+          max_length_mm: value.max_length_mm,
+          f_number: value.design?.f_number ?? w.design_task.f_number,
+        };
+        if (validTask(task)) w.design_task = task;
+      }
     });
   const actual = result?.paraxial,
     required = g ? c.target_efl_mm / g.f_number : null,
@@ -61,6 +72,18 @@ export default function GoalPanel({
   return (
     <div className="workflow-panel design-panel">
       <h2>设计目标与实际能力</h2>
+      {project.workspace?.design_task && (
+        <p>
+          已有统一设计任务：{project.workspace.design_task.focal_length_mm} mm /
+          F{project.workspace.design_task.f_number}。
+          <button
+            onClick={() => edit((p) => applyTask(p, p.workspace!.design_task!))}
+          >
+            同步任务的传感器、视场与画质验收要求
+          </button>{" "}
+          修改本页焦距、F 数与长度会同步到任务；手工改变其他约束仍保留。
+        </p>
+      )}
       <p>
         目标用于约束优化；改变目标不会直接缩放镜头或画面。F 数由 d
         线近轴入瞳计算，通光仍须实际追迹。
@@ -183,6 +206,8 @@ export default function GoalPanel({
             onChange={(v) =>
               edit((p) => {
                 p.sensor[0] = v;
+                if (p.workspace?.design_task && v <= 100)
+                  p.workspace.design_task.sensor_mm[0] = v;
               })
             }
           />
@@ -194,6 +219,8 @@ export default function GoalPanel({
             onChange={(v) =>
               edit((p) => {
                 p.sensor[1] = v;
+                if (p.workspace?.design_task && v <= 100)
+                  p.workspace.design_task.sensor_mm[1] = v;
               })
             }
           />

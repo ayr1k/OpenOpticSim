@@ -49,6 +49,7 @@ export interface Coverage {
   warnings: string[];
 }
 export interface QualityGuards {
+  require_sensor_coverage?: boolean;
   max_rms_um: (number | null)[];
   max_worst_rms_um?: number | null;
   max_degradation_percent?: number | null;
@@ -369,6 +370,7 @@ export interface DesignVersion {
   groups?: OpticalGroup[];
 }
 export interface Workspace {
+  design_task?: import("./designTask").DesignBrief;
   motion?: MotionWorkspace;
   schema_version: 1;
   versions: DesignVersion[];

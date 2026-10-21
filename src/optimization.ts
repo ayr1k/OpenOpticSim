@@ -94,6 +94,8 @@ export function optimizationError(
   if (
     g !== undefined &&
     (!g ||
+      (g.require_sensor_coverage !== undefined &&
+        typeof g.require_sensor_coverage !== "boolean") ||
       !Array.isArray(g.max_rms_um) ||
       (g.max_rms_um.length !== 0 &&
         g.max_rms_um.length !== (fieldTargets(p)?.length ?? p.fields.length)) ||

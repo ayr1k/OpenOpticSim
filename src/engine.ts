@@ -1,3 +1,4 @@
+import { tasks } from "./taskQueue";
 import { invoke } from "@tauri-apps/api/core";
 import { listen } from "@tauri-apps/api/event";
 import type {
@@ -92,7 +93,7 @@ export async function examples(): Promise<Project[]> {
     ),
   ];
 }
-export async function compute<T>(
+async function computeDirect<T>(
   job: string,
   operation: string,
   project: Project,
@@ -178,6 +179,22 @@ export async function compute<T>(
   const data = await r.json();
   if (!r.ok) throw Error(data.error ?? JSON.stringify(data));
   return data;
+}
+export async function compute<T>(
+  ...args: Parameters<typeof computeDirect<T>>
+): Promise<T> {
+  const [job, operation, project, signal, extras, onProgress] = args;
+  return tasks.run(
+    `${project.name} · ${operation}`,
+    signal,
+    (queuedSignal, detail) =>
+      computeDirect<T>(job, operation, project, queuedSignal, extras, (p) => {
+        detail(
+          `迭代 ${p.iteration}/${p.max_iterations} · RMS ${p.weighted_rms_um.toFixed(3)} µm`,
+        );
+        onProgress?.(p);
+      }),
+  );
 }
 function explainStreamError(error: string) {
   try {

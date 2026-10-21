@@ -4,6 +4,7 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 #[serde(default, deny_unknown_fields)]
 pub struct QualityGuards {
+    pub require_sensor_coverage: bool,
     pub max_rms_um: Vec<Option<f64>>,
     pub max_worst_rms_um: Option<f64>,
     pub max_degradation_percent: Option<f64>,
@@ -143,6 +144,19 @@ pub fn checks(a: &Analysis, before: &Analysis, g: &QualityGuards) -> Vec<Constra
             "max",
             "约束最差视场，不使用平均 RMS 替代。",
         );
+    }
+    if g.require_sensor_coverage {
+        for index in 0..3 {
+            let point = a.coverage.as_ref().and_then(|v| v.checkpoints.get(index));
+            let passed = point.is_some_and(|v| v.status == "sampled_clear");
+            push(
+                format!("传感器覆盖检查点 {}", index + 1),
+                Some(if passed { 1. } else { 0. }),
+                1.,
+                "min",
+                "必须在实际像高中验证短边、长边、角落，且全部采样光线通过。MTF 另行验收。",
+            );
+        }
     }
     out
 }

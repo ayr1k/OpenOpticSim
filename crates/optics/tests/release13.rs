@@ -73,6 +73,8 @@ fn classic_topologies_and_cancelled_search() {
         assert_eq!(p.surfaces.len(), count);
         assert!(p.validate().is_empty(), "{kind}: {:?}", p.validate());
         let brief = synthesis::DesignBrief {
+            require_sensor_coverage: false,
+            glass_search: false,
             structure: kind.into(),
             focal_length_mm: 50.,
             f_number: 8.,

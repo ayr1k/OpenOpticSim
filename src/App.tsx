@@ -1,3 +1,5 @@
+import QualityReportPanel from "./QualityReportPanel";
+import TaskPanel from "./TaskPanel";
 import MotionPanel from "./MotionPanel";
 import { synchronizeMotion } from "./motion";
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
@@ -708,7 +710,7 @@ export default function App() {
           <div>
             OpenOpticSim <small>光学工作室</small>
           </div>
-          <span className="alpha">1.3</span>
+          <span className="alpha">1.4</span>
         </div>
         <div className="toolbar">
           <button
@@ -1123,9 +1125,14 @@ export default function App() {
               )}
             </div>
           )}
+          <TaskPanel />
           <section className="analysis" id="analysis-workbench">
+            {tab === "quality_report" && (
+              <QualityReportPanel project={project} />
+            )}
             {tab === "synthesis" && (
               <SynthesisPanel
+                edit={edit}
                 project={project}
                 onCreate={(p) => requestAction(() => loadDocument(p))}
               />

@@ -1,21 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import type { Candidate, Project } from "./types";
 import { compute, exportReport } from "./engine";
-import { ConstraintTable } from "./ConstraintEditor";
+import { ConstraintTable, checkLabel } from "./ConstraintEditor";
 import { Num } from "./Num";
-export interface DesignBrief {
-  structure: string;
-  focal_length_mm: number;
-  f_number: number;
-  sensor_mm: [number, number];
-  half_field_deg: number;
-  max_length_mm: number;
-  max_rms_um: number;
-  iterations: number;
-  starts: number;
-}
+import {
+  type DesignBrief,
+  defaultTask,
+  applyTask,
+  projectFromCandidate,
+} from "./designTask";
+import { ensureWorkspace } from "./versions";
+export type { DesignBrief } from "./designTask";
 interface Outcome {
   candidate: Candidate | null;
+  candidates: Candidate[];
   attempts: string[];
   brief: DesignBrief;
   note: string;
@@ -23,32 +21,32 @@ interface Outcome {
 export default function SynthesisPanel({
   project,
   onCreate,
+  edit,
 }: {
   project: Project;
+  edit: (f: (p: Project) => void) => void;
   onCreate: (p: Project) => void;
 }) {
-  const [brief, setBrief] = useState<DesignBrief>({
-    structure: "tessar",
-    focal_length_mm: 50,
-    f_number: 8,
-    sensor_mm: [36, 24],
-    half_field_deg: 5,
-    max_length_mm: 100,
-    max_rms_um: 25,
-    iterations: 25,
-    starts: 1,
-  });
+  const brief = project.workspace?.design_task ?? defaultTask;
   const [result, setResult] = useState<Outcome | null>(null),
     [busy, setBusy] = useState(false),
     [error, setError] = useState(""),
     [progress, setProgress] = useState("");
   const ctrl = useRef<AbortController | null>(null);
-  useEffect(() => () => ctrl.current?.abort(), []);
+  const taskKey = JSON.stringify(brief);
+  useEffect(() => {
+    ctrl.current?.abort();
+    setBusy(false);
+    setResult(null);
+    return () => ctrl.current?.abort();
+  }, [taskKey]);
   const patch = (v: Partial<DesignBrief>) => {
     ctrl.current?.abort();
     setBusy(false);
     setResult(null);
-    setBrief((b) => ({ ...b, ...v }));
+    edit((p) => {
+      ensureWorkspace(p).design_task = { ...brief, ...v };
+    });
   };
   const run = async () => {
     ctrl.current?.abort();
@@ -57,6 +55,7 @@ export default function SynthesisPanel({
     setBusy(true);
     setError("");
     setResult(null);
+    setProgress("");
     try {
       const r = await compute<Outcome>(
         crypto.randomUUID(),
@@ -77,6 +76,7 @@ export default function SynthesisPanel({
     }
   };
   const labels: Record<string, string> = {
+    auto: "自动比较全部四种结构",
     tessar: "Tessar 型 · 4 片 3 组",
     planar: "Planar 型 · 6 片 4 组",
     double_gauss: "分离式双高斯 · 6 片 6 组",
@@ -84,7 +84,26 @@ export default function SynthesisPanel({
   };
   return (
     <div className="workflow-panel">
-      <h2>从指标创建设计</h2>
+      <h2>设计任务 · 从指标创建设计</h2>
+      <p>任务随项目保存，可撤销。先设定目标，再生成新设计或应用到当前镜头。</p>
+      <label style={{ display: "block", marginBottom: 8 }}>
+        <input
+          type="checkbox"
+          checked={brief.require_sensor_coverage}
+          disabled={busy}
+          onChange={(e) => patch({ require_sensor_coverage: e.target.checked })}
+        />
+        必须覆盖传感器短边、长边与角落（实际像高求解）
+      </label>
+      <label style={{ display: "block", marginBottom: 8 }}>
+        <input
+          type="checkbox"
+          checked={brief.glass_search}
+          disabled={busy}
+          onChange={(e) => patch({ glass_search: e.target.checked })}
+        />
+        自动玻璃选择：比较 3 组目录玻璃，每组重新优化几何
+      </label>
       <p>
         选择结构与目标 → 生成多个初值 → 逐步扩大孔径和视场 →
         全目标复核。当前项目保持打开，确认后创建独立项目。
@@ -103,6 +122,19 @@ export default function SynthesisPanel({
           ))}
         </select>
       </label>
+      <button
+        disabled={busy}
+        onClick={() =>
+          patch({
+            ...defaultTask,
+            sensor_mm: [6, 4],
+            max_length_mm: 150,
+            glass_search: true,
+          })
+        }
+      >
+        加载已验证入门任务 · 50 mm F8 / 6×4 mm
+      </button>
       <div className="dialog-grid">
         {(
           [
@@ -146,21 +178,15 @@ export default function SynthesisPanel({
         ))}
       </div>
       <p className="hint">
-        传感器尺寸不自动扩大测试角度。建议角落半视场约{" "}
-        {(
-          (Math.atan(
-            Math.hypot(...brief.sensor_mm) / 2 / brief.focal_length_mm,
-          ) *
-            180) /
-          Math.PI
-        ).toFixed(2)}
-        °；存在畸变时须用“设计目标 → 按目标像高”复核。默认 5°
-        是窄视场起步，不代表全画幅通过。
+        覆盖验收开启时，以实际像高为目标，逐步扩展至传感器检查点；角度设置仅用于关闭覆盖验收的模式。几何通过不代表
+        MTF 或制造公差通过。
       </p>
       <p className="hint">
-        原创起点仅借鉴经典拓扑，使用 N-BK7 /
-        N-F2。不是原厂镜头复刻；当前不自动选择玻璃、评估公差或保证可制造性。
+        玻璃池：N-BK7/N-F2、N-BAK4/N-SF5、N-SK16/N-SF10；保留材料来源和系数。每个组合使用相同目标与预算。此版本不穷举全部玻璃。
       </p>
+      <button disabled={busy} onClick={() => edit((p) => applyTask(p, brief))}>
+        将任务应用到当前镜头的设计目标与优化约束
+      </button>
       <button disabled={busy} onClick={() => void run()}>
         生成并优化设计
       </button>
@@ -193,12 +219,49 @@ export default function SynthesisPanel({
             <p key={i}>{s}</p>
           ))}
           <p>{result.note}</p>
+          <p>
+            同一任务、F/d/C 波长、共用平面像面、33×33
+            瞳采样。排序优先满足全部约束，再比较 RMS。
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>候选 / 材料</th>
+                <th>RMS µm</th>
+                <th>未通过项</th>
+                <th>查看</th>
+              </tr>
+            </thead>
+            <tbody>
+              {result.candidates.map((c, i) => (
+                <tr key={i}>
+                  <td>{c.project.name}</td>
+                  <td>{c.after_rms_um.toFixed(3)}</td>
+                  <td>
+                    {c.checks
+                      .filter((v) => !v.passed)
+                      .map(checkLabel)
+                      .join("、") || "全部通过"}
+                  </td>
+                  <td>
+                    <button
+                      onClick={() => setResult({ ...result, candidate: c })}
+                    >
+                      查看检查表
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
           {result.candidate && (
             <>
               <ConstraintTable checks={result.candidate.checks} />
               <button
                 disabled={!result.candidate.accepted}
-                onClick={() => onCreate(result.candidate!.project)}
+                onClick={() => {
+                  onCreate(projectFromCandidate(result.candidate!, brief));
+                }}
               >
                 使用已验证候选创建项目
               </button>

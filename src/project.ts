@@ -1,3 +1,4 @@
+import { validTask } from "./designTask";
 import { validMotion } from "./motion";
 import { validCoating } from "./coatings";
 import type { Project } from "./types";
@@ -126,6 +127,8 @@ export function projectFromJson(text: string, nested = false): Project {
           true,
         );
     }
+    if (w.design_task !== undefined && !validTask(w.design_task))
+      throw Error("保存的设计任务无效");
     const ids = new Set<string>();
     if (w.groups !== undefined && !validGroups(p, w.groups))
       throw Error("保存的镜组范围无效或重叠");

@@ -1,0 +1,43 @@
+{
+  "version": "1.4.0",
+  "date": "2026-10-20",
+  "frontend_tests": 72,
+  "rust_desktop_tests": 95,
+  "typescript": "passed",
+  "production_frontend": "passed",
+  "clippy_warnings_denied": "passed",
+  "windows_nsis_build": "passed",
+  "design_search": {
+    "attempts": 12,
+    "accepted": 11,
+    "sensor_mm": [
+      6,
+      4
+    ],
+    "focal_length_mm": 50,
+    "f_number": 8
+  },
+  "evidence": [
+    "docs/validation-design-1.4.json",
+    "docs/validation-study-1.4.json",
+    "docs/validation-diffraction-1.4.json",
+    "docs/validation-design-saved-1.0.json",
+    "docs/validation-ui-1.4.json"
+  ],
+  "legacy_zoom_rms_errors_um": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "legacy_400mm_samples_unchanged": 38508,
+  "independent_diffraction_cases": 8,
+  "native_startup": "passed; see asset build-report for matching executable hash",
+  "clean_windows_install_or_upgrade_tested": false,
+  "signed": false,
+  "limitations": [
+    "Bounded classic topology and three paired glass families; not a global or manufacturability guarantee",
+    "Queue pause prevents new jobs only; no solver checkpoint resume",
+    "UI integration tested in local production web build; native dialogs not end-to-end tested"
+  ]
+}

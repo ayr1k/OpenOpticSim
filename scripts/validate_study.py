@@ -77,7 +77,7 @@ def main():
                 focus400_rayoptics=focus_ref,legacy_zoom_rms_errors_um=regression,
                 scope='Fixed-sensor geometric studies; finite sampled positions only; not continuous parfocality or diffraction certification')
     output=ROOT/(sys.argv[1] if len(sys.argv)>1 else 'docs/validation-study-1.2.json')
-    if len(sys.argv)>1: report['version']='1.3.0'
+    if len(sys.argv)>1: report['version']=json.loads((ROOT/'package.json').read_text(encoding='utf8'))['version']
     output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     if len(sys.argv)==1:
         (ROOT/'docs/fixtures/study-1.2-results.json').write_text(json.dumps(scan,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
